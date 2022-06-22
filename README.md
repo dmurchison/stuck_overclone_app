@@ -2,4 +2,4 @@
 
 ## Main Links
 - [Design Docs](https://github.com/dmurchison/stuck_overclone_app/wiki)
-- [Stuck Overclone Website](https://stuck-overclone.herokuapp.com/)
+- [Stuck Overclone Website](https://stuckoverclone.herokuapp.com/)
