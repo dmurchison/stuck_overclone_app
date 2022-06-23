@@ -1,8 +1,14 @@
 import React from 'react';
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
+import {
+  Route,
+  Redirect,
+  Switch,
+  Link,
+  HashRouter
+} from 'react-router-dom';
 
 export const App = () => {
-  console.log('this is in app.jsx')
   return (
     <div>
       <h1>Welcome to Stuck Overclone!</h1>
