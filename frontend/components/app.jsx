@@ -1,12 +1,13 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
-import { Greeting } from './greeting/greeting_container';
+import signup_container from './session/signup_container';
 
 export const App = () => {
   return (
     <div>
       <h1>Welcome to Stuck Overclone!</h1>
-      <Greeting />
+      <Route path="/signup" component={SignupContainer} />
     </div>
   )
 }
