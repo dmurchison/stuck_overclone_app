@@ -28,7 +28,6 @@ var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 var RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
-  debugger;
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser: currentUser
@@ -40,7 +39,6 @@ var logoutCurrentUser = function logoutCurrentUser() {
   };
 };
 var receiveErrors = function receiveErrors(errors) {
-  debugger;
   return {
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
@@ -58,12 +56,9 @@ var signup = function signup(user) {
 };
 var login = function login(user) {
   return function (dispatch) {
-    debugger;
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__.login(user).then(function (user) {
-      debugger;
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
-      debugger;
       return dispatch(receiveErrors(err.responseJSON));
     });
   };
@@ -91,15 +86,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
 /* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
+/* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+
+
 
 
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Welcome to Stuck Overclone!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Welcome to Stuck Overclone!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__.AuthRoute, {
+    exact: true,
+    path: "/signup",
+    component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__.AuthRoute, {
+    exact: true,
     path: "/login",
     component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
   }));
@@ -260,7 +263,6 @@ var mapStateToProps = function mapStateToProps(_ref) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
-      debugger;
       return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__.login)(user));
     }
   };
@@ -341,7 +343,6 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      debugger;
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
@@ -387,6 +388,52 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
 }((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SessionForm);
+
+/***/ }),
+
+/***/ "./frontend/components/session_form/signup_form_container.jsx":
+/*!********************************************************************!*\
+  !*** ./frontend/components/session_form/signup_form_container.jsx ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _session_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session_form */ "./frontend/components/session_form/session_form.jsx");
+
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var errors = _ref.errors;
+  return {
+    errors: errors.session,
+    formType: 'signup',
+    navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+      to: "/login"
+    }, "Login Instead!")
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    processForm: function processForm(user) {
+      return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__.signup)(user));
+    }
+  };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(_session_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -522,7 +569,6 @@ var sessionReducer = function sessionReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_CURRENT_USER:
-      debugger;
       return Object.assign({}, {
         id: action.currentUser.id
       });
@@ -603,6 +649,69 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
+/***/ "./frontend/util/route_util.jsx":
+/*!**************************************!*\
+  !*** ./frontend/util/route_util.jsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AuthRoute": () => (/* binding */ AuthRoute),
+/* harmony export */   "ProtectedRoute": () => (/* binding */ ProtectedRoute)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+
+
+
+
+var Auth = function Auth(_ref) {
+  var Component = _ref.component,
+      path = _ref.path,
+      LoggedIn = _ref.LoggedIn,
+      exact = _ref.exact;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+    path: path,
+    exact: exact,
+    render: function render(props) {
+      return !LoggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Redirect, {
+        to: "/"
+      });
+    }
+  });
+};
+
+var Protected = function Protected(_ref2) {
+  var Component = _ref2.component,
+      path = _ref2.path,
+      LoggedIn = _ref2.LoggedIn,
+      exact = _ref2.exact;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+    path: path,
+    exact: exact,
+    render: function render(props) {
+      return !LoggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Redirect, {
+        to: "/login"
+      });
+    }
+  });
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    loggedIn: Boolean(state.session.id)
+  };
+};
+
+var AuthRoute = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps)(Auth));
+var ProtectedRoute = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps)(Protected));
+
+/***/ }),
+
 /***/ "./frontend/util/session_api_util.js":
 /*!*******************************************!*\
   !*** ./frontend/util/session_api_util.js ***!
@@ -628,7 +737,6 @@ var signup = function signup(user) {
   });
 };
 var login = function login(user) {
-  debugger;
   return $.ajax({
     method: 'POST',
     url: "/api/session",
