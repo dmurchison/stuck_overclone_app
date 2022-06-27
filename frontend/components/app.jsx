@@ -6,7 +6,8 @@ import styled, {createGlobalStyle} from 'styled-components';
 
 // Components
 import Header from './header';
-import QuestionsPage from './questions_page';
+import QuestionsPage from './questions/questions_page';
+import QuestionRow from './questions/question_row';
 import Greeting_container from './greeting/greeting_container';
 import login_form_container from './session_form/login_form_container';
 import signup_form_container from './session_form/signup_form_container';
