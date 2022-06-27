@@ -46,6 +46,7 @@ const SearchBar = styled.input`
   background: rgba(0,0,0,.1);
   padding: 8px 10px;
   margin-top: 9px;
+  color: white;
 `;
 
 const ProfileLink = styled.a`

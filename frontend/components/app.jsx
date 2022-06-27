@@ -27,7 +27,7 @@ export const App = () => {
       <Reset />
       <GlobalStyles />
       <Header />
-      <h1>Top Questions</h1>
+      <QuestionsPage />
       <AuthRoute exact path='/signup' component={signup_form_container} />
       <AuthRoute exact path='/login' component={login_form_container} />
     </div>
