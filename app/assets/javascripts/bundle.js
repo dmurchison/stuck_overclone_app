@@ -7745,7 +7745,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -7753,11 +7753,15 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var StyledHeader = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  font-size: 1.8rem;\n"])));
 var HeaderRow = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr min-content;\n  padding: 30px 20px;\n"])));
-var AskQuestionButton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  background-color: #378ad3;\n  color: #fff;\n  border: 0;\n  border-radius: 5px;\n  padding 15px 10px;\n"])));
-var QuestionsRow = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  background-color: 255, 255, 255,.1;\n  \n"])));
+var AskQuestionButton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  background-color: #378ad3;\n  color: #fff;\n  border: 0;\n  border-radius: 5px;\n  padding 12px 10px;\n"])));
+var QuestionRow = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  background-color: rgba(255, 255, 255,.1);\n  padding: 15px 15px;\n  display: grid;\n  grid-template-columns: repeat(3, 50px) 1fr;\n"])));
+var QuestionStat = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  text-align: center;\n  display: inline-block;\n  font-size: 1.2rem;\n  color: #aaa;\n  span {\n    font-size: .7rem;\n    display: block;\n    font-weight: 300px;\n    margin-top: 4px;\n  }\n"])));
+var QuestionTitleArea = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  padding: 0 30px;\n"])));
+var QuestionLink = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  text-decoration: none;\n  color: #3ca4ff;\n  font-size: 1.1rem;\n"])));
+var Tag = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].span(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: inline-block;\n  margin-right: 3px;\n  background-color: #3e4a52;\n  color: #9cc3db;\n"])));
 
 function QuestionsPage() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(HeaderRow, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledHeader, null, "Top Questions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(AskQuestionButton, null, "Ask\xA0Question")));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(HeaderRow, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledHeader, null, "Top Questions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(AskQuestionButton, null, "Ask\xA0Question")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionRow, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionStat, null, "0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "votes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionStat, null, "1", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "answers")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionStat, null, "8", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "views")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionTitleArea, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionLink, null, "how to get to the properties of an object inside of it javascript"))));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuestionsPage);
