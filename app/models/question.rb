@@ -43,8 +43,8 @@ class Question < ApplicationRecord
 
   private
 
-  def vote_count(ans)
-    self.vote.where(vote: ans).count
+  def vote_amt(ans)
+    self.votes.where(vote: ans).count
   end
 
 end
