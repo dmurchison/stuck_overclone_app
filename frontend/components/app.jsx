@@ -1,6 +1,6 @@
 // React
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // Styling
 import { Reset } from 'styled-reset';
@@ -8,13 +8,13 @@ import styled, {createGlobalStyle} from 'styled-components';
 
 // Components
 import Header from './header';
-import QuestionsPage from './questions/questions_page';
-import NewQuestionPage from './questions/new_question_page';
+import QuestionsIndex from './questions/questions_index';
+import SignupFormContainer from './session_form/signup_form_container';
+import LoginFormContainer from './session_form/login_form_container';
 
-import Greeting_container from './greeting/greeting_container';
-import login_form_container from './session_form/login_form_container';
-import signup_form_container from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
+
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto:wght@300;700&display=swap');
@@ -25,17 +25,18 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+
+
 export const App = () => {
   return (
-    <div>
+    <div className=''>
       <Reset />
       <GlobalStyles />
       <Header />
       <Switch>
-        <Route exact path='/' component={QuestionsPage} />
-        <AuthRoute path='/signup' component={signup_form_container} />
-        <AuthRoute path='/login' component={login_form_container} />
-        <ProtectedRoute path='/ask' component={NewQuestionPage} />
+        <Route exact path='/' component={QuestionsIndex} />
+        <AuthRoute path='/signup' component={SignupFormContainer} />
+        <AuthRoute path='/login' component={LoginFormContainer} />
       </Switch>
     </div>
   )

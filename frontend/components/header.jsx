@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import styled, {createGlobalStyle} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
@@ -50,7 +50,7 @@ const SearchBar = styled.input`
   color: white;
 `;
 
-const ProfileLink = styled.a`
+const ProfileLink = styled(Link)`
   color: #fff;
   text-decoration: none;
   line-height: 50px;
@@ -58,27 +58,57 @@ const ProfileLink = styled.a`
 
 const LoginLink = styled.div`
   line-height: 50px;
-  font-color: #;
+  font-color: #321;
 `;
 
+const LoginButtonStyle = styled.button`
+  display: flex;
+  justify-content: space-between;
+  width: 125px;
+  margin-right: 15px;
+  flex-flow: row, nowrap;
+  padding: 10px 8px 13px 8px;
+  border-color: #378ad3;
+  box-shadow: insert 0 0.5px 0 0 white;
+  background-color: #378ad3;
+  color: #fff;
+  &:hover {
+    background-color: hsl(206, 100%, 40%)
+  }
+`;
 
-const Header = () => {
+const SignupButtonStyle = styled.a`
+  display: flex;
+  justify-content: space-between;
+  width: 125px;
+  margin-right: 15px;
+  flex-flow: row, nowrap;
+  padding: 10px 8px 13px 8px;
+  border-color: #378ad3;
+  box-shadow: insert 0 0.5px 0 0 white;
+  background-color: #378ad3;
+  color: #fff;
+  &:hover {
+    background-color: hsl(206, 100%, 40%)
+  }
+`;
+
+const Header = ({currentUser}) => {
   return (
     <StyledHeader>
-      <LogoLink href="" className="logo">
+      <LogoLink href="/" className="logo">
         <FontAwesomeIcon icon={faStackOverflow} size='2x' />
         <span>stuck<b>overclone</b></span>
       </LogoLink>
       <form action="" className='search'>
         <SearchBar type="text" placeholder='Search...' />
       </form>
-      <LoginLink>
-        <nav className='login-signup'>
-          <Link to='/login'>Login</Link>
-            &nbsp;or&nbsp;
-          <Link to='/signup'>Sign up!</Link>
-        </nav>
-      </LoginLink>
+      {currentUser && (
+        <ProfileLink to={'/profile'} className='profile'>Username</ProfileLink>
+      )}
+      {!currentUser && (
+        <ProfileLink to={'/login'} className='profile'>Log in</ProfileLink>
+      )}
     </StyledHeader>
   )
 }

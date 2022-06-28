@@ -20,23 +20,32 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  validates :username, :password_digest, :session_token, presence: true
-  validates :username, uniqueness: true
+  validates :username, :email, :session_token, presence: true, uniqueness: true
+  validates :password_digest, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   after_validation :ensure_session_token
 
   has_many :questions,
-    foreign_key: :author_id
+    foreign_key: :author_id,
+    class_name: :Question
 
   has_many :answers,
-    foreign_key: :author_id
+    foreign_key: :author_id,
+    class_name: :Answer
 
-  has_many :upvotes,
+  has_many :votes,
     foreign_key: :user_id
 
-  has_many :downvotes,
-    foreign_key: :user_id
+  def users_questions
+    self.posts.where(parent_question_id: nil).count
+  end
+
+  def users_answers
+    self.posts.where.not(parent_question_id: nil).count
+  end
+
+
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
@@ -58,7 +67,7 @@ class User < ApplicationRecord
     save!
     self.session_token
   end
-
+  
   private
 
   def ensure_session_token

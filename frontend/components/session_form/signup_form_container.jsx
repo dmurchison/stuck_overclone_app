@@ -1,23 +1,26 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { signup } from '../../actions/session_actions';
-import SessionForm from './session_form';
+import { connect } from 'react-redux';
+
+import { signup, login, removeSessionErrors } from '../../actions/session_actions';
+import SignupForm from './signup_form';
 
 const mapStateToProps = ({ errors }) => {
   return {
-    errors: errors.session,
+    errors: errors.login,
     formType: 'signup',
-    navLink: <Link to='/login'>Login Instead!</Link>
+    navLink: <div>Already have an account? <Link to='/login'>Log in</Link></div>
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (user) => {
-      return dispatch(signup(user))
-    }
+    processForm: (user) => dispatch(signup(user)),
+    demoLogin: (demo) => dispatch(login(demo)),
+    removeSessionErrors: () => dispatch(removeSessionErrors()) 
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+const SignupFormContainer = connect(mapStateToProps, mapDispatchToProps)(SignupForm);
+
+export default SignupFormContainer

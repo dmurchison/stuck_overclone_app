@@ -24,11 +24,9 @@ const AskQuestionButton = styled.button`
   padding 12px 10px;
 `;
 
-
-
 // React Components
 
-function QuestionsPage() {
+function QuestionsIndex() {
   return (
     <main>
       <HeaderRow>
@@ -44,4 +42,4 @@ function QuestionsPage() {
   )
 }
 
-export default QuestionsPage;
+export default QuestionsIndex;
