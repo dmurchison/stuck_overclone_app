@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_28_194127) do
+ActiveRecord::Schema.define(version: 2022_06_28_210647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,9 @@ ActiveRecord::Schema.define(version: 2022_06_28_194127) do
     t.string "title", null: false
     t.text "body", null: false
     t.integer "author_id", null: false
-    t.integer "parent_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_questions_on_author_id"
-    t.index ["parent_question_id"], name: "index_questions_on_parent_question_id"
   end
 
   create_table "users", force: :cascade do |t|

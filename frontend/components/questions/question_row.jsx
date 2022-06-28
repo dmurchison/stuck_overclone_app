@@ -52,7 +52,6 @@ const AuthorTimeStamp = styled.div`
   display: inline-block;
   color: #aaa;
   font-size: .8rem;
-  float: right;
   padding: 10px 0;
 `;
 

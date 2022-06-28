@@ -27,15 +27,21 @@ class User < ApplicationRecord
   after_validation :ensure_session_token
 
   has_many :questions,
-    foreign_key: :author_id,
-    class_name: :Question
+    class_name: :Question,
+    foreign_key: :author_id
 
   has_many :answers,
-    foreign_key: :author_id,
-    class_name: :Answer
+    class_name: :Answer,
+    foreign_key: :author_id
+
+  has_many :comments,
+    class_name: :Comment,
+    foreign_key: :commenter_id
 
   has_many :votes,
-    foreign_key: :user_id
+    class_name: :Vote,
+    foreign_key: :voter_id
+
 
   def users_questions
     self.posts.where(parent_question_id: nil).count

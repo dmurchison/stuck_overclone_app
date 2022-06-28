@@ -2,18 +2,16 @@
 #
 # Table name: questions
 #
-#  id                 :bigint           not null, primary key
-#  body               :text             not null
-#  title              :string           not null
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  author_id          :integer          not null
-#  parent_question_id :integer
+#  id         :bigint           not null, primary key
+#  body       :text             not null
+#  title      :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  author_id  :integer          not null
 #
 # Indexes
 #
-#  index_questions_on_author_id           (author_id)
-#  index_questions_on_parent_question_id  (parent_question_id)
+#  index_questions_on_author_id  (author_id)
 #
 
 # This model initially had no columns defined. If you add columns to the

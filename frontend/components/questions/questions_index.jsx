@@ -21,7 +21,7 @@ const AskQuestionButton = styled.button`
   color: #fff;
   border: 0;
   border-radius: 5px;
-  padding 12px 10px;
+  padding: 12px 10px;
 `;
 
 // React Components
