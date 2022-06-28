@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled, {createGlobalStyle} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
@@ -55,8 +56,13 @@ const ProfileLink = styled.a`
   line-height: 50px;
 `;
 
+const LoginLink = styled.div`
+  line-height: 50px;
+  font-color: #;
+`;
 
-function Header() {
+
+const Header = () => {
   return (
     <StyledHeader>
       <LogoLink href="" className="logo">
@@ -66,7 +72,13 @@ function Header() {
       <form action="" className='search'>
         <SearchBar type="text" placeholder='Search...' />
       </form>
-      <ProfileLink href="" className="profile">SirHackALot</ProfileLink>
+      <LoginLink>
+        <nav className='login-signup'>
+          <Link to='/login'>Login</Link>
+            &nbsp;or&nbsp;
+          <Link to='/signup'>Sign up!</Link>
+        </nav>
+      </LoginLink>
     </StyledHeader>
   )
 }

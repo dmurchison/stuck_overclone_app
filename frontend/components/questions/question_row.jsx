@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
+// Styling Components
+
 const QuestionStat = styled.div`
   text-align: center;
   display: inline-block;
@@ -58,7 +61,9 @@ const UserLink = styled.a`
 `;
 
 
-function QuestionRow() {
+// React Components
+
+const QuestionRow = () => {
   return (
     <StyledQuestionRow>
       <QuestionStat>0<span>votes</span></QuestionStat>

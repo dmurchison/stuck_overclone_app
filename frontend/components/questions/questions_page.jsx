@@ -1,6 +1,10 @@
 import React from 'react';
+
 import styled from 'styled-components';
 import QuestionRow from './question_row';
+
+
+// Styling Components
 
 const StyledHeader = styled.h1`
   font-size: 1.8rem;
@@ -20,6 +24,9 @@ const AskQuestionButton = styled.button`
   padding 12px 10px;
 `;
 
+
+
+// React Components
 
 function QuestionsPage() {
   return (

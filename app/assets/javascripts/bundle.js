@@ -7479,12 +7479,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LOGOUT_CURRENT_USER": () => (/* binding */ LOGOUT_CURRENT_USER),
 /* harmony export */   "RECEIVE_CURRENT_USER": () => (/* binding */ RECEIVE_CURRENT_USER),
-/* harmony export */   "RECEIVE_SESSION_ERRORS": () => (/* binding */ RECEIVE_SESSION_ERRORS),
+/* harmony export */   "RECEIVE_SIGNUP_ERRORS": () => (/* binding */ RECEIVE_SIGNUP_ERRORS),
 /* harmony export */   "login": () => (/* binding */ login),
 /* harmony export */   "logout": () => (/* binding */ logout),
 /* harmony export */   "logoutCurrentUser": () => (/* binding */ logoutCurrentUser),
 /* harmony export */   "receiveCurrentUser": () => (/* binding */ receiveCurrentUser),
-/* harmony export */   "receiveErrors": () => (/* binding */ receiveErrors),
+/* harmony export */   "receiveSignUpErrors": () => (/* binding */ receiveSignUpErrors),
 /* harmony export */   "signup": () => (/* binding */ signup)
 /* harmony export */ });
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_api_util */ "./frontend/util/session_api_util.js");
@@ -7493,7 +7493,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
-var RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+var RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS';
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -7505,9 +7505,9 @@ var logoutCurrentUser = function logoutCurrentUser() {
     type: LOGOUT_CURRENT_USER
   };
 };
-var receiveErrors = function receiveErrors(errors) {
+var receiveSignUpErrors = function receiveSignUpErrors(errors) {
   return {
-    type: RECEIVE_SESSION_ERRORS,
+    type: RECEIVE_SIGNUP_ERRORS,
     errors: errors
   };
 }; // Thunk action creators
@@ -7553,11 +7553,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var styled_reset__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-reset */ "./node_modules/styled-reset/lib/esm/index.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./frontend/components/header.jsx");
 /* harmony import */ var _questions_questions_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./questions/questions_page */ "./frontend/components/questions/questions_page.jsx");
-/* harmony import */ var _questions_question_row__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./questions/question_row */ "./frontend/components/questions/question_row.jsx");
+/* harmony import */ var _questions_new_question_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./questions/new_question_page */ "./frontend/components/questions/new_question_page.jsx");
 /* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
 /* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
@@ -7566,8 +7567,9 @@ var _templateObject;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-// Libraries
+// React
 
+ // Styling
 
 
  // Components
@@ -7581,15 +7583,20 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var GlobalStyles = (0,styled_components__WEBPACK_IMPORTED_MODULE_9__.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto:wght@300;700&display=swap');\n  body{\n    background: #2d2d2d;\n    color: #fff;\n    font-family: Roboto, sans-serif;\n  }\n"])));
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(styled_reset__WEBPACK_IMPORTED_MODULE_1__.Reset, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(GlobalStyles, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_questions_questions_page__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__.AuthRoute, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(styled_reset__WEBPACK_IMPORTED_MODULE_1__.Reset, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(GlobalStyles, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     exact: true,
+    path: "/",
+    component: _questions_questions_page__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__.AuthRoute, {
     path: "/signup",
     component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__.AuthRoute, {
-    exact: true,
     path: "/login",
     component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__.ProtectedRoute, {
+    path: "/ask",
+    component: _questions_new_question_page__WEBPACK_IMPORTED_MODULE_4__["default"]
+  })));
 };
 
 /***/ }),
@@ -7694,12 +7701,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
 /* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "./node_modules/@fortawesome/free-brands-svg-icons/index.es.js");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -7709,8 +7718,9 @@ var StyledHeader = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].hea
 var LogoLink = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  color: #fff;\n  text-decoration: none;\n  display: inline-block;\n  height: 50px;\n  line-height: 30px;\n  padding: 0px 15px;\n  svg {\n    margin-top: 7px;\n    display: inline-block;\n    float: left;\n  }\n  span {\n    display: inline-block;\n    padding-left: 5px;\n    padding-top: 10px;\n    font-size: 1.2rem;\n    font-weight: 300;\n  }\n  b {\n    font-weight: bold;\n    display: inline-block;\n    margin-left: 2px;\n  }\n"])));
 var SearchBar = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].input(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: inline-block;\n  box-sizing: border-box;\n  width: 100%;\n  border-radius: 3px;\n  border: 1px solid #777;\n  background: rgba(0,0,0,.1);\n  padding: 8px 10px;\n  margin-top: 9px;\n  color: white;\n"])));
 var ProfileLink = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  color: #fff;\n  text-decoration: none;\n  line-height: 50px;\n"])));
+var LoginLink = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  line-height: 50px;\n  font-color: #;\n"])));
 
-function Header() {
+var Header = function Header() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledHeader, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(LogoLink, {
     href: "",
     className: "logo"
@@ -7723,13 +7733,38 @@ function Header() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(SearchBar, {
     type: "text",
     placeholder: "Search..."
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ProfileLink, {
-    href: "",
-    className: "profile"
-  }, "SirHackALot"));
-}
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(LoginLink, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
+    className: "login-signup"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+    to: "/login"
+  }, "Login"), "\xA0or\xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+    to: "/signup"
+  }, "Sign up!"))));
+};
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
+
+/***/ }),
+
+/***/ "./frontend/components/questions/new_question_page.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/questions/new_question_page.jsx ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+
+var NewQuestionPage = function NewQuestionPage() {};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NewQuestionPage);
 
 /***/ }),
 
@@ -7752,6 +7787,7 @@ var _templateObject, _templateObject2, _templateObject3, _templateObject4, _temp
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
+ // Styling Components
 
 var QuestionStat = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  text-align: center;\n  display: inline-block;\n  font-size: 1.2rem;\n  color: #aaa;\n  margin-top: 7px;\n  span {\n    font-size: .7rem;\n    display: block;\n    font-weight: 300px;\n    margin-top: 4px;\n  }\n"])));
 var QuestionTitleArea = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  padding: 0 30px;\n"])));
@@ -7759,11 +7795,11 @@ var QuestionLink = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a(_
 var Tag = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].span(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  display: inline-block;\n  margin-right: 5px;\n  background-color: #3e4a52;\n  color: #9cc3db;\n  padding: 7px;\n  border-radius: 4px;\n  font-size: .9rem;\n"])));
 var StyledQuestionRow = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  background-color: rgba(255, 255, 255,.05);\n  padding: 15px 15px 10px;\n  display: grid;\n  grid-template-columns: repeat(3, 50px) 1fr;\n  border-top: 1px solid #555;\n"])));
 var AuthorTimeStamp = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: inline-block;\n  color: #aaa;\n  font-size: .8rem;\n  float: right;\n  padding: 10px 0;\n"])));
-var UserLink = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  color: #3ca4ff;\n"])));
+var UserLink = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  color: #3ca4ff;\n"]))); // React Components
 
-function QuestionRow() {
+var QuestionRow = function QuestionRow() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledQuestionRow, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionStat, null, "0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "votes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionStat, null, "1", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "answers")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionStat, null, "8", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "views")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionTitleArea, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(QuestionLink, null, "how to get to the properties of an object inside of it javascript"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Tag, null, "javascript"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Tag, null, "object"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(AuthorTimeStamp, null, "asked 53 seconds ago ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(UserLink, null, "SirHackALot"))));
-}
+};
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuestionRow);
 
@@ -7790,10 +7826,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+ // Styling Components
 
 var StyledHeader = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  font-size: 1.8rem;\n"])));
 var HeaderRow = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr min-content;\n  padding: 30px 20px;\n"])));
-var AskQuestionButton = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  background-color: #378ad3;\n  color: #fff;\n  border: 0;\n  border-radius: 5px;\n  padding 12px 10px;\n"])));
+var AskQuestionButton = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  background-color: #378ad3;\n  color: #fff;\n  border: 0;\n  border-radius: 5px;\n  padding 12px 10px;\n"]))); // React Components
 
 function QuestionsPage() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(HeaderRow, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledHeader, null, "Top Questions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(AskQuestionButton, null, "Ask\xA0Question")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_question_row__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_question_row__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_question_row__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_question_row__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_question_row__WEBPACK_IMPORTED_MODULE_1__["default"], null));
