@@ -4,7 +4,7 @@ import styled, {createGlobalStyle} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 
-const StyledHeader = styled.header`
+const HeaderStyled = styled.header`
   background-color: #393939;
   box-shadow: 0 3px 3px rgba(0,0,0,.2);
   display: grid;
@@ -13,16 +13,15 @@ const StyledHeader = styled.header`
 `;
 
 const LogoLink = styled.a`
-  color: #fff;
-  text-decoration: none;
   display: inline-block;
+  padding: 0px 15px;
   height: 50px;
   line-height: 30px;
-  padding: 0px 15px;
+  color: #fff;
+  text-decoration: none;
   svg {
-    margin-top: 7px;
     display: inline-block;
-    float: left;
+    margin-top: 7px;
   }
   span {
     display: inline-block;
@@ -41,12 +40,12 @@ const LogoLink = styled.a`
 const SearchBar = styled.input`
   display: inline-block;
   box-sizing: border-box;
-  width: 100%;
-  border-radius: 3px;
-  border: 1px solid #777;
-  background: rgba(0,0,0,.1);
-  padding: 8px 10px;
   margin-top: 9px;
+  border-radius: 3px;
+  width: 100%;
+  border: 1px solid #777;
+  padding: 8px 10px;
+  background: rgba(0,0,0,.1);
   color: white;
 `;
 
@@ -58,10 +57,10 @@ const ProfileLink = styled(Link)`
 
 const LoginLink = styled.div`
   line-height: 50px;
-  font-color: #321;
+  color: #321;
 `;
 
-const LoginButtonStyle = styled.button`
+const LoginButtonStyled = styled.button`
   display: flex;
   justify-content: space-between;
   width: 125px;
@@ -77,7 +76,7 @@ const LoginButtonStyle = styled.button`
   }
 `;
 
-const SignupButtonStyle = styled.a`
+const SignupButtonStyled = styled.a`
   display: flex;
   justify-content: space-between;
   width: 125px;
@@ -95,7 +94,7 @@ const SignupButtonStyle = styled.a`
 
 const Header = ({currentUser}) => {
   return (
-    <StyledHeader>
+    <HeaderStyled>
       <LogoLink href="/" className="logo">
         <FontAwesomeIcon icon={faStackOverflow} size='2x' />
         <span>stuck<b>overclone</b></span>
@@ -107,9 +106,9 @@ const Header = ({currentUser}) => {
         <ProfileLink to={'/profile'} className='profile'>Username</ProfileLink>
       )}
       {!currentUser && (
-        <ProfileLink to={'/login'} className='profile'>Log in</ProfileLink>
+        <LoginLink to={'/login'} className='profile'>Log in</LoginLink>
       )}
-    </StyledHeader>
+    </HeaderStyled>
   )
 }
 

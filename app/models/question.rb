@@ -33,18 +33,4 @@ class Question < ApplicationRecord
     class_name: Vote,
     foreign_key: :answer_id
 
-  def score
-    vote_count(true) - vote_count(false)
-  end
-
-  def answer_amt
-    self.answers.count
-  end
-
-  private
-
-  def vote_amt(ans)
-    self.votes.where(vote: ans).count
-  end
-
 end
