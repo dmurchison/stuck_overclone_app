@@ -6,15 +6,11 @@ class Api::SessionsController < ApplicationController
       params[:user][:email],
       params[:user][:password]
     )
-    if params[:user][:password].empty?
-      render json: ["Password can't be blank"]
-    elsif @user.nil?
-      render json: ["Invalid email/password combination"]
-    elsif !params[:user][:password].include?('@')
-      render json: ["Please use a valid email address"]
-    else
+    if @user
       login!(@user)
-      render "api/users/show";
+      render "api/users/show"
+    else
+      render json: ["Invalid username/password combination"], status: 401
     end
   end
 
