@@ -8,12 +8,6 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.logout = this.logout.bind(this);
-  }
-
-  logout() {
-    this.props.logout();
-    this.props.history.push("/");
   }
 
   render() {
@@ -21,23 +15,23 @@ class Header extends React.Component {
     return (
       <header className='header-container'>
           <Link className="header-logo" to="/">
-            <FontAwesomeIcon icon={faStackOverflow} size='2x' />
-            <span className='logo-letters'>stuck<b>overclone</b></span>
+            <FontAwesomeIcon className='header-fa-icon' icon={faStackOverflow} size='2x' />
+            <span className='header-logo-letters'>stuck<b className='header-logo-letters-overclone'>overclone</b></span>
           </Link>
-          <form action="" className='search-form'>
-            <input className='search-bar' type="text" placeholder='Search...' />
+          <form action="" className='header-search-form'>
+            <input className='header-search-bar' type="text" placeholder='Search...' />
           </form>
           {currentUser && (
             <div>
-              <Link className='profile-link' to={'/profile'}>Username</Link>
+              <Link className='header-profile-link' to={'/profile'}>Username</Link>
             </div>
           )}
           {!currentUser && (
-            <nav className='headerButtons-nav'>
-              <Link className='headerButtons-login' to='/login'>Log in</Link>
+            <div className='header-buttons-div'>
+              <Link className='header-button-LogIn' to='/login'>Log in</Link>
                 &nbsp;
-              <Link className='headerButtons-signup' to='/signup'>Sign up</Link>
-            </nav>
+              <Link className='header-button-SignUp' to='/signup'>Sign up</Link>
+            </div>
           )}
       </header>
     )

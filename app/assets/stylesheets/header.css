@@ -14,24 +14,24 @@
   color: #fff;
   text-decoration: none;
 }
-svg {
-  display: inline-block;
+.header-fa-icon {
   margin-top: 7px;
+  display: inline-block;
 }
-span {
+.header-logo-letters {
   display: inline-block;
   padding-left: 5px;
   padding-top: 10px;
   font-size: 1.2rem;
   font-weight: 300;
 }
-b {
+.header-logo-letters-overclone {
   font-weight: bold;
   display: inline-block;
   margin-left: 2px;
 }
 
-.search-bar {
+.header-search-bar {
   display: inline-block;
   box-sizing: border-box;
   margin-top: 9px;
@@ -43,36 +43,35 @@ b {
   color: white;
 }
 
-.headerButtons-nav {
+.header-buttons-div {
   padding-left: 2px;
   padding-right: 8px;
 }
 
-.headerButtons-login {
-  margin-top: 7px;
+.header-button-LogIn {
+  margin-top: 10px;
   padding: 8px 10px;
   border: 1px solid transparent;
   border-radius: 3px;
-  display: grid;
+  display: inline-block;
   width: 50px;
   outline: none;
   text-align: center;
   text-decoration: none;
   font-size: 13px;
   box-shadow: inset 0 0.5px 0 0 white;
-  background-color: rgb(180, 223, 238);
+  background-color: lightblue;
   border-color: rgb(52, 132, 238);
   color: rgb(52, 132, 238);
-  float: left;
 }
 
-.headerButtons-signup {
-  margin-top: 7px;
+.header-button-SignUp {
+  margin-top: 10px;
   margin-right: 20px;
   padding: 8px 10px;
   border: 1px solid transparent;
   border-radius: 3px;
-  display: grid;
+  display: inline-block;
   width: 50px;
   outline: none;
   text-align: center;
@@ -82,14 +81,13 @@ b {
   background-color: rgb(52, 132, 238);
   border-color: rgb(128, 197, 220);
   color: white;
-  float: right
 }
 
-.headerButtons-login:hover {
-  background: rgb(157, 209, 226);
+.header-button-LogIn:hover {
+  background: rgb(128, 197, 220);
   color: rgb(52, 132, 238);
 }
 
-.headerButtons-signup:hover {
+.header-button-SignUp:hover {
   background: rgb(46, 115, 200);
 }

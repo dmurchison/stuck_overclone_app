@@ -49,17 +49,37 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className='signup-page'>
+      <div className='signup-form-container'>
         <HeaderContainer />
-        <div className='signup-container'>
-          <div className='singup-page-text'>
+          {/* <div className='singup-form-left'>
             <h1 className='signup-page-header'>Join the Stuck Overclone community</h1>
             <div className='signup-page-promo'>
               <IconContext.Provider value={{className: 'signup-page-logo'}}>
                 <FcQuestions />
               </IconContext.Provider>
             </div>
-          </div>
+          </div> */}
+          
+
+
+        <div className='signup-form'>
+          <form onSubmit={this.handleSubmit}>
+            <label>Display Name:
+              <br />
+              <input 
+                type="text"
+                value={this.state.display_name}
+                onChange={this.handleInput('display_name')}
+              />
+            </label>
+            <label>Email:
+              <br />
+              <input 
+                type="text" 
+                value={this.state.email}
+              />
+            </label>
+          </form>
         </div>
       </div>
     )

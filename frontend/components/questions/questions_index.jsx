@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import HeaderContainer from '../header/header_container';
+import QuestionsRow from './questions_row';
 
 import styled from 'styled-components';
-import QuestionsRow from './questions_row';
 
 
 // Styling Components
@@ -27,21 +29,31 @@ const AskQuestionButton = styled.button`
 
 // React Components
 
-function QuestionsIndex() {
-  return (
-    <main>
-      <HeaderContainer />
-      <HeaderRow>
-        <StyledHeader>Top Questions</StyledHeader>
-        <AskQuestionButton>Ask&nbsp;Question</AskQuestionButton>
-      </HeaderRow>
-      <QuestionsRow />
-      <QuestionsRow />
-      <QuestionsRow />
-      <QuestionsRow />
-      <QuestionsRow />
-    </main>
-  )
+class QuestionsIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    const {currentUser} = this.props
+    return (
+      <div className='questions-index-container'>
+        <HeaderContainer />
+        <div className='questions-index-header-container'>
+          <h1 className='questions-index-header'>Top Questions</h1>
+          <Link className='questions-index-AskQuestion-btn' to='/questions/new'>Ask&nbsp;Question</Link>
+        </div>
+        <QuestionsRow />
+        <QuestionsRow />
+        <QuestionsRow />
+        <QuestionsRow />
+        <QuestionsRow />
+      </div>
+    )
+  }
+
+
 }
 
 export default QuestionsIndex;

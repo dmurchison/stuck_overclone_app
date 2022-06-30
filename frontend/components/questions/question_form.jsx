@@ -6,13 +6,13 @@ const Container = styled.div`
   padding: 30px 20px;
 `;
 
-const NewQuestionPage = () => {
+const QuestionForm = () => {
   return (
-    <Container>
+    <div className='question-form-container'>
       <input type="text" placeholder='Title of your question' />
       <textarea></textarea>
-    </Container>
+    </div>
   )
 }
 
-export default NewQuestionPage
+export default QuestionForm
