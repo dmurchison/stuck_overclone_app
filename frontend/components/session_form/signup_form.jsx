@@ -1,66 +1,71 @@
 import React from 'react';
+import { IconContext } from 'react-icons';
+import { FcQuestions } from 'react-icons/fc';
+
+import HeaderContainer from '../header/header_container';
 
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      display_name: "",
       email: "",
       password: ""
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.removeSessionErrors();
-  }
-
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value,
-    });
-  }
-
-  handleDemoLogin(e) {
-    e.preventDefault();
-    const user = {
-      email: 'stuckoverclone@yahoo.com', 
-      password:'123456'
-    };
-    this.props.demoLogin(user)
-      .then(() => this.props.history.push('/'));
+  handleInput(type) {
+    return (e) => {
+      this.setState({ [type]: e.target.value })
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
-      .then(() => this.props.history.push('/'))
+    this.props.processForm(user);
+  }
+
+  componentWillUnmount() {
+    this.props.removeSessionErrors();
+  }
+
+  handleDemoLogin(e) {
+    e.preventDefault();
+    this.props.login({ email: "demouser@email.com", password: '123456' })
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
-  render() {
     return (
-      <div className='form'>
-        <div className='login-form-wrapper'>
-          <form className='login-form-form' onSubmit={this.handleSubmit}></form>
-        </div>
+      <div className='session-errors'>
+        {this.props.errors.map( (error, i) => (
+          <div key={`error-${i}`}>{error}</div>
+        ))}
       </div>
     )
   }
 
+  render() {
+    return (
+      <div className='signup-page'>
+        <HeaderContainer />
+        <div className='signup-container'>
+          <div className='singup-page-text'>
+            <h1 className='signup-page-header'>Join the Stuck Overclone community</h1>
+            <div className='signup-page-promo'>
+              <IconContext.Provider value={{className: 'signup-page-logo'}}>
+                <FcQuestions />
+              </IconContext.Provider>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+  
+  
 }
 
-export default SignupForm;
+export default SignupForm

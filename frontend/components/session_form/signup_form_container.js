@@ -7,20 +7,20 @@ import SignupForm from './signup_form';
 
 const mapStateToProps = ({ errors }) => {
   return {
-    errors: errors.login,
-    formType: 'signup',
-    navLink: <div>Already have an account? <Link to='/login'>Log in</Link></div>
+    errors: errors.session,
+    formType: 'Sign up',
+    link: <Link to='/login'>Log in</Link>
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     processForm: (user) => dispatch(signup(user)),
-    demoLogin: (demo) => dispatch(login(demo)),
+    login: (user) => dispatch(login(user)),
     removeSessionErrors: () => dispatch(removeSessionErrors()) 
   };
 };
 
 const SignupFormContainer = connect(mapStateToProps, mapDispatchToProps)(SignupForm);
 
-export default SignupFormContainer
+export default SignupFormContainer;

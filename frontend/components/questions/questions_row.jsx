@@ -62,22 +62,22 @@ const UserLink = styled.a`
 
 // React Components
 
-const QuestionRow = () => {
+const QuestionsRow = () => {
   return (
-    <StyledQuestionRow>
-      <QuestionStat>0<span>votes</span></QuestionStat>
-      <QuestionStat>1<span>answers</span></QuestionStat>
-      <QuestionStat>8<span>views</span></QuestionStat>
-      <QuestionTitleArea>
-        <QuestionLink>how to get to the properties of an object inside of it javascript</QuestionLink>
-        <Tag>javascript</Tag>
-        <Tag>object</Tag>
-        <AuthorTimeStamp>
-          asked 53 seconds ago <UserLink>SirHackALot</UserLink>
-        </AuthorTimeStamp>
-      </QuestionTitleArea>
-    </StyledQuestionRow>
+    <div className='questions-row-question-row'>
+      <div className='questions-row-question-stats'>0<span>votes</span></div>
+      <div className='questions-row-question-stats'>1<span>answers</span></div>
+      <div className='questions-row-question-stats'>8<span>views</span></div>
+      <div className='questions-row-question-title'>
+        <a className='questions-row-question-link'>how to get to the properties of an object inside of it javascript</a>
+        <span className='questions-row-question-tag'>javascript</span>
+        <span className='questions-row-question-tag'>object</span>
+        <div className='questions-row-author-timestamp'>
+          asked 53 seconds ago <a className='questions-page-author-link'>SirHackALot</a>
+        </div>
+      </div>
+    </div>
   )
 }
 
-export default QuestionRow;
+export default QuestionsRow;

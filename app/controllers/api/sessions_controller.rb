@@ -5,23 +5,23 @@ class Api::SessionsController < ApplicationController
       params[:user][:email],
       params[:user][:password]
     )
-    if @user
-      login!(@user)
-      render "api/users/show"
+    if params[:user][:password].empty?
+      render json: ["Password can't be blank"]
+    elsif @user.nil?
+      render json: ["Invalid email/password combination"]
+    elsif !params[:user][:password].include?('@')
+      render json: ["Please use a valid email address"]
     else
-      render json: ["Invalid email/password combination"], status: 401
+      login!(@user)
+      render "api/users/show";
     end
-  end
-
-  def show
-    @user = current_user
   end
 
   def destroy
     @user = current_user
     if @user
       logout!
-      render json: {}, status: 200
+      render "api/users/show"
     else
       render json: ["Please sign in"], status: 404
     end

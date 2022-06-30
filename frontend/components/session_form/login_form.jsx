@@ -1,4 +1,5 @@
 import React from 'react';
+import HeaderContainer from '../header/header_container';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -11,49 +12,44 @@ class LoginForm extends React.Component {
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
-  componentDidMount() {
-    this.props.removeSessionErrors();
-  }
-
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value,
-    });
-  }
-
-  handleDemoLogin(e) {
-    e.preventDefault();
-    const user = {
-      email: 'stuckoverclone@yahoo.com', 
-      password:'123456'
-    };
-    this.props.demoLogin(user)
-      .then(() => this.props.history.push('/'));
+  handleInput(type) {
+    return(e) => {
+      this.setState({ [type]: e.target.value })
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-      .then(() => this.props.history.push('/'))
+  }
+
+  componentWillUnmount() {
+    this.props.removeSessionErrors();
+  }
+
+  handleDemoLogin(e) {
+    e.preventDefault();
+    this.props.processForm({ email: "demouser@email.com", password: "123456" })
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
+    return (
+      <div className='session-errors'>
+        {this.props.errors.map( (error, i) => (
+          <div key={`error-${i}`}>{error}</div>
         ))}
-      </ul>
-    );
+      </div>
+    )
   }
 
   render() {
     return (
-      <div className='login-form-container'>
-        <form onSubmit={this.handleSubmit}></form>
+      <div className='login-page'>
+        <HeaderContainer />
+        <div className='login-page-container'>
+
+        </div>
       </div>
     )
   }
@@ -61,3 +57,4 @@ class LoginForm extends React.Component {
 }
 
 export default LoginForm;
+

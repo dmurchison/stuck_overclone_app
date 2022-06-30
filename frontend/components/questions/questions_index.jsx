@@ -1,7 +1,8 @@
 import React from 'react';
+import HeaderContainer from '../header/header_container';
 
 import styled from 'styled-components';
-import QuestionRow from './question_row';
+import QuestionsRow from './questions_row';
 
 
 // Styling Components
@@ -29,15 +30,16 @@ const AskQuestionButton = styled.button`
 function QuestionsIndex() {
   return (
     <main>
+      <HeaderContainer />
       <HeaderRow>
         <StyledHeader>Top Questions</StyledHeader>
         <AskQuestionButton>Ask&nbsp;Question</AskQuestionButton>
       </HeaderRow>
-      <QuestionRow />
-      <QuestionRow />
-      <QuestionRow />
-      <QuestionRow />
-      <QuestionRow />
+      <QuestionsRow />
+      <QuestionsRow />
+      <QuestionsRow />
+      <QuestionsRow />
+      <QuestionsRow />
     </main>
   )
 }
