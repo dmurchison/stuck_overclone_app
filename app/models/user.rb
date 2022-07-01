@@ -14,14 +14,13 @@
 #
 #  index_users_on_email          (email) UNIQUE
 #  index_users_on_session_token  (session_token) UNIQUE
-#  index_users_on_username       (username) UNIQUE
 #
 class User < ApplicationRecord
 
   attr_reader :password
 
-  validates :email, :session_token, presence: true, uniqueness: true
-  validates :password_digest, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   after_initialize :ensure_session_token
@@ -30,17 +29,17 @@ class User < ApplicationRecord
     class_name: :Question,
     foreign_key: :author_id
 
-  has_many :answers,
-    class_name: :Answer,
-    foreign_key: :author_id
+  # has_many :answers,
+  #   class_name: :Answer,
+  #   foreign_key: :author_id
 
-  has_many :comments,
-    class_name: :Comment,
-    foreign_key: :commenter_id
+  # has_many :comments,
+  #   class_name: :Comment,
+  #   foreign_key: :commenter_id
 
-  has_many :votes,
-    class_name: :Vote,
-    foreign_key: :voter_id
+  # has_many :votes,
+  #   class_name: :Vote,
+  #   foreign_key: :voter_id
 
 
   def self.find_by_credentials(username, password)
@@ -63,8 +62,6 @@ class User < ApplicationRecord
     self.save
     self.session_token
   end
-  
-  private
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64

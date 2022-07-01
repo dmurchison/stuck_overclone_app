@@ -21,12 +21,12 @@ class Question < ApplicationRecord
     class_name: :User,
     foreign_key: :author_id
 
-  has_many :answers, 
-    class_name: :Answer, 
-    foreign_key: :answer_id
+  # has_many :answers, 
+  #   class_name: :Answer, 
+  #   foreign_key: :answer_id
 
-  has_many :comments,
-    class_name: :Comment,
-    foreign_key: :comment_id
+  # has_many :comments,
+  #   class_name: :Comment,
+  #   foreign_key: :comment_id
 
 end
