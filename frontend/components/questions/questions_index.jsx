@@ -35,6 +35,10 @@ class QuestionsIndex extends React.Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    this.props.fetchQuestions();
+  }
+
   render() {
     const {currentUser} = this.props
     return (
@@ -44,6 +48,10 @@ class QuestionsIndex extends React.Component {
           <h1 className='questions-index-header'>Top Questions</h1>
           <Link className='questions-index-AskQuestion-btn' to='/questions/new'>Ask&nbsp;Question</Link>
         </div>
+        <QuestionsRow />
+        <QuestionsRow />
+        <QuestionsRow />
+        <QuestionsRow />
         <QuestionsRow />
         <QuestionsRow />
         <QuestionsRow />
