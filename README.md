@@ -6,21 +6,6 @@ Stuck Overclone is a clone of [Stack Overflow](https://stackoverflow.com/)
 - [Design Docs](https://github.com/dmurchison/stuck_overclone_app/wiki)
 - [Stuck Overclone Website](https://stuckoverclone.herokuapp.com/)
 
-## Technologies
-  ### Backend:
-    - Ruby
-    - Rails
-  ### Middleware
-    - JQuery
-    - JBuilder
-    - Redux
-  ### Frontend
-    - JavaScript
-    - React
-    - [Styled Components](https://styled-components.com/)
-    - [React Icons](https://react-icons.github.io/react-icons/)
-
-
 ## Questions Index
 <img width="1592" alt="Screen Shot 2022-07-01 at 10 10 11 AM" src="https://user-images.githubusercontent.com/80483775/176911821-4bd96bf0-bf19-492b-92f4-d736d0ade1fb.png">
 
@@ -40,6 +25,25 @@ Stuck Overclone is a clone of [Stack Overflow](https://stackoverflow.com/)
     - CSS and styling needs to be fixed.
     - Demo Login feature.
 
+
 ## Header/Footer
   - Provides a searchbar, logo with link to splash page, and dynamic buttons for logging in and signing up which will change to a users profile badge if there is an active session.
   - Provides links to the developers LinkedIn and Github accounts.
+
+
+## Technologies
+  ### Backend:
+    - Ruby
+    - Rails
+  ### Middleware
+    - JQuery
+    - JBuilder
+    - Redux
+  ### Frontend
+    - JavaScript
+    - React
+    - [Styled Components](https://styled-components.com/)
+    - [React Icons](https://react-icons.github.io/react-icons/)
+
+
+
