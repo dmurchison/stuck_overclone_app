@@ -17,7 +17,6 @@ Stuck Overclone is a clone of [Stack Overflow](https://stackoverflow.com/)
 
 
 ## Login/Signup Page
-<img width="1220" alt="Screen Shot 2022-07-01 at 10 27 41 AM" src="https://user-images.githubusercontent.com/80483775/176914042-decdebdd-6fd6-4b50-91f2-9a3d66f72cb9.png">
 
   - The signup page is a simple form to allow users to signup which will intern give them access to the features listed on the left side of the form.
   - There will be a link to signup the user or login if the user already has an account.
