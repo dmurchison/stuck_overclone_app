@@ -1,6 +1,7 @@
 import React from 'react';
 import { IconContext } from 'react-icons';
 import { FcQuestions } from 'react-icons/fc';
+import { BsArrowDownUp } from 'react-icons/bs'
 
 import HeaderContainer from '../header/header_container';
 
@@ -51,35 +52,59 @@ class SignupForm extends React.Component {
     return (
       <div className='signup-form-container'>
         <HeaderContainer />
-          {/* <div className='singup-form-left'>
-            <h1 className='signup-page-header'>Join the Stuck Overclone community</h1>
-            <div className='signup-page-promo'>
-              <IconContext.Provider value={{className: 'signup-page-logo'}}>
+          <div className='singup-form-left'>
+            <h1 className='signup-form-header'>Join the Stuck Overclone community</h1>
+            <div className='signup-form-promo'>
+              <IconContext.Provider value={{className: 'signup-form-logo'}}>
                 <FcQuestions />
               </IconContext.Provider>
+              <p>Get unstuck --- ask a question</p>
             </div>
-          </div> */}
-          
-
-
-        <div className='signup-form'>
-          <form onSubmit={this.handleSubmit}>
-            <label>Display Name:
+            <div className='signup-form-promo'>
+              <IconContext.Provider value={{className: 'signup-form-logo'}}>
+                <BsArrowDownUp />
+              </IconContext.Provider>
+              <p>Get unstuck ---- ask a question</p>
+            </div>
+          </div>
+          <br />
+          <br />
+          <div className='signup-form'>
+            <form onSubmit={this.handleSubmit}>
+              <label>Display Name:
+                <br />
+                <input 
+                  type="text"
+                  value={this.state.display_name}
+                  onChange={this.handleInput('display_name')}
+                />
+              </label>
               <br />
-              <input 
-                type="text"
-                value={this.state.display_name}
-                onChange={this.handleInput('display_name')}
-              />
-            </label>
-            <label>Email:
+              <label>Email:
+                <br />
+                <input
+                  type="text" 
+                  value={this.state.email}
+                  onChange={this.handleInput('email')}
+                />
+              </label>
               <br />
-              <input 
-                type="text" 
-                value={this.state.email}
-              />
-            </label>
-          </form>
+              <label>Password:
+                <br />
+                <input 
+                  type="text"
+                  value={this.state.password}
+                  onChange={this.handleInput('password')}
+                />
+              </label>
+              <div className='signup-form-buttons'>
+                {this.renderErrors()}
+                <button className='signup-form-submit-button'>Sign up</button>
+              </div>
+            </form>
+          </div>
+        <div className='signup-form-login-button'>
+          <p>If you already have an account, please click here: {this.props.link}</p>
         </div>
       </div>
     )
