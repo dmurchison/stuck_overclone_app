@@ -2,6 +2,7 @@ import React from 'react';
 import { IconContext } from 'react-icons';
 import { FcQuestions } from 'react-icons/fc';
 import { BsArrowDownUp } from 'react-icons/bs'
+import { FcFinePrint } from 'react-icons/fc'
 
 import HeaderContainer from '../header/header_container';
 
@@ -54,18 +55,35 @@ class SignupForm extends React.Component {
         <HeaderContainer />
           <div className='singup-form-left'>
             <h1 className='signup-form-header'>Join the Stuck Overclone community</h1>
+
             <div className='signup-form-promo'>
               <IconContext.Provider value={{className: 'signup-form-logo'}}>
                 <FcQuestions />
               </IconContext.Provider>
               <p>Get unstuck --- ask a question</p>
             </div>
+            <br />
             <div className='signup-form-promo'>
               <IconContext.Provider value={{className: 'signup-form-logo'}}>
                 <BsArrowDownUp />
               </IconContext.Provider>
-              <p>Get unstuck ---- ask a question</p>
+              <p>Unlock new priviledges like voting and commenting</p>
             </div>
+            <br />
+            <div className='signup-form-promo'>
+              <IconContext.Provider value={{className: 'signup-form-logo'}}>
+                <FcFinePrint />
+              </IconContext.Provider>
+              <p>Save your favorite tags, filters, and jobs</p>
+            </div>
+            <br />
+            <div className='signup-form-promo'>
+              <IconContext.Provider value={{className: 'signup-form-logo'}}>
+                <BsArrowDownUp />
+              </IconContext.Provider>
+              <p>Earn reputation and badges</p>
+            </div>
+
           </div>
           <br />
           <br />
