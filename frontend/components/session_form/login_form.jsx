@@ -45,10 +45,35 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className='login-page'>
+      <div className='login-form-container'>
         <HeaderContainer />
-        <div className='login-page-container'>
-
+        <div className='login-form'>
+          <form onSubmit={this.handleSubmit}>
+            <label>Email:
+              <br />
+              <input 
+                type="text"
+                value={this.state.email}
+                onChange={this.handleInput('email')}
+              />
+            </label>
+            <br />
+            <label>Password
+              <br />
+              <input 
+                type="text"
+                value={this.state.password}
+                onChange={this.handleInput('password')}
+              />
+            </label>
+            {this.renderErrors()}
+            <div className='login-form-buttons'>
+              <button className='login-form-login-button'>Log in</button>
+            </div>
+          </form>
+        </div>
+        <div className='login-form-signup-link'>
+          <p>Please {this.props.link} if you don't have an account!</p>
         </div>
       </div>
     )

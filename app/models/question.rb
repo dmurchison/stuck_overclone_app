@@ -29,8 +29,4 @@ class Question < ApplicationRecord
     class_name: :Comment,
     foreign_key: :comment_id
 
-  has_many :votes,
-    class_name: Vote,
-    foreign_key: :answer_id
-
 end
