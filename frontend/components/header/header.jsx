@@ -8,6 +8,13 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+
+    this.logout = this.logout.bind(this);
+  }
+
+  logout() {
+    this.props.logout();
+    this.prrops.history.push('/')
   }
 
   render() {
@@ -22,15 +29,17 @@ class Header extends React.Component {
             <input className='header-search-bar' type="text" placeholder='Search...' />
           </form>
           {currentUser && (
-            <div>
-              <Link className='header-profile-link' to={'/profile'}>Username</Link>
+            <div className='header-buttons-div'>
+              <Link className='header-profile-link' to={'/profile'}>{currentUser.email}</Link>
+                &nbsp;
+              <button className='header-logout-button' onClick={this.logout}>Log out</button>
             </div>
           )}
           {!currentUser && (
             <div className='header-buttons-div'>
-              <Link className='header-button-LogIn' to='/login'>Log in</Link>
+              <Link className='header-button-left' to='/login'>Log in</Link>
                 &nbsp;
-              <Link className='header-button-SignUp' to='/signup'>Sign up</Link>
+              <Link className='header-button-right' to='/signup'>Sign up</Link>
             </div>
           )}
       </header>

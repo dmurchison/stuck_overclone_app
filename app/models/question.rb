@@ -15,7 +15,8 @@
 #
 class Question < ApplicationRecord
   
-  validates :title, :body, :author_id, presence: true
+  validates :title, :author_id, presence: true
+  validates :body, presence: true, length: { minimum: 25 }
 
   belongs_to :author,
     class_name: :User,

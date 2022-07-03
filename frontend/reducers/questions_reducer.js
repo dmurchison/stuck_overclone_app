@@ -9,14 +9,14 @@ const questionsReducer = (state = {}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_QUESTION:
-      newState = Object.assign({}, state)
-      newState[action.question.id] = action.question;
+      newState = Object.assign({}, { [action.question.question.id]: action.question });
       return newState;
     case RECEIVE_QUESTIONS:
-      return Object.assign({}, state, action.questions);
+      newState = Object.assign({}, action.questions.questions);
+      return newState;
     case REMOVE_QUESTION:
       newState = Object.assign({}, state);
-      delete newState[action.question.id];
+      delete newState[action.questionId];
       return newState;
     default:
       return state;

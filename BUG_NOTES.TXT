@@ -1,0 +1,17 @@
+
+Problem:
+- Requests were not including the csrf token
+Solution:
+- Kevin: Moved JQUERY up to the top of my application.js file
+
+Problem:
+- User Model searching for username with the find_by method
+Solution:
+- Kevin: Validated email so needed to make that me searching reference
+
+
+
+Left off:
+- Finished user-auth and added the dynamic header functionality
+- Problem with question reducer unable to read an 'id' or 'question'.
+
