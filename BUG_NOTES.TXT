@@ -1,13 +1,21 @@
+BUGS AND FIXES DURING DEVELOPMENT
 
-Problem:
+Bug:
 - Requests were not including the csrf token
-Solution:
-- Kevin: Moved JQUERY up to the top of my application.js file
+Fix:
+- Moved JQUERY up to the top of my application.js file
 
-Problem:
+Bug:
 - User Model searching for username with the find_by method
-Solution:
-- Kevin: Validated email so needed to make that me searching reference
+Fix:
+- Validated email so needed to make that me searching reference
+
+Bug:
+- Logout button was logging an error for the for (unable to read push; Property undefined)
+Fix:
+- Changed the session_reducer from rendering a _nulluser on the logout action to an empty object.
+
+
 
 
 

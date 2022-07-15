@@ -1,7 +1,5 @@
 import React from 'react';
-
-import QuestionsIndexContainer from './questions_index_container';
-
+import { withRouer } from 'react-router-dom';
 
 
 class QuestionsRow extends React.Component {
@@ -10,10 +8,12 @@ class QuestionsRow extends React.Component {
     this.state = {};
   }
 
-  redirect() {
-    this.props.removeEntity();
-    this.props.history.push(`/questions/${this.props.id}`);
+  handleRedirect() {
+    this.props.clearEntity();
+    this.props.history.push('questions' + this.props.id);
   }
+
+  
 
   render() {
     const { title, body, numVotes, numAnswers, numUpVotes } = this.props;

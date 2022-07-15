@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 
@@ -7,14 +8,15 @@ import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
 
-    this.logout = this.logout.bind(this);
+    this.logoutUser = this.logoutUser.bind(this);
   }
-
-  logout() {
+  
+  
+  logoutUser(e) {
+    e.preventDefault();
     this.props.logout();
-    this.prrops.history.push('/')
+    this.props.history.push('/')
   }
 
   render() {
@@ -32,7 +34,7 @@ class Header extends React.Component {
             <div className='header-buttons-div'>
               <Link className='header-profile-link' to={'/profile'}>{currentUser.email}</Link>
                 &nbsp;
-              <button className='header-logout-button' onClick={this.logout}>Log out</button>
+              <button className='header-logout-button' onClick={this.logoutUser}>Log out</button>
             </div>
           )}
           {!currentUser && (
@@ -48,4 +50,4 @@ class Header extends React.Component {
 
 }
 
-export default Header;
+export default withRouter(Header);
