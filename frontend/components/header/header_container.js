@@ -3,7 +3,7 @@ import Header from './header';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
-  const {id} = state.session
+  const id = state.session.id
   return {
     session: state.session,
     currentUser: state.entities.users[id]

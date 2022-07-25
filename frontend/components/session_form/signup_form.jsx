@@ -4,13 +4,11 @@ import { FcQuestions } from 'react-icons/fc';
 import { BsArrowDownUp } from 'react-icons/bs'
 import { FcFinePrint } from 'react-icons/fc'
 
-import HeaderContainer from '../header/header_container';
-
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display_name: "",
+      username: "",
       email: "",
       password: ""
     };
@@ -52,10 +50,8 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className='signup-form-container'>
-        <HeaderContainer />
           <div className='singup-form-left'>
             <h1 className='signup-form-header'>Join the Stuck Overclone community</h1>
-
             <div className='signup-form-promo'>
               <IconContext.Provider value={{className: 'signup-form-logo'}}>
                 <FcQuestions />
@@ -93,8 +89,8 @@ class SignupForm extends React.Component {
                 <br />
                 <input 
                   type="text"
-                  value={this.state.display_name}
-                  onChange={this.handleInput('display_name')}
+                  value={this.state.username}
+                  onChange={this.handleInput('username')}
                 />
               </label>
               <br />

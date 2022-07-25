@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import HeaderContainer from '../header/header_container';
 import QuestionsRow from './questions_row';
 
 class QuestionsIndex extends React.Component {
@@ -16,18 +15,21 @@ class QuestionsIndex extends React.Component {
     this.props.fetchQuestions();
   }
 
+  componentWillUnmount() {
+
+  }
+
   askQuestionButton() {
-    this.props.history.push(`questions/new`)
+    this.props.history.push('/questions/new')
   }
 
   render() {
     const {currentUser} = this.props
     return (
       <div className='questions-index-container'>
-        <HeaderContainer />
         <div className='questions-index-header-container'>
           <h1 className='questions-index-header'>Top Questions</h1>
-          <div className='questions-index-AskQuestion-btn' onClick={this.askQuestionButton}>Ask&nbsp;Question</div>
+          <Link className='questions-index-AskQuestion-btn' to={'/questions/new'}>Ask&nbsp;Question </Link>
         </div>
         <QuestionsRow />
         <QuestionsRow />

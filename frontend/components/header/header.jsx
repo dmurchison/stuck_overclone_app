@@ -32,7 +32,7 @@ class Header extends React.Component {
           </form>
           {currentUser && (
             <div className='header-buttons-div'>
-              <Link className='header-profile-link' to={'/profile'}>{currentUser.email}</Link>
+              <Link className='header-profile-link' to={'/profile'}>{currentUser.username}</Link>
                 &nbsp;
               <button className='header-logout-button' onClick={this.logoutUser}>Log out</button>
             </div>

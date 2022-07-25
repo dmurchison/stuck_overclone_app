@@ -1,5 +1,4 @@
 import React from 'react';
-import HeaderContainer from '../header/header_container';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -47,7 +46,6 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className='login-form-container'>
-        <HeaderContainer />
         <div className='login-form'>
           <form onSubmit={this.handleSubmit}>
             <label>Email:
