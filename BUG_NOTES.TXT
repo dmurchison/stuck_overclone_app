@@ -15,6 +15,12 @@ Bug:
 Fix:
 - Changed the session_reducer from rendering a _nulluser on the logout action to an empty object.
 
+Bug:
+- Session would stay active after refresh, user information was not rendering on the frontend.
+Fix:
+- window.currentUser function in root.html.erb was incorrect.
+- refactored user views.
+
 
 
 
