@@ -1,23 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
-
-
-const Container = styled.div`
-  padding: 30px 20px;
-`;
-
-const QuestionTitleInput = styled.input`
-  background: none;
-  border: 1px solid #aaa;
-`;
 
 const QuestionForm = () => {
   return (
     <div className='question-form-container'>
-      <div className='question-form-title'></div>
-      <input 
+      <input
+        className='question-form-title' 
         type="text" 
-        placeholder='Title of your question' />
+        placeholder='Title of your question' 
+      />
       <textarea></textarea>
     </div>
   )
