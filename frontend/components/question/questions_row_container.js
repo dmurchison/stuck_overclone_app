@@ -29,5 +29,5 @@ const mapDispatchToProps = dispatch => ({
   clearEntity: () => dispatch(clearEntity())
 })
 
-const QuestionsRowContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionIndexItem);
+const QuestionsRowContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionsRow);
 export default QuestionsRowContainer;

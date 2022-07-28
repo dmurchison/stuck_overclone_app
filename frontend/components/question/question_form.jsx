@@ -14,7 +14,10 @@ const QuestionTitleInput = styled.input`
 const QuestionForm = () => {
   return (
     <div className='question-form-container'>
-      <input type="text" placeholder='Title of your question' />
+      <div className='question-form-title'></div>
+      <input 
+        type="text" 
+        placeholder='Title of your question' />
       <textarea></textarea>
     </div>
   )

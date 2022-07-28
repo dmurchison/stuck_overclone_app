@@ -1,3 +1,53 @@
-// Place all the styles related to the api/sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Signup Form */
+.signup-form-header {
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 5px 0px;
+}
+
+.signup-form-logo {
+  color: lightblue;
+  font-size: 2.2rem;
+}
+
+.signup-form-promo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 15px;
+  margin-top: 24px;
+}
+
+.signup-form {
+  background-color: gray;
+  padding: 24px;
+  width: 316px;
+  height: 480px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+        flex-direction: column;
+    -webkit-box-align: center;
+      -ms-flex-align: center;
+        align-items: center;
+  margin-top: 55px;
+  margin-bottom: 24px;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 10px 25px;
+    box-shadow: 0 10px 25px;
+}
+
+.signup-form-login-button {
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: center;
+    -ms-flex-pack: center;
+      justify-content: center;
+}
