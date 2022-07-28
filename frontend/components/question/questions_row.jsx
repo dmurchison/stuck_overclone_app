@@ -13,8 +13,6 @@ class QuestionsRow extends React.Component {
     this.props.history.push('questions' + this.props.id);
   }
 
-  
-
 
 
   render() {
