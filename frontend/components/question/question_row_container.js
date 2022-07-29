@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import QuestionsRow from './questions_row';
+import QuestionRow from './question_row';
 import { clearEntity } from '../../actions/entity_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -29,5 +29,5 @@ const mapDispatchToProps = dispatch => ({
   clearEntity: () => dispatch(clearEntity())
 })
 
-const QuestionsRowContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionsRow);
-export default QuestionsRowContainer;
+const QuestionRowContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionRow);
+export default QuestionRowContainer;

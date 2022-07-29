@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import QuestionsRow from './questions_row';
+import QuestionRow from './question_row';
 
 class QuestionsIndex extends React.Component {
   constructor(props) {

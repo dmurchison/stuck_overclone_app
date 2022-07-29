@@ -11,7 +11,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import QuestionFormContainer from './question/question_form_container';
 
 // Components
-import SplashPageContainer from './home/splash_page';
+import SplashPage from './home/splash_page';
 import Footer from './nav/footer';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -22,7 +22,7 @@ export const App = () => {
     <div className='main'>
       <HeaderContainer/>
         <Switch>
-          <Route exact path='/' component={SplashPageContainer} />
+          <Route exact path='/' component={SplashPage} />
           <Route exact path='/questions' component={QuestionsIndexContainer} />
           <AuthRoute exact path='/signup' component={SignupFormContainer} />
           <AuthRoute exact path='/login' component={LoginFormContainer} />
