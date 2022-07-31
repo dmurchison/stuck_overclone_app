@@ -5,7 +5,6 @@
 // Signup Form
 .sf-container {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   position: absolute;
   left: 50%;
@@ -61,10 +60,9 @@
 
 
 // Login Form
-.lf-container {
+.login-page-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: absolute;
   left: 50%;
@@ -72,11 +70,34 @@
   transform: translate(-50%, -50%);
 }
 
+.lf-logo {
+  margin-bottom: 1.5rem;
+}
+
+.demoLogin-btn {
+  height: 2.5rem;
+  width: 15rem;
+  padding: 5px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: white;
+}
+.demoLogin-btn:hover {
+  background-color: rgb(208, 208, 208);
+  cursor: pointer;
+}
+
 .login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   background-color: var(--light);
   border-radius: 5px;
   color: var(--dark);
   font: var(--mainFont);
   font-weight: 600;
-  padding: 10px;
+  padding: 20px;
+  height: 10rem;
+  width: 15rem;
 }

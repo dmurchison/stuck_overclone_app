@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 
 function Header({currentUser, logout}) {
 
@@ -13,8 +11,7 @@ function Header({currentUser, logout}) {
   return (
     <header className='header-container'>
         <Link className="header-logo" to="/">
-          <FontAwesomeIcon className='header-fa-icon' icon={faStackOverflow} size='2x' />
-          <span className='header-logo-letters'>stuck<b className='header-logo-letters-overclone'>overclone</b></span>
+          <img className='header-icon' src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/25/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"/>          <span className='header-logo-letters'>stuck<b className='header-logo-letters-overclone'>overclone</b></span>
         </Link>
         <form action="" className='header-search-form'>
           <input className='header-search-bar' type="text" placeholder='Search...' />

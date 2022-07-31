@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -49,35 +50,31 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className='lf-container'>
+      <div className='login-page-container'>
+        <Link className="lf-logo" to="/">
+          <img className='lf-icon' src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"/>
+        </Link>
         <div className='demoLogin'>
           <button className='demoLogin-btn' onClick={this.handleDemo}>Log in with Demo User</button>
         </div>
-        <div className='login-form'>
-          <form onSubmit={this.handleSubmit}>
-            <label>Email:
-              <br />
-              <input 
-                type="text"
-                value={this.state.email}
-                onChange={this.handleInput('email')}
-              />
-            </label>
-            <br />
-            <label>Password
-              <br />
-              <input 
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInput('password')}
-              />
-            </label>
-            {this.renderErrors()}
-            <div className='lf-buttons'>
-              <button className='login-form-login-button'>Log in</button>
-            </div>
-          </form>
-        </div>
+        <form className='login-form' onSubmit={this.handleSubmit}>
+          <label>Email</label>
+            <input 
+              type="text"
+              value={this.state.email}
+              onChange={this.handleInput('email')}
+            />
+          <label>Password</label>
+            <input 
+              type="password"
+              value={this.state.password}
+              onChange={this.handleInput('password')}
+            />
+          {this.renderErrors()}
+          <div className='lf-buttons'>
+            <button className='login-form-login-button'>Log in</button>
+          </div>
+        </form>
         <div className='lf-signup-link'>
           <p>Don't have an account? {this.props.link}</p>
         </div>

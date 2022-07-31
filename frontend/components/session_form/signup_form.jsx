@@ -83,29 +83,26 @@ class SignupForm extends React.Component {
           </div>
 
           <form className='signup-form' onSubmit={this.handleSubmit}>
-            <label>Display Name:
+            <label>Display Name:</label>
               <input 
                 type="text"
                 value={this.state.username}
                 onChange={this.handleInput('username')}
               />
-            </label>
 
-            <label>Email:
+            <label>Email:</label>
               <input
                 type="text" 
                 value={this.state.email}
                 onChange={this.handleInput('email')}
               />
-            </label>
 
-            <label>Password:
+            <label>Password:</label>
               <input 
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')}
               />
-            </label>
 
             <div className='sf-buttons'>
               {this.renderErrors()}
