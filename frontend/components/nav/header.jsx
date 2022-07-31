@@ -34,7 +34,8 @@ function Header({currentUser, logout}) {
           </div>
         )}
     </header>
-  )
+  );
+
 }
 
 export default Header;
