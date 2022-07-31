@@ -8,7 +8,7 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleInput(type) {
@@ -28,9 +28,13 @@ class LoginForm extends React.Component {
     this.props.removeSessionErrors();
   }
 
-  handleDemoLogin(e) {
+  handleDemo(e) {
     e.preventDefault();
-    this.props.processForm({ email: "demouser@email.com", password: "123456" })
+    const demoUser = {
+      email: "demouser@email.com",
+      password: "123456"
+    };
+    this.props.login(demoUser);
   }
 
   renderErrors() {
@@ -45,7 +49,10 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className='login-form-container'>
+      <div className='lf-container'>
+        <div className='demoLogin'>
+          <button className='demoLogin-btn' onClick={this.handleDemo}>Log in with Demo User</button>
+        </div>
         <div className='login-form'>
           <form onSubmit={this.handleSubmit}>
             <label>Email:
@@ -66,16 +73,16 @@ class LoginForm extends React.Component {
               />
             </label>
             {this.renderErrors()}
-            <div className='login-form-buttons'>
+            <div className='lf-buttons'>
               <button className='login-form-login-button'>Log in</button>
             </div>
           </form>
         </div>
-        <div className='login-form-signup-link'>
-          <p>Please {this.props.link} if you don't have an account!</p>
+        <div className='lf-signup-link'>
+          <p>Don't have an account? {this.props.link}</p>
         </div>
       </div>
-    )
+    );
   }
 
 }

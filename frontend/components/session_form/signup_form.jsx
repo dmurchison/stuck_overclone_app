@@ -1,8 +1,4 @@
 import React from 'react';
-import { IconContext } from 'react-icons';
-import { FcQuestions } from 'react-icons/fc';
-import { BsArrowDownUp } from 'react-icons/bs'
-import { FcFinePrint } from 'react-icons/fc'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -12,7 +8,7 @@ class SignupForm extends React.Component {
       email: "",
       password: ""
     };
-    this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -25,16 +21,20 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.signup(user);
   }
 
   componentWillUnmount() {
     this.props.removeSessionErrors();
   }
 
-  handleDemoLogin(e) {
+  handleDemo(e) {
     e.preventDefault();
-    this.props.login({ email: "demouser@email.com", password: '123456' })
+    const demoUser = {
+      email: "demouser@email.com",
+      password: "123456"
+    };
+    this.props.login(demoUser);
   }
 
   renderErrors() {
@@ -49,79 +49,79 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className='signup-form-container'>
-          <div className='singup-form-left'>
-            <h1 className='signup-form-header'>Join the Stuck Overclone community</h1>
-            <div className='signup-form-promo'>
-              <IconContext.Provider value={{className: 'signup-form-logo'}}>
-                <FcQuestions />
-              </IconContext.Provider>
+      <div className='sf-container'>
+
+        <div className='sf-left'>
+
+          <h1 className='sf-header'>Join the Stuck Overclone community</h1>
+
+          <div className='sf-promo'>
+            <img className='sf-logo' src="https://img.icons8.com/fluency/40/000000/ask-question.png"/>
+            <div className='sf-left-text'>
               <p>Get unstuck --- ask a question</p>
             </div>
-            <br />
-            <div className='signup-form-promo'>
-              <IconContext.Provider value={{className: 'signup-form-logo'}}>
-                <BsArrowDownUp />
-              </IconContext.Provider>
+          </div>
+
+          <div className='sf-promo'>
+            <img className='sf-logo' src="https://img.icons8.com/office/40/000000/sort.png"/>
+            <div className='sf-left-text'>
               <p>Unlock new priviledges like voting and commenting</p>
             </div>
-            <br />
-            <div className='signup-form-promo'>
-              <IconContext.Provider value={{className: 'signup-form-logo'}}>
-                <FcFinePrint />
-              </IconContext.Provider>
-              <p>Save your favorite tags, filters, and jobs</p>
-            </div>
-            <br />
-            <div className='signup-form-promo'>
-              <IconContext.Provider value={{className: 'signup-form-logo'}}>
-                <BsArrowDownUp />
-              </IconContext.Provider>
-              <p>Earn reputation and badges</p>
-            </div>
+          </div>
 
+
+          <div className='sf-promo'>
+            <img className='sf-logo' src="https://img.icons8.com/fluency/40/000000/tags.png"/>
+            <p>Save your favorite tags, filters, and jobs</p>
           </div>
-          <br />
-          <br />
-          <div className='signup-form'>
-            <form onSubmit={this.handleSubmit}>
-              <label>Display Name:
-                <br />
-                <input 
-                  type="text"
-                  value={this.state.username}
-                  onChange={this.handleInput('username')}
-                />
-              </label>
-              <br />
-              <label>Email:
-                <br />
-                <input
-                  type="text" 
-                  value={this.state.email}
-                  onChange={this.handleInput('email')}
-                />
-              </label>
-              <br />
-              <label>Password:
-                <br />
-                <input 
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.handleInput('password')}
-                />
-              </label>
-              <div className='signup-form-buttons'>
-                {this.renderErrors()}
-                <button className='signup-form-submit-button'>Sign up</button>
-              </div>
-            </form>
-          </div>
-        <div className='signup-form-login-button'>
-          <p>If you already have an account, please click here: {this.props.link}</p>
+
         </div>
+
+        <div className='sf-right'>
+          <div className='demoLogin'>
+            <button className='demoLogin-btn' onClick={this.handleDemo}>Log in with Demo User</button>
+          </div>
+
+          <form className='signup-form' onSubmit={this.handleSubmit}>
+            <label>Display Name:
+              <input 
+                type="text"
+                value={this.state.username}
+                onChange={this.handleInput('username')}
+              />
+            </label>
+
+            <label>Email:
+              <input
+                type="text" 
+                value={this.state.email}
+                onChange={this.handleInput('email')}
+              />
+            </label>
+
+            <label>Password:
+              <input 
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInput('password')}
+              />
+            </label>
+
+            <div className='sf-buttons'>
+              {this.renderErrors()}
+              <button className='sf-submit-button'>Sign up</button>
+            </div>
+          </form>
+
+          <div className='sf-login-button'>
+            <p>Already have an account? {this.props.link}</p>
+          </div>
+          
+        </div>
+
       </div>
-    )
+    );
+
   }
   
   

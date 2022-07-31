@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 
-const Header = ({currentUser, logout}) => {
+function Header({currentUser, logout}) {
 
   const handleLogout = (e) => {
     e.preventDefault();

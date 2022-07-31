@@ -1,26 +1,39 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-const Footer = () => {
+function Footer() {
+
   return (
     <footer className='footer-container'>
+
       <div className='footer-dev-info'>
         Developer Information:
       </div>
-      <div className='footer-github-link'>
-        <a href='https://github.com/dmurchison'>
-          <FontAwesomeIcon className='footer-github-icon' icon={faGithub} size='2x' />
+
+      <div className='footer-dev-links-container'>
+
+
+        <a className='dev-link' href='https://dmurchison.github.io/portfolio_site/#/' target={'_blank'}>
+          <img src="https://img.icons8.com/nolan/50/internet.png"/>    
         </a>
-      </div>
-      <div className='footer-linkedin-link'>
-        <a href='https://www.linkedin.com/in/duncan-murchison/'>
-        <FontAwesomeIcon icon={faLinkedin} size='2x' />
+
+        <a className='dev-link' href='https://www.linkedin.com/in/duncan-murchison/'target={'_blank'}>
+          <img src="https://img.icons8.com/nolan/50/linkedin-circled.png"/>
         </a>
+
+        <a className='dev-link' href='https://github.com/dmurchison' target={'_blank'}>
+          <img src="https://img.icons8.com/nolan/50/github.png"/>        
+        </a>
+
+        <a className='dev-link' href='https://angel.co/u/duncan-murchison' target={'_blank'}>
+          <img src="https://img.icons8.com/nolan/50/angelist.png"/>        
+        </a>
+
       </div>
+
+
     </footer>
-  )
+  );
+
 }
 
 export default Footer;

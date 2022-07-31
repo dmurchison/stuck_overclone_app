@@ -1,6 +1,7 @@
 import React from 'react';
 
-const QuestionForm = () => {
+function QuestionForm() {
+
   return (
     <div className='question-form-container'>
       <input
@@ -10,7 +11,8 @@ const QuestionForm = () => {
       />
       <textarea></textarea>
     </div>
-  )
+  );
+
 }
 
 export default QuestionForm

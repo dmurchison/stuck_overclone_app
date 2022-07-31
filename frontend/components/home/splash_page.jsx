@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import ReactDOM from 'react-dom/client';
 
 const SplashPage = (props) => {
@@ -20,6 +21,9 @@ const SplashPage = (props) => {
         <div className='left-question-box'>
           <p>Find the best answer to your technical question, help others answer theirs</p>
           <button>Join the community</button>
+        </div>
+        <div>
+          <Link to={'/questions'}>Home</Link>
         </div>
       </div>
     </div>

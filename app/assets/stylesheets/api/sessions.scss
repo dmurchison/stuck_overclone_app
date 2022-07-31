@@ -1,18 +1,26 @@
+// Session
 
-/* Signup Form */
-.signup-form-header {
+
+
+// Signup Form
+.sf-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sf-header {
   font-size: 27px;
   font-weight: 400;
   line-height: 1;
   margin: 5px 0px;
 }
 
-.signup-form-logo {
-  color: lightblue;
-  font-size: 2.2rem;
-}
-
-.signup-form-promo {
+.sf-promo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,29 +28,27 @@
   margin-top: 24px;
 }
 
+.sf-right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
   background-color: gray;
   padding: 24px;
   width: 316px;
   height: 480px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-        flex-direction: column;
-    -webkit-box-align: center;
-      -ms-flex-align: center;
-        align-items: center;
   margin-top: 55px;
   margin-bottom: 24px;
   border-radius: 7px;
-  -webkit-box-shadow: 0 10px 25px;
-    box-shadow: 0 10px 25px;
 }
 
-.signup-form-login-button {
+.sf-login-button {
   font-size: 13px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,4 +56,27 @@
   -webkit-box-orient: center;
     -ms-flex-pack: center;
       justify-content: center;
+}
+
+
+
+// Login Form
+.lf-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-form {
+  background-color: var(--light);
+  border-radius: 5px;
+  color: var(--dark);
+  font: var(--mainFont);
+  font-weight: 600;
+  padding: 10px;
 }
