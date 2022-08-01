@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionRow from './question_row';
-import { clearEntity } from '../../actions/entity_actions';
+import { removeEntity } from '../../actions/entity_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let question = ownProps.question;
@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  clearEntity: () => dispatch(clearEntity())
+  removeEntity: () => dispatch(removeEntity())
 })
 
 const QuestionRowContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionRow);

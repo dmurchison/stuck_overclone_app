@@ -23,9 +23,9 @@ export const App = () => {
       <HeaderContainer/>
         <Switch>
           <Route exact path='/' component={SplashPage} />
-          <Route exact path='/questions' component={QuestionsIndexContainer} />
           <AuthRoute exact path='/signup' component={SignupFormContainer} />
           <AuthRoute exact path='/login' component={LoginFormContainer} />
+          <ProtectedRoute exact path='/questions' component={QuestionsIndexContainer} />
           <ProtectedRoute exact path='/questions/new' component={QuestionFormContainer} />
         </Switch>
       <Footer />
