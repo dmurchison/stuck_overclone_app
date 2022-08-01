@@ -30,5 +30,5 @@ export const App = () => {
         </Switch>
       <Footer />
     </div>
-  )
+  );
 }
