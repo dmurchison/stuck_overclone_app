@@ -12,6 +12,13 @@ export const fetchQuestion = (questionId) => {
   });
 }
 
+export const fetchUserQuestions = (id) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/questions/user/${id}`
+  });
+}
+
 export const createQuestion = (question) => {
   return $.ajax({
     method: "POST",

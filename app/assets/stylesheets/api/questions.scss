@@ -9,7 +9,7 @@
   padding: 30px 20px;
 }
 
-.questions-index-header {
+.questions-header {
   font-size: 1.8rem;
 }
 
@@ -35,7 +35,26 @@
 
 .question-form-title {
   background: none;
-  border: 1px solid #aaa;
+  border: 1px solid #777;
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.question-form-body {
+  background: none;
+  border: 1px solid #777;
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  min-height: 200px;
 }
 
 
