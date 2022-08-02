@@ -1,4 +1,4 @@
-// Header
+// NavBars
 
 // Variables
 $bg: #393939;
@@ -7,6 +7,7 @@ $lt-blue: rgb(128, 197, 220);
 $reg-blue: rgb(52, 132, 238);
 
 
+// Header
 .header-container {
   background-color: $bg;
   box-shadow: 0 3px 3px rgba(0,0,0,.2);
@@ -105,8 +106,6 @@ $reg-blue: rgb(52, 132, 238);
   background: rgb(21, 82, 161);
 }
 
-
-
 .header-profile-link {
   color: $reg-blue;
   margin-right: 5px;
@@ -117,3 +116,38 @@ $reg-blue: rgb(52, 132, 238);
   transform: scale(1.15);
   color: white;
 }
+
+
+
+// Footer
+.footer-container {
+  position: fixed;
+  left: 0;
+  height: 5rem;
+  bottom: 0;
+  width: 100%;
+  background-color: $bg;
+  color: $reg-blue;
+  text-align: center;
+}
+
+.footer-dev-links-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-dev-info {
+  display: inline-block;
+  padding: 1px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.dev-link {
+  height: 2px;
+  transition: 325ms;
+}
+.dev-link:hover {
+  transform: scale(1.25);
+}
+

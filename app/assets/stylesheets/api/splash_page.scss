@@ -8,20 +8,19 @@ $inner-border: #ffcb6c;
 $inner-btn: orange;
 $inner-btn-hvr: rgb(183, 119, 0);
 
+.splashpage-container {
+  height: 100vh;
+}
+
 .splashpage-outer-border {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   border-radius: 5px;
   background-color: $outer-border;
   color: var(--dark);
+  height: 85%;
   width: 75%;
-  height: 75%;
   margin: auto;
+  margin-top: 25px;
 }
 
 .splashpage-inner-border {
@@ -32,8 +31,8 @@ $inner-btn-hvr: rgb(183, 119, 0);
   border-radius: 5px;
   background-color: $inner-border;
   color: var(--dark);
-  width: 75%;
-  height: 75%;
+  width: 55%;
+  height: 55%;
   margin: auto;
   transition: 325ms;
 }
