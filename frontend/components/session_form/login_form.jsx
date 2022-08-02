@@ -72,7 +72,7 @@ class LoginForm extends React.Component {
             />
           {this.renderErrors()}
           <div className='lf-buttons'>
-            <button className='login-form-login-button'>Log in</button>
+            <button className='login-form-login-button' type='submit'>Log in</button>
           </div>
         </form>
         <div className='lf-signup-link'>

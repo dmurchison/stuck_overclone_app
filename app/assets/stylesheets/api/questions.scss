@@ -1,5 +1,16 @@
 // Questions
 
+// Variables
+$bg: #393939;
+$bg-hover: #272727;
+$lt-blue: rgb(128, 197, 220);
+$reg-blue: rgb(52, 132, 238);
+$hover-blue: rgb(21, 82, 161);
+$lightsmoke: var(--light);
+$lt-orange: #ffcb6c;
+$reg-orange: orange;
+$hover-orange: rgb(183, 119, 0);
+
 
 
 // Questions Index
@@ -14,7 +25,7 @@
 }
 
 .questions-index-AskQuestion-btn {
-  background-color: #378ad3;
+  background-color: $reg-blue;
   color: #fff;
   border: 0;
   border-radius: 5px;
@@ -23,7 +34,7 @@
   transition: 325ms;
 }
 .questions-index-AskQuestion-btn:hover {
-  background: rgb(21, 82, 161);
+  background: $hover-blue;
 }
 
 
@@ -31,6 +42,10 @@
 // Questions Form
 .question-form-container {
   padding: 30px 20px;
+}
+
+.question-form-header {
+  margin-bottom: 20px;
 }
 
 .question-form-title {
@@ -55,6 +70,20 @@
   padding: 10px;
   color: white;
   min-height: 200px;
+}
+
+.question-form-submit {
+  background-color: #378ad3;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 12px 10px;
+  font-style: none;
+  transition: 325ms;
+  margin-top: 20px;
+}
+.question-form-submit:hover {
+  background: rgb(21, 82, 161);
 }
 
 

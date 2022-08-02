@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { QuestionRow } from "../question/question_row";
 
-function ProfilePage({currentUser}) {
+const ProfilePage = ({currentUser}) => {
 
   return (
     <div className='questions-index-container'>

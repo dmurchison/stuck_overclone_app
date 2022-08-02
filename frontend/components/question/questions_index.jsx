@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import QuestionRow from './question_row';
 
-function QuestionsIndex(props) {
+const QuestionsIndex = ({questions, users}) => {
 
   // useEffect(() => {
   //   first

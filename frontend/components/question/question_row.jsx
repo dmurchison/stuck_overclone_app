@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouer } from 'react-router-dom';
 
 
-function QuestionRow() {
+const QuestionRow = () => {
 
   return (
     <div className='questions-row-container'>
