@@ -8,6 +8,22 @@ function Header({currentUser, logout}) {
     logout().then(() => <Redirect to={'/'}/>)
   }
 
+  const buttonChange = () => {
+    return (currentUser) ? (
+      <div className='header-buttons-div'>
+        <Link className='header-profile-link' to={'/profile'}>{currentUser.username}</Link>
+          &nbsp;
+        <Link className='header-button-right' to={'/'} onClick={handleLogout}>Log out</Link>
+      </div>
+    ) : (
+      <div className='header-buttons-div'>
+        <Link className='header-button-left' to='/login'>Log in</Link>
+          &nbsp;
+        <Link className='header-button-right' to='/signup'>Sign up</Link>
+      </div>
+    )
+  }
+
   return (
     <header className='header-container'>
         <Link className="header-logo" to="/">
@@ -16,20 +32,7 @@ function Header({currentUser, logout}) {
         <form action="" className='header-search-form'>
           <input className='header-search-bar' type="text" placeholder='Search...' />
         </form>
-        {currentUser && (
-          <div className='header-buttons-div'>
-            <Link className='header-profile-link' to={'/profile'}>{currentUser.username}</Link>
-              &nbsp;
-            <button className='header-logout-button' onClick={handleLogout}>Log out</button>
-          </div>
-        )}
-        {!currentUser && (
-          <div className='header-buttons-div'>
-            <Link className='header-button-left' to='/login'>Log in</Link>
-              &nbsp;
-            <Link className='header-button-right' to='/signup'>Sign up</Link>
-          </div>
-        )}
+        {buttonChange()}
     </header>
   );
 

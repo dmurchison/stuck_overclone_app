@@ -12,7 +12,7 @@ const questionsErrorsReducer = (state = [], action) => {
       return [];
     default:
       return state;
-  }
+  };
 }
 
 export default questionsErrorsReducer;

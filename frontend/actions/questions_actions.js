@@ -11,67 +11,67 @@ export const receiveQuestions = (questions) => {
   return {
    type: RECEIVE_QUESTIONS,
    questions 
-  }
-};
+  };
+}
 
 export const receiveQuestion = (question) => {
   return {
     type: RECEIVE_QUESTION,
     question
-  }
-};
+  };
+}
 
 export const removeQuestion = (question) => {
   return {
     type: REMOVE_QUESTION,
     question
-  }
-};
+  };
+}
 
 export const recieveQuestionErrors = (errors) => {
   return {
     type: RECEIVE_QUESTION_ERRORS,
     errors
-  }
-};
+  };
+}
 
 export const removeQuestionErrors = () => {
   return {
     type: REMOVE_QUESTION_ERRORS
-  }
-};
+  };
+}
 
 
-export const fetchQuestions = () => dispatch => {
-  return QuestionAPIUtil.fetchQuestions().then(questions => (
+export const fetchQuestions = () => dispatch => (
+  QuestionAPIUtil.fetchQuestions().then(questions => (
     dispatch(receiveQuestions(questions))
   ))
-};
+);
 
-export const fetchQuestion = (questionId) => dispatch => {
-  return QuestionAPIUtil.fetchQuestion(questionId).then(question => (
+export const fetchQuestion = (questionId) => dispatch => (
+  QuestionAPIUtil.fetchQuestion(questionId).then(question => (
     dispatch(receiveQuestion(question))
   ))
-};
+);
 
-export const createQuestion = (question) => dispatch => {
-  return QuestionAPIUtil.createQuestion(question).then(question => (
+export const createQuestion = (question) => dispatch => (
+  QuestionAPIUtil.createQuestion(question).then(question => (
     dispatch(receiveQuestion(question))
-  ), errors => (
-    dispatch(recieveQuestionErrors(errors.responseJSON))
+  ), err => (
+    dispatch(recieveQuestionErrors(err.responseJSON))
   ))
-};
+);
 
-export const updateQuestion = (question) => dispatch => {
-  return QuestionAPIUtil.updateQuestion(question).then(question => (
+export const updateQuestion = (question) => dispatch => (
+  QuestionAPIUtil.updateQuestion(question).then(question => (
     dispatch(receiveQuestion(question))
   ))
-};
+);
 
-export const deleteQuestion = (questionId) => dispatch => {
-  return QuestionAPIUtil.deleteQuestion(questionId).then(question => (
+export const deleteQuestion = (questionId) => dispatch => (
+  QuestionAPIUtil.deleteQuestion(questionId).then(question => (
     dispatch(removeQuestion(question))
   ))
-};
+);
 
 

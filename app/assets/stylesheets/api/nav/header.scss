@@ -3,6 +3,8 @@
 // Variables
 $bg: #393939;
 $bg-hover: #272727;
+$lt-blue: rgb(128, 197, 220);
+$reg-blue: rgb(52, 132, 238);
 
 
 .header-container {
@@ -74,6 +76,11 @@ $bg-hover: #272727;
   background-color: rgb(211, 232, 239);
   border-color: rgb(52, 132, 238);
   color: rgb(26, 99, 194);
+  transition: 325ms;
+}
+.header-button-left:hover {
+  background: rgb(128, 197, 220);
+  color: rgb(26, 99, 194);
 }
 
 .header-button-right {
@@ -92,17 +99,21 @@ $bg-hover: #272727;
   background-color: rgb(52, 132, 238);
   border-color: rgb(128, 197, 220);
   color: white;
+  transition: 325ms;
 }
-
-.header-button-left:hover {
-  background: rgb(128, 197, 220);
-  color: rgb(26, 99, 194);
-}
-
 .header-button-right:hover {
   background: rgb(21, 82, 161);
 }
 
+
+
 .header-profile-link {
-  background-color: white;
+  color: $reg-blue;
+  margin-right: 5px;
+  transition: 325ms;
+  font-weight: bold;
+}
+.header-profile-link:hover {
+  transform: scale(1.15);
+  color: white;
 }

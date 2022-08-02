@@ -11,7 +11,7 @@ const mapStateToProps = ({ errors }) => {
     formType: 'Sign up',
     link: <Link className='signup-form-login-button' to='/login'>Log in</Link>
   };
-};
+}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => {
     login: (user) => dispatch(login(user)),
     removeSessionErrors: () => dispatch(removeSessionErrors()) 
   };
-};
+}
 
 const SignupFormContainer = connect(mapStateToProps, mapDispatchToProps)(SignupForm);
 

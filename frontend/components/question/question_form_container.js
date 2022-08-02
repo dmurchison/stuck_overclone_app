@@ -11,15 +11,15 @@ const mapStateToProps = (state) => {
       body: "",
       author_id: state.session.id
     }
-  }
-};
+  };
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
     action: (question) => dispatch(createQuestion(question)),
     removeErrors: () => dispatch(removeQuestionErrors())
-  }
-};
+  };
+}
 
 const QuestionFormContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionForm);
 

@@ -25,9 +25,11 @@ const mapStateToProps = (state, ownProps) => {
   };
 }
 
-const mapDispatchToProps = dispatch => ({
-  removeEntity: () => dispatch(removeEntity())
-})
+const mapDispatchToProps = dispatch => {
+  return {
+    removeEntity: () => dispatch(removeEntity())
+  };
+}
 
 const QuestionRowContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionRow);
 export default QuestionRowContainer;

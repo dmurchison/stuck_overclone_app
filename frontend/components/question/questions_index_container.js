@@ -7,15 +7,15 @@ const mapStateToProps = (state) => {
     questions: Object.values(state.entities.questions).reverse(),
     users: state.entities.users,
     session: state.session
-  }
-};
+  };
+}
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchQuestions: () => dispatch(fetchQuestions())
-  }
-};
+  };
+}
 
-const QuestionsIndexContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionsIndex)
+const QuestionsIndexContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionsIndex);
 
 export default QuestionsIndexContainer;

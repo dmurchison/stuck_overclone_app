@@ -5,7 +5,6 @@ import questionsErrorsReducer from "./errors/questions_errors_reducer";
 const errorsReducer = combineReducers({
   session: sessionErrorsReducer,
   questions: questionsErrorsReducer,
-
 });
 
 export default errorsReducer;
