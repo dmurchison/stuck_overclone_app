@@ -76,7 +76,7 @@ $hover-orange: rgb(183, 119, 0);
   padding: 20px;
   background-color: #444;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .question-form-submit {
@@ -91,6 +91,7 @@ $hover-orange: rgb(183, 119, 0);
 }
 .question-form-submit:hover {
   background: rgb(21, 82, 161);
+  cursor: pointer;
 }
 
 

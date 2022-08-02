@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => {
   return {
     signup: (user) => dispatch(signup(user)),
     login: (user) => dispatch(login(user)),
-    removeSessionErrors: () => dispatch(removeSessionErrors()) 
+    removeSessionErrors: () => dispatch(removeSessionErrors())
   };
 }
 

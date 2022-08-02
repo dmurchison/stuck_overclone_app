@@ -3,21 +3,18 @@ import QuestionForm from "./question_form";
 import { createQuestion } from "../../actions/questions_actions";
 
 const mapStateToProps = (state) => {
+  const id = state.session.id;
   return {
     formType: "Ask a public question",
     errors: state.errors.questions,
-    question: {
-      title: "",
-      body: "",
-      author_id: state.session.id
-    }
+    currentUser: state.entities.users[id]
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    action: (question) => dispatch(createQuestion(question)),
-    removeErrors: () => dispatch(removeQuestionErrors())
+    createQuestion: (question) => dispatch(createQuestion(question)),
+    removeQuestionErrors: () => dispatch(removeQuestionErrors())
   };
 }
 
