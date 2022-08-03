@@ -13,7 +13,7 @@ const QuestionForm = ({formType, errors, question}) => {
     <div className='question-form-container'>
     <h1 className='questions-header question-form-header'>{formType}</h1>
       <input
-        className='question-form-title '
+        className='question-form-title'
         type="text"
         value={questionTitle}
         onChange={e => setQuestionTitle(e.target.value)}
