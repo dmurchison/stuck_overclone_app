@@ -50,34 +50,42 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className='login-page-container'>
+      <div className='lf-container'>
+
         <Link className="lf-logo" to="/">
           <img className='lf-icon' src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"/>
         </Link>
-        <div className='demoLogin'>
-          <button className='demoLogin-btn' onClick={this.handleDemo}>Log in with Demo User</button>
-        </div>
+        <button className='demoLogin-btn' onClick={this.handleDemo}>Log in with Demo User</button>
+
         <form className='login-form' onSubmit={this.handleSubmit}>
-          <label>Email</label>
+
+          <div className='errors'>
+            {this.renderErrors()}
+          </div>
+
+          <label className='lf-label'>Email</label>
             <input 
+              className='lf-input'
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')}
             />
-          <label>Password</label>
+          <label className='lf-label'>Password</label>
             <input 
+              className='lf-input'
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')}
             />
-          {this.renderErrors()}
-          <div className='lf-buttons'>
-            <button className='login-form-login-button' type='submit'>Log in</button>
-          </div>
+
+          <button className='lf-submit-button' type='submit'>Log in</button>
+
         </form>
+
         <div className='lf-signup-link'>
           <p>Don't have an account? {this.props.link}</p>
         </div>
+
       </div>
     );
   }

@@ -29,8 +29,8 @@ export const App = () => {
         </Switch>
         <Switch>
           <HomeRoute exact path='/' component={QuestionsIndexContainer} />
-          <Route exact path='/questions/new' component={QuestionFormContainer} />
-          <Route exact path='/profile' component={ProfilePageContainer} />
+          <ProtectedRoute exact path='/questions/new' component={QuestionFormContainer} />
+          <ProtectedRoute exact path='/profile' component={ProfilePageContainer} />
         </Switch>
       <Footer />
     </>

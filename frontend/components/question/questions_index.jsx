@@ -20,9 +20,11 @@ const QuestionsIndex = ({questions, users}) => {
         <h1 className='questions-header'>Top Questions</h1>
         <Link className='questions-index-AskQuestion-btn' to={'/questions/new'}>Ask&nbsp;Question </Link>
       </div>
-      <QuestionRow />
-      <QuestionRow />
-      <QuestionRow />
+      <div className='questions-index-rows'>
+        <QuestionRow />
+        <QuestionRow />
+        <QuestionRow />
+      </div>
     </div>
   );
 
