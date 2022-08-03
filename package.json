@@ -39,7 +39,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
     "remark-gfm": "^3.0.1",
-    "remark-markdown": "^0.0.1",
+    "remark-markdown": "^0.0.0",
     "styled-components": "^5.3.5",
     "styled-reset": "^4.4.1",
     "webpack": "^5.73.0",
