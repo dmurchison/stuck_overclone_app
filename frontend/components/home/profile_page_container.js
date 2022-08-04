@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import ProfilePage from "./profile_page";
-import { fetchUsers } from  '../../actions/session_actions';
 import { fetchQuestions } from "../../actions/questions_actions";
 
 const toArr = (obj) => (
@@ -27,7 +26,6 @@ const mapStateToProps = ({entities: {users, questions}}, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchUsers: () => dispatch(fetchUsers()),
     fetchQuestions: (data) => dispatch(fetchQuestions(Object.assign({}, data, {author_id: ownProps.match.params.id})))
   };
 }
