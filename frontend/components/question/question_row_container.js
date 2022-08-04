@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   delete ownProps.question;
   if (!question) {
     return {};
-  }
+  };
 
   question.user = state.entities.users[question.author_id];
   delete question.author_id;

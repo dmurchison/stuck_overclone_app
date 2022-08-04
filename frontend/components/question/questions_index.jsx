@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { QuestionRow } from './question_row';
 
-import QuestionRow from './question_row';
-
-function QuestionsIndex(props) {
+export const QuestionsIndex = ({questions, users}) => {
 
   // useEffect(() => {
   //   first
@@ -16,16 +15,17 @@ function QuestionsIndex(props) {
 
   return (
     <div className='questions-index-container'>
-      <div className='questions-index-header-container'>
-        <h1 className='questions-index-header'>Top Questions</h1>
-        <Link className='questions-index-AskQuestion-btn' to={'/questions/new'}>Ask&nbsp;Question </Link>
+      <div className='page-header-container'>
+        <h1 className='page-header'>Top Questions</h1>
+        <Link className='AskQuestion-btn' to={'/questions/new'}>Ask&nbsp;Question </Link>
       </div>
-      <QuestionRow />
-      <QuestionRow />
-      <QuestionRow />
+      <div className='questions-index-rows'>
+        <QuestionRow />
+        <QuestionRow />
+        <QuestionRow />
+      </div>
     </div>
   );
 
 }
 
-export default QuestionsIndex;

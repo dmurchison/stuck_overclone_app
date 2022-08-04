@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Header from './header';
+import { Header } from './header';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
@@ -8,14 +8,12 @@ const mapStateToProps = (state) => {
     session: state.session,
     currentUser: state.entities.users[id]
   };
-};
+}
 
 const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout())
   };
-};
+}
 
-const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header)
-
-export default HeaderContainer;
+export const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header);

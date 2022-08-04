@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import QuestionsIndex from './questions_index';
+import { QuestionsIndex } from './questions_index';
 import { fetchQuestions } from "../../actions/questions_actions";
 
 const mapStateToProps = (state) => {
@@ -16,6 +16,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-const QuestionsIndexContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionsIndex);
-
-export default QuestionsIndexContainer;
+export const QuestionsIndexContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionsIndex);

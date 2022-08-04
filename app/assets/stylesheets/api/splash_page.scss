@@ -1,13 +1,20 @@
 // Splash Page
 
+// Variables
+$bg: #393939;
+$bg-hover: #272727;
+$lt-blue: rgb(128, 197, 220);
+$reg-blue: rgb(52, 132, 238);
+$hover-blue: rgb(21, 82, 161);
+$lightsmoke: var(--light);
+$lt-orange: #ffcb6c;
+$reg-orange: orange;
+$hover-orange: rgb(183, 119, 0);
+$errors: rgb(227, 30, 30);
 
 
-// Vars
-$outer-border: var(--light);
-$inner-border: #ffcb6c;
-$inner-btn: orange;
-$inner-btn-hvr: rgb(183, 119, 0);
 
+// SP-Container
 .splashpage-container {
   height: 100vh;
 }
@@ -15,7 +22,7 @@ $inner-btn-hvr: rgb(183, 119, 0);
 .splashpage-outer-border {
   display: flex;
   border-radius: 5px;
-  background-color: $outer-border;
+  background-color: $lightsmoke;
   color: var(--dark);
   height: 85%;
   width: 75%;
@@ -29,7 +36,7 @@ $inner-btn-hvr: rgb(183, 119, 0);
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  background-color: $inner-border;
+  background-color: $lt-orange;
   color: var(--dark);
   width: 55%;
   height: 55%;
@@ -60,7 +67,7 @@ $inner-btn-hvr: rgb(183, 119, 0);
   text-align: center;
   text-decoration: none;
   font-size: 13px;
-  background-color: $inner-btn;
+  background-color: $reg-orange;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
@@ -68,6 +75,6 @@ $inner-btn-hvr: rgb(183, 119, 0);
   transition: 325ms;
 }
 .splashpage-signup:hover {
-  background-color: $inner-btn-hvr;
+  background-color: $hover-orange;
   transform: scale(1.15);
 }

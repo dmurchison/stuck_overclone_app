@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import ProfilePage from "./profile_page";
+import { ProfilePage } from "./profile_page";
 import { fetchQuestions } from "../../actions/questions_actions";
+import { fetchUser } from "../../actions/session_actions";
 
 const toArr = (obj) => (
   Object.keys(obj).map(key => {
@@ -18,18 +19,19 @@ const sortFunc = (arr) => (
   })
 );
 
-const mapStateToProps = ({entities: {users, questions}}, ownProps) => {
+const mapStateToProps = (state) => {
+  const id = state.session.id
   return {
-    questions: sortFunc(toArr(questions))
+    questions: sortFunc(toArr(state.entities.questions)),
+    currentUser: state.entities.users[id]
   };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchQuestions: (data) => dispatch(fetchQuestions(Object.assign({}, data, {author_id: ownProps.match.params.id})))
+    fetchQuestions: (data) => dispatch(fetchQuestions(Object.assign({}, data, {author_id: ownProps.match.params.id}))),
+    fetchUser: (user) => dispatch(fetchUser(user))
   };
 }
 
-const ProfilePageContainer = connect(mapStateToProps, mapDispatchToProps)(ProfilePage);
-
-export default ProfilePageContainer;
+export const ProfilePageContainer = connect(mapStateToProps, mapDispatchToProps)(ProfilePage);

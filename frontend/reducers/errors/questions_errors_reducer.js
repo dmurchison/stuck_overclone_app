@@ -3,7 +3,7 @@ import {
   REMOVE_QUESTION_ERRORS 
 } from "../../actions/questions_actions";
 
-const questionsErrorsReducer = (state = [], action) => {
+export const questionsErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_QUESTION_ERRORS:
@@ -15,4 +15,3 @@ const questionsErrorsReducer = (state = [], action) => {
   };
 }
 
-export default questionsErrorsReducer;

@@ -33,7 +33,7 @@ export const removeSessionErrors = () => {
 
 // Thunk action creators
 export const signup = (user) => dispatch => (
-  SessionAPIUtil.signup(user).then(user => (
+  SessionAPIUtil.signup(user).then((user) => (
     dispatch(receiveCurrentUser(user))
   ), err => (
     dispatch(receiveSessionErrors(err.responseJSON))
@@ -41,7 +41,7 @@ export const signup = (user) => dispatch => (
 );
 
 export const login = (user) => dispatch => (
-  SessionAPIUtil.login(user).then(user => (
+  SessionAPIUtil.login(user).then((user) => (
     dispatch(receiveCurrentUser(user))
   ), err => (
     dispatch(receiveSessionErrors(err.responseJSON))
@@ -53,6 +53,12 @@ export const logout = () => dispatch => (
     dispatch(logoutCurrentUser())
   ), err => (
     dispatch(receiveSessionErrors(err.responseJSON))
+  ))
+);
+
+export const fetchUser = (user) => dispatch => (
+  SessionAPIUtil.fetchUser(user).then((user) => (
+    dispatch(receiveCurrentUser(user))
   ))
 );
 

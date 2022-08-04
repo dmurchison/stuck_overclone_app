@@ -1,8 +1,7 @@
 import React from 'react';
-import { withRouer } from 'react-router-dom';
 
 
-function QuestionRow() {
+export const QuestionRow = () => {
 
   return (
     <div className='questions-row-container'>
@@ -26,5 +25,3 @@ function QuestionRow() {
   );
 
 }
-
-export default QuestionRow;

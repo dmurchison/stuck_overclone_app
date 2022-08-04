@@ -5,9 +5,44 @@ $bg: #393939;
 $bg-hover: #272727;
 $lt-blue: rgb(128, 197, 220);
 $reg-blue: rgb(52, 132, 238);
+$hover-blue: rgb(21, 82, 161);
+$lightsmoke: var(--light);
+$lt-orange: #ffcb6c;
+$reg-orange: orange;
+$hover-orange: rgb(183, 119, 0);
+$errors: rgb(227, 30, 30);
+
 
 
 // Header
+
+// Page Header
+.page-header-container {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  padding: 30px 20px;
+  align-items: center;
+}
+
+.page-header {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.AskQuestion-btn {
+  background-color: $reg-blue;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 12px 10px;
+  font-style: none;
+  transition: 325ms;
+}
+.AskQuestion-btn:hover {
+  background: $hover-blue;
+}
+
+// Main Header
 .header-container {
   background-color: $bg;
   box-shadow: 0 3px 3px rgba(0,0,0,.2);
@@ -53,7 +88,7 @@ $reg-blue: rgb(52, 132, 238);
   width: 100%;
   border: 1px solid #777;
   padding: 8px 10px;
-  background: rgba(0,0,0,.1);
+  background: $bg-hover;
   color: white;
 }
 
@@ -75,13 +110,13 @@ $reg-blue: rgb(52, 132, 238);
   font-size: 13px;
   box-shadow: inset 0 0.5px 0 0 white;
   background-color: rgb(211, 232, 239);
-  border-color: rgb(52, 132, 238);
-  color: rgb(26, 99, 194);
+  border-color: $reg-blue;
+  color: $reg-blue;
   transition: 325ms;
 }
 .header-button-left:hover {
-  background: rgb(128, 197, 220);
-  color: rgb(26, 99, 194);
+  background: $lt-blue;
+  color: $reg-blue;
 }
 
 .header-button-right {
@@ -97,13 +132,13 @@ $reg-blue: rgb(52, 132, 238);
   text-decoration: none;
   font-size: 13px;
   box-shadow: inset 0 0.5px 0 0 white;
-  background-color: rgb(52, 132, 238);
-  border-color: rgb(128, 197, 220);
+  background-color: $reg-blue;
+  border-color: $lt-blue;
   color: white;
   transition: 325ms;
 }
-.header-button-right:hover {
-  background: rgb(21, 82, 161);
+.header-button-right:hover, .header-logout:hover {
+  background: $hover-blue;
 }
 
 .header-profile-link {
@@ -115,6 +150,25 @@ $reg-blue: rgb(52, 132, 238);
 .header-profile-link:hover {
   transform: scale(1.15);
   color: white;
+}
+
+.header-logout {
+  margin-top: 10px;
+  // margin-right: 10px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  display: inline-block;
+  width: 50px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  box-shadow: inset 0 0.5px 0 0 white;
+  background-color: $reg-blue;
+  border-color: $lt-blue;
+  color: white;
+  transition: 325ms;
 }
 
 

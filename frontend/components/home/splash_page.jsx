@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 
-function SplashPage(props) {
+export const SplashPage = (props) => {
 
   return (
     <div className='splashpage-container'>
@@ -18,4 +18,3 @@ function SplashPage(props) {
   
 }
 
-export default SplashPage;

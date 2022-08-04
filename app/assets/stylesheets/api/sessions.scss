@@ -1,22 +1,52 @@
 // Session
 
+// Variables
+$bg: #393939;
+$bg-hover: #272727;
+$lt-blue: rgb(128, 197, 220);
+$reg-blue: rgb(52, 132, 238);
+$hover-blue: rgb(21, 82, 161);
+$link-blue: rgb(0, 189, 252);
+$lightsmoke: var(--light);
+$lt-orange: #ffcb6c;
+$reg-orange: orange;
+$hover-orange: rgb(183, 119, 0);
+$errors: rgb(231, 68, 68);
 
+.errors {
+  p {
+    margin-bottom: 5px
+  };
+  font-size: smaller;
+  color: $errors;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  font-weight: bolder;
+}
 
 // Signup Form
 .sf-container {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .sf-header {
   font-size: 27px;
   font-weight: 400;
   line-height: 1;
-  margin: 5px 0px;
+  margin-bottom: 100px;
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 599px) {
+  .sf-left {
+    display: none;
+  }
 }
 
 .sf-promo {
@@ -25,79 +55,116 @@
   display: flex;
   font-size: 15px;
   margin-top: 24px;
+  p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  };
 }
 
 .sf-right {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
-.signup-form {
+.signup-form, .login-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
-  background-color: gray;
-  padding: 24px;
-  width: 316px;
-  height: 480px;
-  margin-top: 55px;
-  margin-bottom: 24px;
+  text-align: left;
+  background-color: $bg;
+  padding: 25px;
+  width: 300px;
+  height: 400px;
+  margin-top: 15px;
+  margin-bottom: 25px;
   border-radius: 7px;
+  border: 1px solid $reg-blue;
+  transition: 325ms;
+}
+.signup-form:hover, .login-form:hover {
+  transform: scale(1.025);
+  border: 1px solid $reg-orange;
+}
+.sf-input, .lf-input {
+  background-color: $bg-hover;
+  margin-bottom: 10px;
+  color: white;
+}
+.sf-label, .lf-label {
+  margin-bottom: 5px;
 }
 
-.sf-login-button {
+.sf-submit-button, .lf-submit-button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+  width: 15rem;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0 0.5px 0 0 $lt-blue;
+  background-color: $reg-blue;
+  border-color: $lt-blue;
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  transition: 325ms;
+}
+.sf-submit-button:hover, .lf-submit-button:hover {
+  background-color: $hover-blue;
+  cursor: pointer;
+}
+
+.sf-login-link, .lf-signup-link {
+  justify-content: center;
+  a {
+    color: $link-blue;
+  }
+  a:hover {
+    color: $lt-blue;
+  };
   font-size: 13px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: center;
     -ms-flex-pack: center;
-      justify-content: center;
 }
 
 
+// Demo Login
+.demoLogin-btn {
+  padding: 10px;
+  width: 352px;
+  border-radius: 5px;
+  background-color: $reg-orange;
+  box-shadow: inset 0 0.5px 0 0 $reg-blue;
+  border-color: $reg-blue;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  transition: 325ms;
+}
+.demoLogin-btn:hover {
+  background-color: $reg-blue;
+  box-shadow: inset 0 0.5px 0 0 $reg-orange;
+  border-color: $reg-orange;
+  transform: scale(1.025);
+  cursor: pointer;
+}
+
 
 // Login Form
-.login-page-container {
+.lf-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 25px;
+  margin-bottom: 10rem;
 }
 
 .lf-logo {
   margin-bottom: 1.5rem;
-}
-
-.demoLogin-btn {
-  height: 2.5rem;
-  width: 15rem;
-  padding: 5px;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-  background-color: white;
-}
-.demoLogin-btn:hover {
-  background-color: rgb(208, 208, 208);
-  cursor: pointer;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background-color: var(--light);
-  border-radius: 5px;
-  color: var(--dark);
-  font: var(--mainFont);
-  font-weight: 600;
-  padding: 20px;
-  height: 10rem;
-  width: 15rem;
 }
