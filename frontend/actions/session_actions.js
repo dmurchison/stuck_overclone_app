@@ -59,6 +59,8 @@ export const logout = () => dispatch => (
 export const fetchUser = (user) => dispatch => (
   SessionAPIUtil.fetchUser(user).then((user) => (
     dispatch(receiveCurrentUser(user))
+  ), err => (
+    dispatch(receiveSessionErrors(err.responseJSON))
   ))
 );
 
