@@ -9,7 +9,7 @@ export const QuestionRow = () => {
       {/* <div className='questions-row-stats'>{numVotes}<span className='questions-row-stats-span'>votes</span></div> */}
       <div className='questions-row-stats'>2<span className='questions-row-stats-span'>answers</span></div>
       {/* <div className='questions-row-stats'>{numAnswers}<span className='questions-row-stats-span'>answers</span></div> */}
-      <div className='questions-row-stats'>5<span className='questions-row-stats-span'>views</span></div>
+      <div className='questions-row-stats'>0<span className='questions-row-stats-span'>views</span></div>
       <div className='questions-row-title'>
         <a className='questions-row-question-link'>how to build a react component</a>
         {/* <a className='questions-row-question-link'>{title}</a> */}
