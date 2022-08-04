@@ -3,19 +3,19 @@ import Header from './header';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
-  const id = state.session.id;
+  const id = state.session.id
   return {
     session: state.session,
     currentUser: state.entities.users[id]
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout())
   };
-}
+};
 
-const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header);
+const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header)
 
 export default HeaderContainer;

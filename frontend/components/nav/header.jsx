@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
-const Header = ({currentUser, logout}) => {
+function Header({currentUser, logout}) {
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const Header = ({currentUser, logout}) => {
       <div className='header-buttons-div'>
         <Link className='header-profile-link' to={'/profile'}>{currentUser.username}</Link>
           &nbsp;
-        <Link className='header-logout' to={'/'} onClick={handleLogout}>Log out</Link>
+        <Link className='header-button-right' to={'/'} onClick={handleLogout}>Log out</Link>
       </div>
     ) : (
       <div className='header-buttons-div'>

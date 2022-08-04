@@ -23,8 +23,7 @@
   --mainFont: Roboto, sans-serif;
   --dark: hsl(210,8%,5%);
   --light: whitesmoke;
-  --reg-blue: rgb(52, 132, 238);
-  --link-blue: rgb(0, 189, 252);
+  
 }
 
 body {
@@ -33,7 +32,9 @@ body {
   font-family: var(--mainFont);
 }
 
-input, textarea {
-  outline-color: var(--reg-blue);
-}
+/* .main {
+  background: var(--mainBackground);
+  color: var(--mainColor);
+  font-family: var(--mainFont);
+} */
 

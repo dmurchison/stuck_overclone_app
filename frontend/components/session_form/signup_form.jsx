@@ -52,16 +52,21 @@ class SignupForm extends React.Component {
       <div className='sf-container'>
 
         <div className='sf-left'>
-        <h1 className='sf-header'>Join the Stuck Overclone community</h1>
+
+          <h1 className='sf-header'>Join the Stuck Overclone community</h1>
 
           <div className='sf-promo'>
             <img className='sf-logo' src="https://img.icons8.com/fluency/40/000000/ask-question.png"/>
-            <p>Get unstuck --- ask a question</p>
+            <div className='sf-left-text'>
+              <p>Get unstuck --- ask a question</p>
+            </div>
           </div>
 
           <div className='sf-promo'>
             <img className='sf-logo' src="https://img.icons8.com/office/40/000000/sort.png"/>
-            <p>Unlock new priviledges like voting and commenting</p>
+            <div className='sf-left-text'>
+              <p>Unlock new priviledges like voting and commenting</p>
+            </div>
           </div>
 
 
@@ -73,43 +78,39 @@ class SignupForm extends React.Component {
         </div>
 
         <div className='sf-right'>
-          <button className='demoLogin-btn' onClick={this.handleDemo}>Log in with Demo User</button>
+          <div className='demoLogin'>
+            <button className='demoLogin-btn' onClick={this.handleDemo}>Log in with Demo User</button>
+          </div>
 
           <form className='signup-form' onSubmit={this.handleSubmit}>
-
-            <div className='errors'>
-              {this.renderErrors()}
-            </div>
-
-            <label className='sf-label'>Display Name</label>
+            <label>Display Name:</label>
               <input 
-                className='sf-input'
                 type="text"
                 value={this.state.username}
                 onChange={this.handleInput('username')}
               />
 
-            <label className='sf-label'>Email</label>
+            <label>Email:</label>
               <input
-                className='sf-input'
                 type="text" 
                 value={this.state.email}
                 onChange={this.handleInput('email')}
               />
 
-            <label className='sf-label'>Password</label>
+            <label>Password:</label>
               <input 
-                className='sf-input'
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')}
               />
 
-            <button className='sf-submit-button'>Sign up</button>
-
+            <div className='sf-buttons'>
+              {this.renderErrors()}
+              <button className='sf-submit-button'>Sign up</button>
+            </div>
           </form>
 
-          <div className='sf-login-link'>
+          <div className='sf-login-button'>
             <p>Already have an account? {this.props.link}</p>
           </div>
           

@@ -1,7 +1,6 @@
 import * as QuestionAPIUtil from '../util/question_api_util';
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
-export const RECEIVE_USER_QUESTIONS = "RECEIVE_USER_QUESTIONS";
 export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
 export const REMOVE_QUESTION = "REMOVE_QUESTION";
 export const RECEIVE_QUESTION_ERRORS = "RECEIVE_QUESTION_ERRORS";
@@ -12,13 +11,6 @@ export const receiveQuestions = (questions) => {
   return {
    type: RECEIVE_QUESTIONS,
    questions 
-  };
-}
-
-export const receiveUserQuestions = (questions) => {
-  return {
-    type: RECEIVE_USER_QUESTIONS,
-    questions
   };
 }
 
@@ -53,12 +45,6 @@ export const removeQuestionErrors = () => {
 export const fetchQuestions = () => dispatch => (
   QuestionAPIUtil.fetchQuestions().then(questions => (
     dispatch(receiveQuestions(questions))
-  ))
-);
-
-export const fetchUserQuestions = (id) => dispatch => (
-  QuestionAPIUtil.fetchUserQuestions(id).then(questions => (
-    dispatch(receiveUserQuestions(questions))
   ))
 );
 

@@ -1,8 +1,6 @@
 import {
   RECEIVE_QUESTION,
-  RECEIVE_USER_QUESTIONS,
   RECEIVE_QUESTIONS,
-  CREATE_QUESTION,
   REMOVE_QUESTION,
 } from '../actions/questions_actions';
 
