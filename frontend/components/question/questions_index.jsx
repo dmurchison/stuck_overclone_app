@@ -1,17 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { QuestionRow } from './question_row';
 
-export const QuestionsIndex = ({questions, users}) => {
 
-  // useEffect(() => {
-  //   first
-  
-  //   return () => {
-  //     second
-  //   }
-  // }, [third])
-  
+export const QuestionsIndex = () => {
 
   return (
     <div className='questions-index-container'>

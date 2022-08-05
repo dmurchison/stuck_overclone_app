@@ -1,9 +1,12 @@
 import { connect } from "react-redux";
-import { QuestionForm } from "./question_form";
+import QuestionForm from "./question_form";
 import { createQuestion } from "../../actions/questions_actions";
 
 const mapStateToProps = (state) => {
+  const id = state.session.id;
   return {
+    session: state.session,
+    currentUser: state.entities.users[id],
     formType: "Ask a public question",
     errors: state.errors.questions,
     question: {
@@ -16,7 +19,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    action: (question) => dispatch(createQuestion(question)),
+    createQuestion: (question) => dispatch(createQuestion(question)),
     removeErrors: () => dispatch(removeQuestionErrors())
   };
 }
