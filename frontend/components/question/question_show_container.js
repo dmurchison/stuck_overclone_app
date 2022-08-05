@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import QuestionShow from './question_show';
 import {
   fetchQuestion,
-  updateQuestion,
   deleteQuestion
 } from '../../actions/questions_actions';
 

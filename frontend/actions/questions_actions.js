@@ -10,7 +10,7 @@ export const REMOVE_QUESTION_ERRORS = "REMOVE_QUESTION_ERRORS";
 export const receiveQuestions = (questions) => {
   return {
    type: RECEIVE_QUESTIONS,
-   questions 
+   questions
   };
 }
 

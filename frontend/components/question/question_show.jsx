@@ -14,9 +14,9 @@ class QuestionShow extends React.Component {
   render() {
     return this.props.question ? (
       <div>
-        <h1>{this.props.question.title}</h1>
+        <h1></h1>
       </div>
-    ) : ( null )
+    ) : (null);
   }
 
 }

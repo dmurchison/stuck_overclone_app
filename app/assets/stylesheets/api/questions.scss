@@ -48,6 +48,7 @@ $errors: rgb(227, 30, 30);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10rem;
 }
 .questions-row-container {
   margin-top: .5px;
@@ -84,12 +85,15 @@ $errors: rgb(227, 30, 30);
   padding: 0 30px;
 }
 
-.questions-row-question-link {
+.question-title-link {
   text-decoration: none;
   color: #3ca4ff;
   font-size: 1.1rem;
   display: block;
   margin-bottom: 5px;
+}
+.question-title-link:hover {
+  cursor: pointer;
 }
 
 .questions-row-tag {

@@ -10,10 +10,10 @@ import { LoginFormContainer } from './session_form/login_form_container';
 import { QuestionFormContainer } from './question/question_form_container';
 import { ProfilePageContainer } from './home/profile_page_container';
 import { QuestionShowContainer } from './question/question_show_container';
+import { QuestionsIndexContainer } from './question/questions_index_container';
 
 // Components
 import { SplashPage } from './home/splash_page';
-import { QuestionsIndex } from './question/questions_index';
 import { Footer } from './nav/footer';
 
 import { AuthRoute, ProtectedRoute, SplashRoute, HomeRoute } from '../util/route_util';
@@ -30,7 +30,7 @@ export const App = () => {
           <AuthRoute exact path='/signup' component={SignupFormContainer} />
         </Switch>
         <Switch>
-          <HomeRoute exact path='/' component={QuestionsIndex} />
+          <HomeRoute exact path='/' component={QuestionsIndexContainer} />
           <ProtectedRoute exact path='/questions/new' component={QuestionFormContainer} />
           <ProtectedRoute exact path='/users/:id' component={ProfilePageContainer} />
           <ProtectedRoute exact path='/questions/:id' component={QuestionShowContainer} />
