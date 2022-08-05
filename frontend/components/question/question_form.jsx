@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { history } from "react-router-dom";
 
 class QuestionForm extends React.Component {
   constructor(props) {
@@ -10,12 +10,17 @@ class QuestionForm extends React.Component {
       author_id: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
     this.setState({
       author_id: this.props.currentUser.id,
     });
+  }
+
+  componentWillUnmount() {
+    this.props.removeQuestionErrors();
   }
 
   update(field) {
@@ -28,8 +33,10 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createQuestion(this.state);
-    this.props.then(() => this.props.history.push('/'))
+    this.props.createQuestion(this.state)
+      .then((res) => {
+        this.props.errors.body ? this.setState({errors: true}) : this.props.history.push(`/questions/${res.question.id}`)
+      })
   }
 
   renderErrors() {
@@ -56,8 +63,8 @@ class QuestionForm extends React.Component {
           />
           <textarea 
             className='question-form-body'
-            onChange={this.update("body")}
             value={this.state.body}
+            onChange={this.update("body")}
             placeholder='Please enter any other information about your question... (You may use markdown here)'
           />
           <div className='errors'>
