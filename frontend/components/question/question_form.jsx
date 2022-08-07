@@ -1,5 +1,6 @@
 import React from 'react';
-import { history } from "react-router-dom";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 class QuestionForm extends React.Component {
   constructor(props) {
@@ -67,6 +68,9 @@ class QuestionForm extends React.Component {
             onChange={this.update("body")}
             placeholder='Please enter any other information about your question... (You may use markdown here)'
           />
+          <div className='question-form-md'>
+            <ReactMarkdown children={this.state.body} remarkPlugins={[remarkGfm]} />
+          </div>
           <div className='errors'>
             {this.renderErrors()}
           </div>
