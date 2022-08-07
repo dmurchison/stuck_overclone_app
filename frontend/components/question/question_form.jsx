@@ -54,7 +54,9 @@ class QuestionForm extends React.Component {
     return (
       <div className='question-form-container'>
         <h1 className='questions-header question-form-header'>{this.props.formType}</h1>
+        
         <form onSubmit={this.handleSubmit} action="">
+
           <input
             className='question-form-title'
             type="text"
@@ -68,13 +70,16 @@ class QuestionForm extends React.Component {
             onChange={this.update("body")}
             placeholder='Please enter any other information about your question... (You may use markdown here)'
           />
+
           <div className='question-form-md'>
             <ReactMarkdown children={this.state.body} />
           </div>
+
           <div className='errors'>
             {this.renderErrors()}
           </div>
           <button className='question-form-submit' type="submit">Post Question</button>
+
         </form>
       </div>
     );
