@@ -1,18 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class QuestionRow extends React.Component {
   constructor(props) {
     super(props);
-    this.handleRedirect = this.handleRedirect.bind(this);
-  }
-
-  handleRedirect() {
-    this.props.history.push(`/questions/${this.props.id}`)
   }
 
 
   render() {
+    const { question } = this.props;
     return (
       <div className='questions-row-container'>
 
@@ -24,9 +21,9 @@ class QuestionRow extends React.Component {
 
         <div className='questions-row-title'>
 
-          <a className='question-title-link' onClick={() => this.handleRedirect()}>
-            {this.props.question.title}
-          </a>
+          <Link className='question-title-link' to={`/questions/${question.id}`}>
+            {question.title}
+          </Link>
 
           <span className='questions-row-tag'>javascript</span>
           <span className='questions-row-tag'>react</span>
@@ -34,12 +31,12 @@ class QuestionRow extends React.Component {
           <span className='questions-row-tag'>object</span>
 
           <div className='questions-row-author-timestamp'>
-            {this.props.question.timestamp} <a className='questions-row-author-link'>{this.props.question.author_id.username}</a>
+            {question.timestamp} <a className='questions-row-author-link'>{question.author_id}</a>
           </div>
 
         </div>
       </div>
-    )
+    );
   }
 
 }

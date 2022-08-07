@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import QuestionRow from './question_row';
+import { NavBarContainer } from '../nav/navbar_container';
 
 
 class QuestionsIndex extends React.Component {
@@ -37,8 +38,7 @@ class QuestionsIndex extends React.Component {
         <div>
           {this.getQuestionRow()}
         </div>
-
-
+        
       </div>
     );
   }

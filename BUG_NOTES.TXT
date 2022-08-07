@@ -1,5 +1,16 @@
 BUGS AND FIXES DURING DEVELOPMENT
 
+
+-- UNRESOLVED --
+
+Bug: 
+- Cannot push to heroku after adding new npm dependecies.
+Fix:
+- ...
+
+
+-- RESOLVED --
+
 Bug:
 - Requests were not including the csrf token
 Fix:
@@ -20,8 +31,6 @@ Bug:
 Fix:
 - window.currentUser function in root.html.erb was incorrect.
 - refactored user views.
-
-
 
 
 

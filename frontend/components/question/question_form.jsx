@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
 // import remarkGfm from 'remark-gfm';
 
 class QuestionForm extends React.Component {
@@ -72,14 +72,15 @@ class QuestionForm extends React.Component {
           />
 
           <div className='question-form-md'>
-            <ReactMarkdown children={this.state.body} />
+            <code className='question-form-code'>{this.state.body}</code>
+            {/* <ReactMarkdown children={this.state.body} plugins={[remarkGfm]} /> */}
           </div>
 
           <div className='errors'>
             {this.renderErrors()}
           </div>
           <button className='question-form-submit' type="submit">Post Question</button>
-
+          
         </form>
       </div>
     );

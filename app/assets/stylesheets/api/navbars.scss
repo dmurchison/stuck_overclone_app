@@ -6,12 +6,34 @@ $bg-hover: #272727;
 $lt-blue: rgb(128, 197, 220);
 $reg-blue: rgb(52, 132, 238);
 $hover-blue: rgb(21, 82, 161);
-$lightsmoke: var(--light);
 $lt-orange: #ffcb6c;
 $reg-orange: orange;
 $hover-orange: rgb(183, 119, 0);
 $errors: rgb(227, 30, 30);
+$lightSmoke: rgb(175, 175, 175);
 
+
+
+// NavBar
+.navbar-container {
+  border-right-style: dashed;
+  border-right-color: $lightSmoke;
+  border-right-width: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: right;
+  padding: 5px;
+  height: 100vh;
+  max-width: 250px;
+}
+.navbar-list a {
+  color: $lightSmoke;
+}
+.navbar-link li {
+  margin-bottom: 15px;
+  font-size: 10px;
+}
 
 
 // Header
