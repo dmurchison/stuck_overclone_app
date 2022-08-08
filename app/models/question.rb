@@ -14,6 +14,8 @@
 #  index_questions_on_author_id  (author_id)
 #
 class Question < ApplicationRecord
+
+  include Votable
   
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 25 }

@@ -29,6 +29,8 @@ class User < ApplicationRecord
     class_name: :Question,
     foreign_key: :author_id
 
+  has_many :votes, inverse_of: :user
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
