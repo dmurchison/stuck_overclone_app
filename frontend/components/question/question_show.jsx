@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NavBarContainer } from '../nav/navbar_container';
-// import ReactMarkdown from 'react-markdown';
-// import remarkGfm from 'remark-gfm';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 class QuestionShow extends React.Component {
   constructor(props) {
@@ -22,8 +22,8 @@ class QuestionShow extends React.Component {
           <Link className='AskQuestion-btn' to={'/questions/new'}>Ask&nbsp;Question </Link>
         </div>
         <div className='question-show-md'>
-          <code className='question-show-code'>{this.props.question.body}</code>
-          {/* <ReactMarkdown children={this.state.body} plugins={[remarkGfm]} /> */}
+          {/* <code className='question-show-code'>{this.props.question.body}</code> */}
+          <ReactMarkdown>{this.props.question.body}</ReactMarkdown>
         </div>
         <NavBarContainer />
       </div>

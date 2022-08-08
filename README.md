@@ -41,8 +41,6 @@ Stuck Overclone is a clone of [Stack Overflow](https://stackoverflow.com/)
   ### Frontend
     - JavaScript
     - React
-    - [Styled Components](https://styled-components.com/)
-    - [React Icons](https://react-icons.github.io/react-icons/)
 
 
 
