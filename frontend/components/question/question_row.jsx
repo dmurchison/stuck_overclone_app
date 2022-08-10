@@ -7,9 +7,9 @@ class QuestionRow extends React.Component {
     super(props);
   }
 
-
   render() {
     const { question } = this.props;
+    const author = question.author_id;
     return (
       <div className='questions-row-container'>
 
@@ -31,7 +31,7 @@ class QuestionRow extends React.Component {
           <span className='questions-row-tag'>object</span>
 
           <div className='questions-row-author-timestamp'>
-            {question.timestamp} <a className='questions-row-author-link'>{question.author_id}</a>
+            {question.timestamp} <a className='questions-row-author-link'>{author}</a>
           </div>
 
         </div>
