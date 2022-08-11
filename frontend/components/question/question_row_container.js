@@ -11,10 +11,17 @@ const mapStateToProps = (state, ownProps) => {
   
   question.user = state.entities.users[question.author_id];
   delete question.author_id;
+
+  question.votes = 0;
+  Object.keys(question).forEach((key) => {
+    if (typeof question[key] === "object" && question[key].votableId) {
+      question.votes += question[key].numVotes;
+      delete question[key];
+    }
+  });
   
   return {
     ...question,
-    author: question.user
   };
 
 }

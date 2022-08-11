@@ -7,6 +7,11 @@ class QuestionRow extends React.Component {
     super(props);
   }
 
+  handleRedirect() {
+    this.props.removeEntity();
+    this.props.history.push(`/questions/${this.props.id}`)
+  }
+
   render() {
     const { question } = this.props;
     const author = question.author_id;
