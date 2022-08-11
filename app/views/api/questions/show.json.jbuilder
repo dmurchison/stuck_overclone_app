@@ -14,7 +14,7 @@ json.votes do
       json.userId vote.user_id
       json.voteableId vote.votable_id
       json.votableType vote.votable_type
-      json.numVotes vote.num_votes
+      json.numVotes vote.votes_number
     end
   end
 end
