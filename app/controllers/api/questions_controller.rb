@@ -49,16 +49,6 @@ class Api::QuestionsController < ApplicationController
     end
   end
 
-  def search
-    @users = User.all
-    args = params[:args].split(" ")
-    @questions = []
-    args.each do |arg|
-      @questions.concat(Question.where("lower{title) LIKE ?", "%#{arg.downcase}%"))
-    end
-    render :index
-  end
-
   def upvote
     vote(1)
   end
@@ -76,7 +66,7 @@ class Api::QuestionsController < ApplicationController
   def vote(direction)
     @question = Question.find(params[:id])
     @vote = @question.votes.find_or_initialize_by(user: current_user)
-    @vote.update(value: direction)
+    @vote.update(votes_number: direction)
     render :show
   end
 
