@@ -14,8 +14,21 @@ class Api::VotesController < ApplicationController
       return
     end
 
-    existing_vote = Vote.find_by(voter_id: voter_id, votable_id: votable_id, )
+    existing_vote = Vote.find_by(voter_id: voter_id, votable_id: votable_id, votable_type: votable_type)
+    if existing_vote.nil?
+      new_vote.save!
+      @votable.addVote(new_vote)
+    else
+      if !(new_vote.vote_type == existing_vote.vote_type)
+        new_vote.save!
+        @votable.addVote(new_vote)
+      end
+      existing_vote.destroy
+      @votable.undoVote(existing_vote)
+    end
 
+    render :vote
+    
   end
 
 
