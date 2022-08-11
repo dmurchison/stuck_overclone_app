@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { HeaderContainer } from './nav/header_container';
 import { SignupFormContainer } from './session_form/signup_form_container';
 import { LoginFormContainer } from './session_form/login_form_container';
-import { NavBarContainer } from './nav/navbar_container';
 import { QuestionFormContainer } from './question/question_form_container';
 import { ProfilePageContainer } from './home/profile_page_container';
 import { QuestionShowContainer } from './question/question_show_container';
