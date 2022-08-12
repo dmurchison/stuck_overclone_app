@@ -14,12 +14,6 @@ class QuestionForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({
-      author_id: this.props.currentUser.id,
-    });
-  }
-
   componentWillUnmount() {
     this.props.removeQuestionErrors();
   }
@@ -36,7 +30,9 @@ class QuestionForm extends React.Component {
     e.preventDefault();
     this.props.createQuestion(this.state)
       .then((res) => {
-        this.props.errors.body ? this.setState({errors: true}) : this.props.history.push(`/questions/${res.question.id}`)
+        this.props.errors.body ? ( this.setState({errors: true}) ) : ( 
+          this.props.history.push(`/questions/${res.question.question.id}`)
+        );
       })
   }
 
@@ -53,7 +49,7 @@ class QuestionForm extends React.Component {
   render() {
     return (
       <div className='question-form-container'>
-        <h1 className='questions-header question-form-header'>{this.props.formType}</h1>
+        <h1 className='questions-header question-form-header'>Ask a Public Question</h1>
         
         <form onSubmit={this.handleSubmit} action="">
 
