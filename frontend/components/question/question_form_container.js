@@ -4,16 +4,15 @@ import { createQuestion } from "../../actions/questions_actions";
 import { removeQuestionErrors } from "../../actions/questions_actions";
 
 const mapStateToProps = (state) => {
-  const id = state.session.id;
+  const currentUserId = state.entities.users[state.session.id]
   return {
     session: state.session,
-    currentUser: state.entities.users[id],
-    formType: "Ask a public question",
+    formType: "Create Question",
     errors: state.errors.questions,
     question: {
       title: "",
       body: "",
-      author_id: state.session.id
+      author_id: currentUserId
     }
   };
 }
