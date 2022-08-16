@@ -14,8 +14,12 @@ class QuestionShow extends React.Component {
     this.changeVote = this.changeVote.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchQuestion(this.props.questionId);
+  }
+
+  componentWillUnmount() {
+    this.props.removeEntity();
   }
 
   update(field) {

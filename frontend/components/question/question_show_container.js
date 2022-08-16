@@ -14,11 +14,12 @@ const mapStateToProps = (state, ownProps) => {
   if (state.entities.questions && state.entities.questions[questionId]) {
     const tempQuestion = state.entities.questions[questionId];
     question = tempQuestion.question;
+    author = tempQuestion.author_id;
     if (tempQuestion.votes && Object.keys(tempQuestion.votes).length > 0) {
       votes = 0;
       Object.keys(tempQuestion.votes).forEach((vote) => {
         let currentVote = tempQuestion.votes[vote];
-        votes += currentVote.value;
+        votes += currentVote.numVotes;
         if (currentVote.userId === state.session.id) {
           currentUserVote = currentVote.value;
         }
