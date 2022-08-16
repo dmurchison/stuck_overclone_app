@@ -2,7 +2,7 @@ json.question do
   json.partial! "/api/questions/question", question: @question
 end
 
-json.authors do
+json.author do
   json.set! @question.author.id do
     json.extract! @question.author, :id, :username
   end
