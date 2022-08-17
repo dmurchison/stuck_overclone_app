@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 
 class QuestionRow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      author: ''
+    }
+    this.getAuthors = this.getAuthors.bind(this);
   }
 
   handleRedirect() {
@@ -12,17 +17,31 @@ class QuestionRow extends React.Component {
     this.props.history.push(`/questions/${this.props.id}`)
   }
 
+  calculateTimeSince(time) {
+    const timeSince = moment(time);
+    return timeSince.fromNow();
+  }
+
+  getAuthors() {
+    const { authors } = this.props;
+    return (
+      <div>
+        {authors.map((author) => (
+          <p>{author.username}</p>
+        ))}
+      </div>
+    );
+  }
+
   render() {
-    const { question } = this.props;
-    const author = question.author_id;
+    const { question, user } = this.props;
     return (
       <div className='questions-row-container'>
 
-        <div className='questions-row-stats'>0<span className='questions-row-stats-span'>votes</span></div>
+        <div className='questions-row-stats'>1<span className='questions-row-stats-span'>votes</span></div>
         {/* <div className='questions-row-stats'>{numVotes}<span className='questions-row-stats-span'>votes</span></div> */}
         <div className='questions-row-stats'>2<span className='questions-row-stats-span'>answers</span></div>
         {/* <div className='questions-row-stats'>{numAnswers}<span className='questions-row-stats-span'>answers</span></div> */}
-        <div className='questions-row-stats'>0<span className='questions-row-stats-span'>views</span></div>
 
         <div className='questions-row-title'>
 
@@ -36,7 +55,7 @@ class QuestionRow extends React.Component {
           <span className='questions-row-tag'>object</span>
 
           <div className='questions-row-author-timestamp'>
-            {question.timestamp} <a className='questions-row-author-link'>{author}</a>
+            <p dateTime={this.props.question.updated_at}>{this.calculateTimeSince(this.props.question.updated_at)}</p>
           </div>
 
         </div>

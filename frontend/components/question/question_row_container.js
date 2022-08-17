@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import QuestionRow from './question_row';
 import { removeEntity } from '../../actions/questions_actions';
+import { getAuthors } from '../../reducers/selectors_reducer';
 
 const mapStateToProps = (state, ownProps) => {
   let question = ownProps.question;
@@ -19,9 +20,13 @@ const mapStateToProps = (state, ownProps) => {
       delete question[key];
     }
   });
+
+
+
   
   return {
     ...question,
+    user: state.entities.users[question.author_id]
   };
 
 }
