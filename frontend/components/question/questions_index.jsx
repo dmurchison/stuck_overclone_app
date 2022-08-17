@@ -14,18 +14,18 @@ class QuestionsIndex extends React.Component {
   }
 
   getQuestionRow() {
+    const {questions} = this.props;
     return (
       <div className='questions-index-rows'>
-        {this.props.questions &&
-          this.props.questions.map((question) => (
-            <QuestionRow key={question.id} question={question} />
-          ))
-        }
+        {questions.map((question) => (
+          <QuestionRow key={question.id} question={question} />
+        ))}
       </div>
     );
   }
 
   render() {
+    const {authors} = this.props;
     return (
       <div className='questions-index-container'>
 
