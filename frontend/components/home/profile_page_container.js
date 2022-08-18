@@ -1,28 +1,20 @@
 import { connect } from "react-redux";
-import { ProfilePage } from "./profile_page";
+import ProfilePage from "./profile_page";
 import { fetchQuestions } from "../../actions/questions_actions";
 import { fetchUser } from "../../actions/session_actions";
-
-const toArr = (obj) => (
-  Object.keys(obj).map(key => {
-    return obj[key];
-  })
-);
-
-const sortFunc = (arr) => (
-  arr.sort(function(x, y) {
-    if (x.created_at > y.created_at) {
-      return -1;
-    } else {
-      return 1;
-    }
-  })
-);
+import { sortFunc, toArr } from "../../reducers/selectors_reducer";
 
 const mapStateToProps = (state) => {
   const id = state.session.id
+  let questions = sortFunc(toArr(state.entities.questions));
+  let usersQuestions = [];
+  questions.forEach((question) => {
+    if (question.author_id === id) {
+      usersQuestions.push(question)
+    }
+  })
   return {
-    questions: sortFunc(toArr(state.entities.questions)),
+    usersQuestions: usersQuestions,
     currentUser: state.entities.users[id]
   };
 }

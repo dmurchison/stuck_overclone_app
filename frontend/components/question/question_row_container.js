@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
   
   return {
     ...question,
-    user: state.entities.users[question.author_id]
+    authors
   };
 
 }
