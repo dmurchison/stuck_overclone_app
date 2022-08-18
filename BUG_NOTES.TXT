@@ -33,8 +33,3 @@ Fix:
 - refactored user views.
 
 
-
-Left off:
-- Finished user-auth and added the dynamic header functionality
-- Problem with question reducer unable to read an 'id' or 'question'.
-
