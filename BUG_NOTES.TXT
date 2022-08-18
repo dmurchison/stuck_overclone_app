@@ -1,5 +1,12 @@
 BUGS AND FIXES DURING DEVELOPMENT
 
+Features for completion
+- Questions *
+- Votes *
+- Answers
+- Searching
+- MD Support for Q&A
+
 
 -- UNRESOLVED --
 
@@ -33,3 +40,6 @@ Fix:
 - refactored user views.
 
 
+Features to add in future:
+- Question Tags
+- Searching questions before login.

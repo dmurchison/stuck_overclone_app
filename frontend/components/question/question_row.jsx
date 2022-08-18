@@ -7,7 +7,7 @@ class QuestionRow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: ''
+      author: this.props.question.author_id
     }
     this.getAuthors = this.getAuthors.bind(this);
   }
@@ -56,6 +56,9 @@ class QuestionRow extends React.Component {
 
           <div className='questions-row-author-timestamp'>
             <p dateTime={this.props.question.updated_at}>{this.calculateTimeSince(this.props.question.updated_at)}</p>
+          </div>
+
+          <div>
           </div>
 
         </div>
