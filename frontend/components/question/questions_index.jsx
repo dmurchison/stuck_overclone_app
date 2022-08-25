@@ -17,7 +17,7 @@ class QuestionsIndex extends React.Component {
     const { questions } = this.props;
     return (
       <div className='questions-index-rows'>
-        {questions.map((question) => (
+        {questions.reverse().map((question) => (
           <QuestionRow key={question.id} question={question} />
         ))}
       </div>
