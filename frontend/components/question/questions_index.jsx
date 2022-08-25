@@ -16,16 +16,15 @@ class QuestionsIndex extends React.Component {
   getQuestionRow() {
     const { questions } = this.props;
     return (
-      <div className='questions-index-rows'>
-        {questions.reverse().map((question) => (
+      <ul className='questions-index-rows'>
+        {questions.map((question) => (
           <QuestionRow key={question.id} question={question} />
         ))}
-      </div>
+      </ul>
     );
   }
 
   render() {
-    const {authors} = this.props;
     return (
       <div className='questions-index-container'>
 
