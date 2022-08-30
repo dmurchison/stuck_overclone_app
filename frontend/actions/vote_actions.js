@@ -10,13 +10,15 @@ export const handleVote = (vote) => {
 }
 
 export const upVoteQuestion = (questionId) => dispatch => (
-  VoteAPIUtil.upVoteQuestion(questionId).then((vote) => (
-    dispatch(handleVote(vote))
-  ))
+  VoteAPIUtil.upVoteQuestion(questionId)
+    .then((vote) => (
+      dispatch(handleVote(vote))
+    ))
 );
 
 export const downVoteQuestion = (questionId) => dispatch => (
-  VoteAPIUtil.downVoteQuestion(questionId).then((vote) => (
-    dispatch(handleVote(vote))
-  ))
+  VoteAPIUtil.downVoteQuestion(questionId)
+    .then((vote) => (
+      dispatch(handleVote(vote))
+    ))
 );

@@ -43,35 +43,39 @@ export const removeQuestionErrors = () => {
 
 
 export const fetchQuestions = () => dispatch => (
-  QuestionAPIUtil.fetchQuestions().then(questions => (
-    dispatch(receiveQuestions(questions))
-  ))
+  QuestionAPIUtil.fetchQuestions()
+    .then(questions => (
+      dispatch(receiveQuestions(questions))
+    ))
 );
 
 export const fetchQuestion = (questionId) => dispatch => (
-  QuestionAPIUtil.fetchQuestion(questionId).then(question => (
-    dispatch(receiveQuestion(question))
-  ))
+  QuestionAPIUtil.fetchQuestion(questionId)
+    .then(question => (
+      dispatch(receiveQuestion(question))
+    ))
 );
 
 export const createQuestion = (question) => dispatch => (
-  QuestionAPIUtil.createQuestion(question).then(question => (
-    dispatch(receiveQuestion(question))
-  ), err => (
-    dispatch(recieveQuestionErrors(err.responseJSON))
-  ))
+  QuestionAPIUtil.createQuestion(question)
+    .then(question => (
+      dispatch(receiveQuestion(question))
+    ), err => (
+      dispatch(recieveQuestionErrors(err.responseJSON))
+    ))
 );
 
 export const updateQuestion = (question) => dispatch => (
-  QuestionAPIUtil.updateQuestion(question).then(question => (
-    dispatch(receiveQuestion(question))
-  ))
+  QuestionAPIUtil.updateQuestion(question)
+    .then(question => (
+      dispatch(receiveQuestion(question))
+    ))
 );
 
 export const deleteQuestion = (questionId) => dispatch => (
-  QuestionAPIUtil.deleteQuestion(questionId).then(question => (
-    dispatch(removeQuestion(question))
-  ))
+  QuestionAPIUtil.deleteQuestion(questionId)
+    .then(question => (
+      dispatch(removeQuestion(question))
+    ))
 );
-
 
