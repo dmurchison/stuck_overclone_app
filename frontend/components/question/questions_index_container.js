@@ -4,7 +4,7 @@ import QuestionsIndex from './questions_index';
 
 const mapStateToProps = (state) => {
   return {
-    questions: Object.values(state.entities.questions),
+    questions: Object.values(state.entities.questions).reverse(),
     authors: Object.values(state.entities.users)
   };
 }

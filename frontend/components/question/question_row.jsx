@@ -9,7 +9,7 @@ class QuestionRow extends React.Component {
     this.state = {
       author: this.props.question.author_id
     }
-    this.getAuthors = this.getAuthors.bind(this);
+    // this.getAuthors = this.getAuthors.bind(this);
   }
 
   handleRedirect() {
@@ -22,19 +22,19 @@ class QuestionRow extends React.Component {
     return timeSince.fromNow();
   }
 
-  getAuthors() {
-    const { authors } = this.props;
-    return (
-      <div>
-        {authors.map((author) => (
-          <p>{author.username}</p>
-        ))}
-      </div>
-    );
-  }
+  // getAuthors() {
+  //   const { authors } = this.props;
+  //   return (
+  //     <div>
+  //       {authors.map((author) => (
+  //         <p>{author.username}</p>
+  //       ))}
+  //     </div>
+  //   );
+  // }
 
   render() {
-    const { question, user } = this.props;
+    const { question } = this.props;
     return (
       <div className='questions-row-container'>
 

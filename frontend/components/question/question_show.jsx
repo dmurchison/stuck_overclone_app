@@ -14,7 +14,7 @@ class QuestionShow extends React.Component {
     this.changeVote = this.changeVote.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchQuestion(this.props.questionId);
   }
 
