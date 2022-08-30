@@ -2,7 +2,7 @@ export const asArray = ({ questions }) => (
   Object.keys(questions).map((key) => questions[key])
 );
 
-export const getAuthors = ({ questions }) => (
+export const getAuthors = (author_id) => (
   Object.values(questions.authors)
 );
 

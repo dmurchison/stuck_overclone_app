@@ -12,6 +12,7 @@ export const fetchQuestion = (questionId) => {
   });
 }
 
+
 export const createQuestion = (question) => {
   return $.ajax({
     method: "POST",
