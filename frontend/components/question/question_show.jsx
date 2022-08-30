@@ -12,6 +12,7 @@ class QuestionShow extends React.Component {
     };
     this.submitAnswer = this.submitAnswer.bind(this);
     this.changeVote = this.changeVote.bind(this);
+    this.votingButtons = this.votingButtons.bind(this);
   }
 
   componentDidMount() {
@@ -66,7 +67,7 @@ class QuestionShow extends React.Component {
     return timeSince.fromNow();
   }
 
-  render() {
+  votingButtons() {
     let currentUserVote = 0;
     let votes = 0;
 
@@ -77,20 +78,57 @@ class QuestionShow extends React.Component {
     if (this.state.votes) {
       votes = this.state.votes;
     }
+    return (
+      <div className='question-show-voting-buttons'>
 
+        <button className='voteButton' onClick={() => this.changeVote(1)}>
+          <div className='upVote'></div>
+        </button>
+
+        <div className='totalVotes'>{votes + currentUserVote}</div>
+
+        <button className='voteButton' onClick={() => this.changeVote(-1)}>
+          <div className='downVote'></div>
+        </button>
+
+      </div>
+    );
+  }
+
+  render() {
     return (this.props.question) ? (
       <div className='question-show-container'>
 
         <div className='page-header-container'>
           <h1 className='question-show-title'>{this.props.question.title}</h1>
-          <Link className='AskQuestion-btn' to={'/questions/new'}>Ask&nbsp;Question </Link>
         </div>
 
-        <div className='question-show-timestamp'>
-          <time dateTime={this.props.question.created_at}>{this.calculateTimeSince(this.props.question.created_at)}</time>
+        <div className='question-show-body'>
+          {this.votingButtons()}
+          <div>
+
+            <div className='question-body-mds'>
+              <code className='question-body-code'>{this.props.question.body}</code>
+              {/* <ReactMarkdown>{this.props.question.body}</ReactMarkdown> */}
+            </div>
+
+            <div className='question-show-other'>
+              {/* <div className='question-show-tags-container'>
+                <span className='questions-row-tags'>javascript</span>
+                <span className='questions-row-tags'>react</span>
+                <span className='questions-row-tags'>component</span>
+                <span className='questions-row-tags'>object</span>
+              </div> */}
+
+              <div className='question-timestamp'>
+                <time dateTime={this.props.question.created_at}>Last updated {this.calculateTimeSince(this.props.question.created_at)}</time>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <div className='question-show-votes-container'>
+        {/* <div className='question-show-votes-container'>
           <button className='question-show-upVote-btn' onClick={() => this.changeVote(1)}>
             <img className={currentUserVote === 1 ? "active-vote" : ""} src="https://img.icons8.com/ios-filled/50/FD7E14/up-squared.png"/>
           </button>
@@ -102,12 +140,8 @@ class QuestionShow extends React.Component {
           <button className='question-show-downVote-btn' onClick={() => this.changeVote(-1)}>
             <img className={currentUserVote === -1 ? "active-vote" : ""} src="https://img.icons8.com/ios-filled/50/FD7E14/down-squared--v1.png"/>
           </button>
-        </div>
+        </div> */}
 
-        <div className='question-show-md'>
-          <code className='question-show-code'>{this.props.question.body}</code>
-          {/* <ReactMarkdown>{this.props.question.body}</ReactMarkdown> */}
-        </div>
           
       </div>
 

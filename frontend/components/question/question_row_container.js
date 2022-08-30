@@ -24,6 +24,7 @@ const mapStateToProps = (state, ownProps) => {
 
 
   
+  console.log(authors);
   return {
     ...question,
     authors

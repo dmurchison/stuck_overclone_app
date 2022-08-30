@@ -49,16 +49,13 @@ class QuestionRow extends React.Component {
             {question.title}
           </Link>
 
-          <span className='questions-row-tag'>javascript</span>
-          <span className='questions-row-tag'>react</span>
-          <span className='questions-row-tag'>component</span>
-          <span className='questions-row-tag'>object</span>
+          {/* <span className='questions-row-tags'>javascript</span>
+          <span className='questions-row-tags'>react</span>
+          <span className='questions-row-tags'>component</span>
+          <span className='questions-row-tags'>object</span> */}
 
-          <div className='questions-row-author-timestamp'>
-            <p dateTime={this.props.question.updated_at}>{this.calculateTimeSince(this.props.question.updated_at)}</p>
-          </div>
-
-          <div>
+          <div className='question-timestamp'>
+            <p dateTime={this.props.question.updated_at}>Last updated {this.calculateTimeSince(this.props.question.updated_at)}</p>
           </div>
 
         </div>

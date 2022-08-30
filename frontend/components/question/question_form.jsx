@@ -67,8 +67,8 @@ class QuestionForm extends React.Component {
             placeholder='Please enter any other information about your question... (You may use markdown here)'
           />
 
-          <div className='question-form-md'>
-            <code className='question-form-code'>{this.state.body}</code>
+          <div className='question-body-md'>
+            <code className='question-body-code'>{this.state.body}</code>
             {/* <ReactMarkdown children={this.state.body} plugins={[remarkGfm]} /> */}
           </div>
 

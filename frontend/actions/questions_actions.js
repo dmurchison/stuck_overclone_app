@@ -2,6 +2,7 @@ import * as QuestionAPIUtil from '../util/question_api_util';
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
+export const RECEIVE_AUTHORS = "RECEIVE_AUTHORS";
 export const REMOVE_QUESTION = "REMOVE_QUESTION";
 export const RECEIVE_QUESTION_ERRORS = "RECEIVE_QUESTION_ERRORS";
 export const REMOVE_QUESTION_ERRORS = "REMOVE_QUESTION_ERRORS";
@@ -17,6 +18,13 @@ export const receiveQuestions = (questions) => {
 export const receiveQuestion = (question) => {
   return {
     type: RECEIVE_QUESTION,
+    question
+  };
+}
+
+export const receiveAuthors = (question) => {
+  return {
+    type: RECEIVE_AUTHORS,
     question
   };
 }

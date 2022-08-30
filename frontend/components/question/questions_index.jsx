@@ -29,7 +29,7 @@ class QuestionsIndex extends React.Component {
       <div className='questions-index-container'>
 
         <div className='page-header-container'>
-          <h1 className='page-header'>Top Questions</h1>
+          <h1 className='page-header'>All Questions</h1>
           <Link className='AskQuestion-btn' to={'/questions/new'}>Ask&nbsp;Question </Link>
         </div>
 
