@@ -68,7 +68,7 @@ class QuestionForm extends React.Component {
           />
 
           <div className='question-form-md'>
-            <ReactMarkdown className='react-markdown' children={this.state.body} plugins={[remarkGfm]} />
+            <ReactMarkdown className='qf-react-markdown' children={this.state.body} plugins={[remarkGfm]} />
           </div>
 
           <div className='errors'>

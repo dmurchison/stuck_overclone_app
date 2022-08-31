@@ -107,7 +107,7 @@ class QuestionShow extends React.Component {
           <div>
             
             <div className='questions-show-md'>
-              <ReactMarkdown className='react-markdown' children={this.props.question.body} plugins={[remarkGfm]} />
+              <ReactMarkdown className='qs-react-markdown' children={this.props.question.body} plugins={[remarkGfm]} />
             </div>
 
             <div className='question-show-other'>

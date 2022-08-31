@@ -139,8 +139,7 @@ $errors: rgb(227, 30, 30);
 .question-show-title {
   border-bottom: 1px solid rgba(255,255,255, .1);
   padding-bottom: 10px;
-  font-size: 1.35rem;
-  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .question-show-body {
@@ -206,6 +205,39 @@ $errors: rgb(227, 30, 30);
   }
 }
 
+.qs-react-markdown {
+  b, strong {
+    font-weight: 700;
+  }
+  a {
+    color: $link-blue;
+  }
+  a:hover {
+    color: $lt-blue;
+  };
+  p {
+    margin-bottom: 10px 0;
+    line-height: 1.5rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  blockquote, pre {
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, .2);
+    padding: 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    width: 500px;
+    font-size: 15px;
+    line-height: 1rem;
+    color: lightgreen;
+  }
+}
+
 
 
 // Questions Form
@@ -250,7 +282,11 @@ $errors: rgb(227, 30, 30);
   margin-bottom: 20px;
 }
 
-  .react-markdown {
+.qf-react-markdown {
+  h1, h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
   b, strong {
     font-weight: 700;
   }
@@ -263,10 +299,6 @@ $errors: rgb(227, 30, 30);
   p {
     margin-bottom: 10px 0;
     line-height: 1.5rem;
-  }
-  h1, h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
   }
   h1 {
     font-size: 1.8rem;
