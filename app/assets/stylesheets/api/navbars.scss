@@ -38,30 +38,93 @@ $lightSmoke: rgb(175, 175, 175);
 
 // Header
 
-// Page Header
-.page-header-container {
+// Splash Header
+.header-container-splash {
   display: grid;
   grid-template-columns: 1fr min-content;
   padding: 30px 20px;
   align-items: center;
 }
 
-.page-header {
-  font-size: 1.8rem;
-  margin: 0;
+.header-logo-splash {
+  display: inline-block;
+  padding: 0px 15px;
+  height: 75px;
+  font-size: larger;
+  line-height: 75px;
+  color: #fff;
+  text-decoration: none;
+  transition: 325ms;
+  width: fit-content;
+}
+.header-logo-splash:hover {
+    transform: scale(1.05);
+}
+.header-icon-splash {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 50px;
+}
+.header-logo-letters-splash {
+  display: inline-block;
+  padding-left: 5px;
+  padding-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.header-logo-letters-overclone-splash {
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 5px;
 }
 
-.AskQuestion-btn {
-  background-color: $reg-blue;
-  color: #fff;
-  border: 0;
-  border-radius: 5px;
-  padding: 12px 10px;
-  font-style: none;
+.header-buttons-div-splash {
+  padding-left: 2px;
+  padding-right: 8px;
+}
+.login-button {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  display: inline-block;
+  width: 100px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: inset 0 0.5px 0 0 white;
+  background-color: rgb(211, 232, 239);
+  border-color: $reg-blue;
+  color: $reg-blue;
   transition: 325ms;
 }
-.AskQuestion-btn:hover {
+.login-button:hover {
+  transform: scale(1.15);
+  background: $lt-blue;
+  color: $reg-blue;
+}
+.signup-button {
+  margin-top: 10px;
+  margin-right: 20px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  display: inline-block;
+  width: 100px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: inset 0 0.5px 0 0 white;
+  background-color: $reg-blue;
+  border-color: $lt-blue;
+  color: white;
+  transition: 325ms;
+}
+.signup-button:hover {
   background: $hover-blue;
+  transform: scale(1.15);
 }
 
 // Main Header

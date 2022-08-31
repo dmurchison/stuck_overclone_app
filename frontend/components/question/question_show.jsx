@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import ReactMarkdown from 'react-markdown';
-// import remarkGfm from 'remark-gfm';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import moment from 'moment';
 
 class QuestionShow extends React.Component {
@@ -106,43 +106,28 @@ class QuestionShow extends React.Component {
         <div className='question-show-body'>
           {this.votingButtons()}
           <div>
-
-            <div className='question-body-mds'>
-              <code className='question-body-code'>{this.props.question.body}</code>
-              {/* <ReactMarkdown>{this.props.question.body}</ReactMarkdown> */}
+            
+            <div className='questions-show-md'>
+              <ReactMarkdown className='react-markdown' children={this.props.question.body} plugins={[remarkGfm]} />
             </div>
 
             <div className='question-show-other'>
+
               {/* <div className='question-show-tags-container'>
                 <span className='questions-row-tags'>javascript</span>
                 <span className='questions-row-tags'>react</span>
                 <span className='questions-row-tags'>component</span>
                 <span className='questions-row-tags'>object</span>
               </div> */}
-
+              
               <div className='question-timestamp'>
                 <time dateTime={this.props.question.created_at}>Last updated {this.calculateTimeSince(this.props.question.created_at)}</time>
               </div>
+
             </div>
-
           </div>
+
         </div>
-
-        {/* <div className='question-show-votes-container'>
-          <button className='question-show-upVote-btn' onClick={() => this.changeVote(1)}>
-            <img className={currentUserVote === 1 ? "active-vote" : ""} src="https://img.icons8.com/ios-filled/50/FD7E14/up-squared.png"/>
-          </button>
-
-          <div className='question-show-vote-score'>
-            {votes + currentUserVote}
-          </div>
-
-          <button className='question-show-downVote-btn' onClick={() => this.changeVote(-1)}>
-            <img className={currentUserVote === -1 ? "active-vote" : ""} src="https://img.icons8.com/ios-filled/50/FD7E14/down-squared--v1.png"/>
-          </button>
-        </div> */}
-
-          
       </div>
 
     ) : (null);

@@ -29,7 +29,7 @@ $errors: rgb(231, 68, 68);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: -25px;
   margin-bottom: 10rem;
   margin-left: 15%;
   margin-right: 15%;
@@ -161,10 +161,10 @@ $errors: rgb(231, 68, 68);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 25px;
+  margin-top: -25px;
   margin-bottom: 10rem;
 }
 
 .lf-logo {
-  margin-bottom: 1.5rem;
+  margin-bottom: 15px;
 }
