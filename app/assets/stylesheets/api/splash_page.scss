@@ -44,7 +44,7 @@ $errors: rgb(227, 30, 30);
   transition: 325ms;
 }
 .splashpage-inner-border:hover {
-  transform: scale(1.15);
+  transform: scale(1.05);
 }
 
 .splashpage-inner-header {
@@ -53,6 +53,9 @@ $errors: rgb(227, 30, 30);
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 10rem;
+  font-family: monospace;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 .splashpage-signup {
@@ -67,7 +70,7 @@ $errors: rgb(227, 30, 30);
   text-align: center;
   text-decoration: none;
   font-size: 13px;
-  background-color: $reg-orange;
+  background-color: $reg-blue;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
@@ -75,6 +78,7 @@ $errors: rgb(227, 30, 30);
   transition: 325ms;
 }
 .splashpage-signup:hover {
-  background-color: $hover-orange;
+  background-color: $hover-blue;
+  color: $reg-orange;
   transform: scale(1.15);
 }

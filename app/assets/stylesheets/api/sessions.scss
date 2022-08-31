@@ -24,13 +24,18 @@ $errors: rgb(231, 68, 68);
   font-weight: bolder;
 }
 
-// Signup Form
+// Session Forms
+.lf-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -25px;
+}
 .sf-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: -25px;
-  margin-bottom: 10rem;
   margin-left: 15%;
   margin-right: 15%;
 }
@@ -77,7 +82,7 @@ $errors: rgb(231, 68, 68);
   background-color: $bg;
   padding: 25px;
   width: 300px;
-  height: 400px;
+  height: 350px;
   margin-top: 15px;
   margin-bottom: 25px;
   border-radius: 7px;
@@ -155,16 +160,3 @@ $errors: rgb(231, 68, 68);
   cursor: pointer;
 }
 
-
-// Login Form
-.lf-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: -25px;
-  margin-bottom: 10rem;
-}
-
-.lf-logo {
-  margin-bottom: 15px;
-}
