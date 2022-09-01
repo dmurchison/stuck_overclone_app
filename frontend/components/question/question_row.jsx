@@ -44,10 +44,7 @@ class QuestionRow extends React.Component {
         {/* <div className='questions-row-stats'>{numAnswers}<span className='questions-row-stats-span'>answers</span></div> */}
 
         <div className='questions-row-title'>
-
-          <Link className='question-title-link' to={`/questions/${question.id}`}>
-            {question.title}
-          </Link>
+          <Link className='question-title-link' to={`/questions/${question.id}`}>{question.title}</Link>
 
           {/* <span className='questions-row-tags'>javascript</span>
           <span className='questions-row-tags'>react</span>
@@ -57,7 +54,6 @@ class QuestionRow extends React.Component {
           <div className='question-timestamp'>
             <p dateTime={this.props.question.updated_at}>Last updated {this.calculateTimeSince(this.props.question.updated_at)}</p>
           </div>
-
         </div>
       </div>
     );

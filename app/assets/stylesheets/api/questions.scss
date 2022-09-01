@@ -104,12 +104,14 @@ $errors: rgb(227, 30, 30);
   color: $question-blue;
   font-size: 1.1rem;
   display: block;
+  width: fit-content;
   margin-bottom: 5px;
   transition: 325ms;
 }
 .question-title-link:hover {
   cursor: pointer;
-  transform: scale(1.025);
+  color: $lt-orange;
+  font-weight: 500;
 }
 
 .questions-row-tags {
@@ -231,8 +233,8 @@ $errors: rgb(227, 30, 30);
     padding: 15px;
     border-radius: 5px;
     font-family: monospace;
-    width: 500px;
     font-size: 15px;
+    width: fit-content;
     line-height: 1rem;
     color: lightgreen;
   }
@@ -312,7 +314,7 @@ $errors: rgb(227, 30, 30);
     padding: 15px;
     border-radius: 5px;
     font-family: monospace;
-    width: 500px;
+    width: fit-content;
     font-size: 15px;
     line-height: 1rem;
     color: lightgreen;
