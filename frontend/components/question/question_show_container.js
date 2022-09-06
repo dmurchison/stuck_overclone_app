@@ -30,7 +30,6 @@ const mapStateToProps = (state, ownProps) => {
     questionId,
     author,
     question,
-    questionTitle: state.entities.questions[questionId].title,
     currentUserId: state.entities.users[state.session.id].id
   };
   if (votes !== undefined) {

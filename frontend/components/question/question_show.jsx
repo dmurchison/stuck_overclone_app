@@ -72,7 +72,7 @@ class QuestionShow extends React.Component {
     const { question, currentUserId } = this.props;
     return (question.author_id === currentUserId) ? (
       <div className="editButton-container">
-        <Link className="editButton" to={`/questions/${question.id}/edit`}>Edit/Delete Question</Link>
+        <Link className="editButton" to={`/questions/${question.id}/edit`}>Update Question</Link>
       </div>
     ) : (null);
   }

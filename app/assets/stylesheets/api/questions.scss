@@ -16,7 +16,34 @@ $errors: rgb(227, 30, 30);
 
 
 
-// Question Row
+// Page Header
+.page-header-container {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  padding: 30px 20px;
+  align-items: center;
+}
+
+.page-header {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.AskQuestion-btn {
+  background-color: $reg-blue;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 12px 10px;
+  font-style: none;
+  transition: 325ms;
+}
+.AskQuestion-btn:hover {
+  background: $hover-blue;
+}
+
+
+// Questions Row
 .questions-index-rows {
   display: flex;
   flex-direction: column;
@@ -168,8 +195,8 @@ $errors: rgb(227, 30, 30);
 }
 
 .editButton-container {
-  text-align: right;
-  margin-right: 50px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .editButton {
@@ -179,9 +206,9 @@ $errors: rgb(227, 30, 30);
   border-style: groove;
   border-color: $lt-orange;
   border-radius: 5px;
-  padding: 15px 15px;
-  font-weight: 550;
+  padding: 10px;
   transition: 325ms;
+  margin-bottom: 0;
 }
 .editButton:hover {
   transform: scale(1.05);
@@ -213,7 +240,7 @@ $errors: rgb(227, 30, 30);
     padding: 15px;
     border-radius: 5px;
     font-family: monospace;
-    font-size: 12px;
+    font-size: 15px;
     width: fit-content;
     line-height: 1rem;
     color: lightgreen;
@@ -222,7 +249,7 @@ $errors: rgb(227, 30, 30);
 
 
 
-// Question Create
+// Questions Form
 .question-form-container {
   padding: 30px 20px;
   margin-bottom: 100px;
@@ -296,11 +323,12 @@ $errors: rgb(227, 30, 30);
     border-radius: 5px;
     font-family: monospace;
     width: fit-content;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1rem;
     color: lightgreen;
   }
 }
+
 
 .question-form-submit {
   background-color: #378ad3;
