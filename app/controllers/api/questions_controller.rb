@@ -1,5 +1,5 @@
 class Api::QuestionsController < ApplicationController
-  before_action :require_logged_in, only: [:create]
+  before_action :require_logged_in
 
   def index
     if params[:searchTerm]
@@ -56,18 +56,19 @@ class Api::QuestionsController < ApplicationController
   def downvote
     vote(-1)
   end
-  
+
+
   private
-
-  def question_params
-    params.require(:question).permit(:title, :body, :author_id)
-  end
-
+  
   def vote(direction)
     @question = Question.find(params[:id])
     @vote = @question.votes.find_or_initialize_by(user: current_user)
     @vote.update(votes_number: direction)
     render :show
+  end
+
+  def question_params
+    params.require(:question).permit(:title, :body, :author_id)
   end
 
 end

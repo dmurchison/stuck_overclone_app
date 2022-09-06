@@ -8,7 +8,7 @@ import {
   logout
 } from './actions/session_actions';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
     const preloadedState = {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logout;
   window.getState = store.getState;
 
-  const root = document.getElementById("root");
+  const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
 
