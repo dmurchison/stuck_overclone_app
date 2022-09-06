@@ -3,6 +3,7 @@ import {
   REMOVE_QUESTION_ERRORS 
 } from "../../actions/questions_actions";
 
+
 export const questionsErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
+
+// Customized Routes
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
   <Route path={path} exact={exact} render={(props) => (
     !loggedIn ? (
@@ -43,10 +45,13 @@ const Home = ({ component: Component, path, loggedIn, exact }) => (
 );
 
 
+// Checking session status
 const mapStateToProps = state => (
   { loggedIn: Boolean(state.session.id) }
 );
 
+
+// Export all of the routes
 export const AuthRoute = connect(mapStateToProps)(Auth);
 export const ProtectedRoute = connect(mapStateToProps)(Protected);
 export const SplashRoute = connect(mapStateToProps)(Splash);

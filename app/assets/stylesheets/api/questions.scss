@@ -207,6 +207,26 @@ $errors: rgb(227, 30, 30);
   }
 }
 
+.editButton-container {
+  text-align: right;
+  margin-right: 50px;
+}
+
+.editButton {
+  background-color: $hover-blue;
+  color: $reg-orange;
+  border: 2px;
+  border-style: groove;
+  border-color: $lt-orange;
+  border-radius: 5px;
+  padding: 15px 15px;
+  font-weight: 550;
+  transition: 325ms;
+}
+.editButton:hover {
+  transform: scale(1.05);
+}
+
 .qs-react-markdown {
   b, strong {
     font-weight: 700;

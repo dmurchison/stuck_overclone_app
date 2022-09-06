@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { NavBar } from "./navbar";
 
+
 const mapStateToProps = (state) => {
   const id = state.session.id
   return {

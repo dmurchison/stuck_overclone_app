@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 import QuestionRow from './question_row';
 import { removeEntity } from '../../actions/questions_actions';
-import { getAuthors } from '../../reducers/selectors_reducer';
+import { fetchUser } from '../../actions/session_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   let question = ownProps.question;
   delete ownProps.question;
+
   if (!question) {
     return {};
   }
-  
+
   question.user = state.entities.users[question.author_id];
   delete question.author_id;
 
@@ -21,21 +23,16 @@ const mapStateToProps = (state, ownProps) => {
     }
   });
 
-
-
-  
-  console.log(authors);
   return {
     ...question,
-    authors
   };
-
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    removeEntity: () => dispatch(removeEntity())
-  }
+    removeEntity: () => dispatch(removeEntity()),
+    fetchUser: (id) => dispatch(fetchUser(id))
+  };
 }
 
 export const QuestionRowContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionRow);

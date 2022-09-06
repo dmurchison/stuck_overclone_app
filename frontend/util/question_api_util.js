@@ -1,3 +1,5 @@
+
+// AJAX Requests
 export const fetchQuestions = () => {
   return $.ajax({
     method: "GET",
@@ -11,7 +13,6 @@ export const fetchQuestion = (questionId) => {
     url: `/api/questions/${questionId}`
   });
 }
-
 
 export const createQuestion = (question) => {
   return $.ajax({

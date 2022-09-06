@@ -1,3 +1,5 @@
+
+// AJAX Requests
 export const upVoteQuestion = (questionId) => {
   return $.ajax({
     method: 'POST',

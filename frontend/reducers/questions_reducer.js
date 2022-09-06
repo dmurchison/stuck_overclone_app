@@ -3,8 +3,8 @@ import {
   RECEIVE_QUESTIONS,
   REMOVE_QUESTION,
 } from '../actions/questions_actions';
-
 import { REMOVE_ENTITY } from '../actions/entity_actions';
+
 
 export const questionsReducer = (state = {}, action) => {
   Object.freeze(state);

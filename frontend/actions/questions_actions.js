@@ -50,6 +50,7 @@ export const removeQuestionErrors = () => {
 }
 
 
+// Thunk action creators
 export const fetchQuestions = () => dispatch => (
   QuestionAPIUtil.fetchQuestions()
     .then(questions => (

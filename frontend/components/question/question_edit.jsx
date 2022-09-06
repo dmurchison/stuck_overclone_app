@@ -3,16 +3,14 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 
-class QuestionForm extends React.Component {
+class QuestionEdit extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: "",
-      body: "",
-      author_id: "",
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    this.state = this.props.question;
+  }
+  
+  componentDidMount() {
+    this.props.fetchQuestion(this.props.match.params.questionId);
   }
 
   componentWillUnmount() {
@@ -29,12 +27,16 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createQuestion(this.state)
+    this.props.updateQuestion(this.state)
       .then((res) => {
-        this.props.errors.body ? ( this.setState({errors: true}) ) : ( 
+        this.props.errors.body ? ( this.setState({errors: true}) ) : (
           this.props.history.push(`/questions/${res.question.question.id}`)
         );
       })
+  }
+
+  updateBody(value) {
+    this.setState({ body: value });
   }
 
   renderErrors() {
@@ -48,35 +50,37 @@ class QuestionForm extends React.Component {
   }
 
   render() {
+    const { questionTitle } = this.props;
     return (
       <div className='question-form-container'>
-        <h1 className='questions-header question-form-header'>Ask a Public Question</h1>
+        <h1 className='questions-header question-form-header'>{questionTitle}</h1>
         
         <form onSubmit={this.handleSubmit} action="">
 
-          <input
+        <input
             className='question-form-title'
             type="text"
-            value={this.state.title}
+            value={this.state ? this.state.title : ""}
             onChange={this.update("title")}
-            placeholder='How can I replace my react class component with a hook?'
+            placeholder='You may make changes to the title of your question here.'
           />
+          
           <textarea 
             className='question-form-body'
-            value={this.state.body}
+            value={this.state ? this.state.body : ""}
             onChange={this.update("body")}
-            placeholder='Please enter any other information about your question... (You may use markdown here)'
+            placeholder='You may make changes to the body of your question... (You may use markdown here)'
           />
 
           <div className='question-form-md'>
-            <ReactMarkdown className='qf-react-markdown' children={this.state.body} remarkPlugins={[remarkGfm]} />
+            <ReactMarkdown className='qf-react-markdown' children={this.state ? this.state.body : ""} remarkPlugins={[remarkGfm]} />
           </div>
 
           <div className='errors'>
             {this.renderErrors()}
           </div>
 
-          <button className='question-form-submit' type="submit">Post Question</button>
+          <button className='question-form-submit' type="submit">Update Question</button>
           
         </form>
       </div>
@@ -85,4 +89,4 @@ class QuestionForm extends React.Component {
 
 }
 
-export default QuestionForm;
+export default QuestionEdit;

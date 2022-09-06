@@ -3,6 +3,7 @@ import {
   REMOVE_SESSION_ERRORS,
 } from '../../actions/session_actions';
 
+
 export const sessionErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {

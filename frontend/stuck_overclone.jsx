@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
+  // Debugging and Redux Cycle Test functions
   window.store = store;
   window.signup = signup;
   window.login = login;
