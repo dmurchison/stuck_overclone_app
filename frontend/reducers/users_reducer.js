@@ -1,7 +1,7 @@
 import { 
   LOGOUT_CURRENT_USER, 
   RECEIVE_CURRENT_USER 
-} from "../actions/session_actions";
+} from '../actions/session_actions';
 
 
 export const usersReducer = (state = {}, action) => {
