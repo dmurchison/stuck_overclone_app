@@ -123,6 +123,7 @@ $errors: rgb(227, 30, 30);
 // Question Show
 .question-show-container {
   padding: 30px 75px;
+  margin-bottom: 100px;
 }
 
 .question-show-title {
@@ -329,7 +330,6 @@ $errors: rgb(227, 30, 30);
   }
 }
 
-
 .question-form-submit {
   background-color: #378ad3;
   color: #fff;
@@ -344,3 +344,9 @@ $errors: rgb(227, 30, 30);
   cursor: pointer;
 }
 
+
+
+// Question Index
+.questions-index-container {
+  margin-bottom: 100px;
+}
