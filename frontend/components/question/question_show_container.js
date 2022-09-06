@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 import QuestionShow from './question_show';
 import { fetchQuestion } from '../../actions/questions_actions';
 import { removeEntity } from '../../actions/entity_actions';
-import { upVoteQuestion } from '../../actions/vote_actions';
-import { downVoteQuestion } from '../../actions/vote_actions';
+import { upVoteQuestion, downVoteQuestion } from '../../actions/vote_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   const questionId = ownProps.match.params.id;
@@ -30,12 +30,14 @@ const mapStateToProps = (state, ownProps) => {
     questionId,
     author,
     question,
-    currentUser: state.session.id
+    questionTitle: state.entities.questions[questionId].title,
+    currentUserId: state.entities.users[state.session.id].id
   };
   if (votes !== undefined) {
     returnValue.votes = votes;
     returnValue.currentUserVote = currentUserVote;
   }
+  
   return returnValue;
 }
 

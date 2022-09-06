@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import moment from 'moment';
+
 
 class QuestionShow extends React.Component {
   constructor(props) {
@@ -12,6 +14,7 @@ class QuestionShow extends React.Component {
     this.submitAnswer = this.submitAnswer.bind(this);
     this.changeVote = this.changeVote.bind(this);
     this.votingButtons = this.votingButtons.bind(this);
+    this.editButton = this.editButton.bind(this);
   }
 
   componentDidMount() {
@@ -23,7 +26,9 @@ class QuestionShow extends React.Component {
   }
 
   update(field) {
-    return (event) => this.setState({[field]: event.currentTarget.value});
+    return (
+      (event) => this.setState({[field]: event.currentTarget.value})
+    );
   }
 
   submitAnswer() {
@@ -33,7 +38,6 @@ class QuestionShow extends React.Component {
 
   changeVote(vote) {
     let newUserVote;
-
     if (vote === 1) {
       this.props.upVoteQuestion(this.props.question.id);
       newUserVote = 1
@@ -41,11 +45,9 @@ class QuestionShow extends React.Component {
       this.props.downVoteQuestion(this.props.question.id);
       newUserVote = -1
     }
-
     if (vote === this.state.currentUserVote) {
       newUserVote = 0;
     }
-    
     this.setState({
       currentUserVote: newUserVote,
     });
@@ -66,20 +68,26 @@ class QuestionShow extends React.Component {
     return timeSince.fromNow();
   }
 
+  editButton() {
+    const { question, currentUserId } = this.props;
+    return (question.author_id === currentUserId) ? (
+      <div className='editButton-container'>
+        <Link className='editButton' to={`/questions/${question.id}/edit`}>Edit/Delete Question</Link>
+      </div>
+    ) : (null);
+  }
+
   votingButtons() {
     let currentUserVote = 0;
     let votes = 0;
-
     if (this.state.currentUserVote) {
       currentUserVote = this.state.currentUserVote;
     }
-
     if (this.state.votes) {
       votes = this.state.votes;
     }
     return (
       <div className='question-show-voting-buttons'>
-
         <button className='voteButton' onClick={() => this.changeVote(1)}>
           <div className='upVote'></div>
         </button>
@@ -89,10 +97,9 @@ class QuestionShow extends React.Component {
         <button className='voteButton' onClick={() => this.changeVote(-1)}>
           <div className='downVote'></div>
         </button>
-
       </div>
     );
-  }
+  };
 
   render() {
     return (this.props.question) ? (
@@ -104,31 +111,27 @@ class QuestionShow extends React.Component {
 
         <div className='question-show-body'>
           {this.votingButtons()}
+
           <div>
-            
             <div className='questions-show-md'>
-              <ReactMarkdown className='qs-react-markdown' children={this.props.question.body} plugins={[remarkGfm]} />
+              <ReactMarkdown className='qs-react-markdown' children={this.props.question.body} remarkPlugins={[remarkGfm]} />
             </div>
-
             <div className='question-show-other'>
-
               {/* <div className='question-show-tags-container'>
                 <span className='questions-row-tags'>javascript</span>
                 <span className='questions-row-tags'>react</span>
                 <span className='questions-row-tags'>component</span>
                 <span className='questions-row-tags'>object</span>
               </div> */}
-              
               <div className='question-timestamp'>
                 <time dateTime={this.props.question.created_at}>Last updated {this.calculateTimeSince(this.props.question.created_at)}</time>
               </div>
-
+              {this.editButton()}
             </div>
           </div>
 
         </div>
       </div>
-
     ) : (null);
   }
 

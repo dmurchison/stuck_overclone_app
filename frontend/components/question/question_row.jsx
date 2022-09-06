@@ -6,10 +6,7 @@ import moment from 'moment';
 class QuestionRow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      author: this.props.question.author_id
-    }
-    // this.getAuthors = this.getAuthors.bind(this);
+    this.state = {};
   }
 
   handleRedirect() {
@@ -21,17 +18,6 @@ class QuestionRow extends React.Component {
     const timeSince = moment(time);
     return timeSince.fromNow();
   }
-
-  // getAuthors() {
-  //   const { authors } = this.props;
-  //   return (
-  //     <div>
-  //       {authors.map((author) => (
-  //         <p>{author.username}</p>
-  //       ))}
-  //     </div>
-  //   );
-  // }
 
   render() {
     const { question } = this.props;

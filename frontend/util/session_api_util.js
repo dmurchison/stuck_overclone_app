@@ -1,3 +1,5 @@
+
+// AJAX Requests
 export const fetchUser = (user) => {
   return $.ajax({
       method: "GET",
