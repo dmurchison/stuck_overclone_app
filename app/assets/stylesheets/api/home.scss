@@ -1,4 +1,4 @@
-// Splash Page
+// HOME -- /frontend/components/home
 
 // Variables
 $bg: #393939;
@@ -14,8 +14,7 @@ $errors: rgb(227, 30, 30);
 
 
 
-// SP-Container
-
+// Splash Page
 .splashpage-inner-border {
   display: flex;
   flex-direction: column;
@@ -76,3 +75,4 @@ $errors: rgb(227, 30, 30);
   color: $reg-orange;
   transform: scale(1.15);
 }
+

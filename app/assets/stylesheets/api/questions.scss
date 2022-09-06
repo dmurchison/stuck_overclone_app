@@ -1,4 +1,4 @@
-// Questions
+// QUESTIONS -- frontend/components/questions
 
 // Variables
 $bg: #393939;
@@ -16,47 +16,7 @@ $errors: rgb(227, 30, 30);
 
 
 
-.AskQuestion-btn {
-  background-color: $reg-blue;
-  color: #fff;
-  border: 0;
-  border-radius: 5px;
-  padding: 12px 10px;
-  font-style: none;
-  transition: 325ms;
-}
-.AskQuestion-btn:hover {
-  background: $hover-blue;
-}
-
-// Page Header
-.page-header-container {
-  display: grid;
-  grid-template-columns: 1fr min-content;
-  padding: 30px 20px;
-  align-items: center;
-}
-
-.page-header {
-  font-size: 1.8rem;
-  margin: 0;
-}
-
-.AskQuestion-btn {
-  background-color: $reg-blue;
-  color: #fff;
-  border: 0;
-  border-radius: 5px;
-  padding: 12px 10px;
-  font-style: none;
-  transition: 325ms;
-}
-.AskQuestion-btn:hover {
-  background: $hover-blue;
-}
-
-
-// Questions Row
+// Question Row
 .questions-index-rows {
   display: flex;
   flex-direction: column;
@@ -262,7 +222,7 @@ $errors: rgb(227, 30, 30);
 
 
 
-// Questions Form
+// Question Create
 .question-form-container {
   padding: 30px 20px;
   margin-bottom: 100px;
@@ -341,7 +301,6 @@ $errors: rgb(227, 30, 30);
     color: lightgreen;
   }
 }
-
 
 .question-form-submit {
   background-color: #378ad3;
