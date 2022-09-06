@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 
 class QuestionEdit extends React.Component {
@@ -52,35 +52,35 @@ class QuestionEdit extends React.Component {
   render() {
     const { questionTitle } = this.props;
     return (
-      <div className='question-form-container'>
-        <h1 className='questions-header question-form-header'>{questionTitle}</h1>
+      <div className="question-form-container">
+        <h1 className="questions-header question-form-header">{questionTitle}</h1>
         
         <form onSubmit={this.handleSubmit} action="">
 
         <input
-            className='question-form-title'
+            className="question-form-title"
             type="text"
             value={this.state ? this.state.title : ""}
             onChange={this.update("title")}
-            placeholder='You may make changes to the title of your question here.'
+            placeholder="You may make changes to the title of your question here."
           />
           
           <textarea 
-            className='question-form-body'
+            className="question-form-body"
             value={this.state ? this.state.body : ""}
             onChange={this.update("body")}
-            placeholder='You may make changes to the body of your question... (You may use markdown here)'
+            placeholder="You may make changes to the body of your question... (You may use markdown here)"
           />
 
-          <div className='question-form-md'>
-            <ReactMarkdown className='qf-react-markdown' children={this.state ? this.state.body : ""} remarkPlugins={[remarkGfm]} />
+          <div className="question-form-md">
+            <ReactMarkdown className="qf-react-markdown" children={this.state ? this.state.body : ""} remarkPlugins={[remarkGfm]} />
           </div>
 
-          <div className='errors'>
+          <div className="errors">
             {this.renderErrors()}
           </div>
 
-          <button className='question-form-submit' type="submit">Update Question</button>
+          <button className="question-form-submit" type="submit">Update Question</button>
           
         </form>
       </div>

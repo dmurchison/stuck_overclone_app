@@ -1,6 +1,6 @@
-import * as VoteAPIUtil from '../util/vote_api_util';
+import * as VoteAPIUtil from "../util/vote_api_util";
 
-export const HANDLE_VOTE = 'HANDLE_VOTE';
+export const HANDLE_VOTE = "HANDLE_VOTE";
 
 
 export const handleVote = (vote) => {

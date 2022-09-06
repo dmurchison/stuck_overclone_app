@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import Header from './header';
-import { logout } from '../../actions/session_actions';
+import { connect } from "react-redux";
+import Header from "./header";
+import { logout } from "../../actions/session_actions";
 
 
 const mapStateToProps = (state) => {

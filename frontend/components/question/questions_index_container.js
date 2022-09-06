@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import QuestionsIndex from './questions_index';
+import QuestionsIndex from "./questions_index";
 import { fetchQuestions } from "../../actions/questions_actions";
 
 

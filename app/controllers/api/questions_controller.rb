@@ -1,12 +1,13 @@
 class Api::QuestionsController < ApplicationController
+
   before_action :require_logged_in
 
   def index
     if params[:searchTerm]
-      args = params[:searchTerm].split(' ')
+      keywords = params[:searchTerm].split(" ")
       @questions = []
-      args.each do |arg|
-        @questions.concat(Question.where("lower(title) LIKE ?", "%#{arg.downcase}%"))
+      keywords.each do |keyword|
+        @questions.concat(Question.where("lower(title) LIKE ?", "%#{keyword.downcase}%"))
       end
     else
       @questions = Question.all
@@ -46,6 +47,15 @@ class Api::QuestionsController < ApplicationController
       render :show
     else
       render json: @question.errors.full_messages, status: 422
+    end
+  end
+
+  def search
+    @users = User.all
+    keywords = params[:keywords].split(" ")
+    questions = []
+    keywords.each do |keyword|
+      @questions.concat(Question.where("lower(title) LIKE ?", "%#{keyword.downcase}%"))
     end
   end
 

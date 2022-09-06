@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import QuestionShow from './question_show';
-import { fetchQuestion } from '../../actions/questions_actions';
-import { removeEntity } from '../../actions/entity_actions';
-import { upVoteQuestion, downVoteQuestion } from '../../actions/vote_actions';
+import QuestionShow from "./question_show";
+import { fetchQuestion } from "../../actions/questions_actions";
+import { removeEntity } from "../../actions/entity_actions";
+import { upVoteQuestion, downVoteQuestion } from "../../actions/vote_actions";
 
 
 const mapStateToProps = (state, ownProps) => {

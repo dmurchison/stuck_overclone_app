@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 
-class QuestionForm extends React.Component {
+class QuestionCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -49,34 +49,34 @@ class QuestionForm extends React.Component {
 
   render() {
     return (
-      <div className='question-form-container'>
-        <h1 className='questions-header question-form-header'>Ask a Public Question</h1>
+      <div className="question-form-container">
+        <h1 className="questions-header question-form-header">Ask a Public Question</h1>
         
         <form onSubmit={this.handleSubmit} action="">
 
           <input
-            className='question-form-title'
+            className="question-form-title"
             type="text"
             value={this.state.title}
             onChange={this.update("title")}
-            placeholder='How can I replace my react class component with a hook?'
+            placeholder="How can I replace my react class component with a hook?"
           />
           <textarea 
-            className='question-form-body'
+            className="question-form-body"
             value={this.state.body}
             onChange={this.update("body")}
-            placeholder='Please enter any other information about your question... (You may use markdown here)'
+            placeholder="Please enter any other information about your question... (You may use markdown here)"
           />
 
-          <div className='question-form-md'>
-            <ReactMarkdown className='qf-react-markdown' children={this.state.body} remarkPlugins={[remarkGfm]} />
+          <div className="question-form-md">
+            <ReactMarkdown className="qf-react-markdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
           </div>
 
-          <div className='errors'>
+          <div className="errors">
             {this.renderErrors()}
           </div>
 
-          <button className='question-form-submit' type="submit">Post Question</button>
+          <button className="question-form-submit" type="submit">Post Question</button>
           
         </form>
       </div>
@@ -85,4 +85,4 @@ class QuestionForm extends React.Component {
 
 }
 
-export default QuestionForm;
+export default QuestionCreate;
