@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 
 class LoginForm extends React.Component {
@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <div className='session-errors'>
+      <div className="session-errors">
         {this.props.errors.map( (error, i) => (
           <div key={`error-${i}`}>{error}</div>
         ))}
@@ -51,40 +51,40 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className='lf-container'>
+      <div className="lf-container">
 
         <Link className="lf-logo" to="/">
-          <img className='lf-icon' src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"/>
+          <img className="lf-icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"/>
         </Link>
-        <button className='demoLogin-btn' onClick={this.handleDemo}>Log in with Demo User</button>
+        <button className="demoLogin-btn" onClick={this.handleDemo}>Log in with Demo User</button>
 
-        <form className='login-form' onSubmit={this.handleSubmit}>
+        <form className="login-form" onSubmit={this.handleSubmit}>
 
-          <div className='errors'>
+          <div className="errors">
             {this.renderErrors()}
           </div>
 
-          <label className='lf-label'>Email</label>
+          <label className="lf-label">Email</label>
             <input 
-              className='lf-input'
+              className="lf-input"
               type="text"
               value={this.state.email}
-              onChange={this.handleInput('email')}
+              onChange={this.handleInput("email")}
             />
-          <label className='lf-label'>Password</label>
+          <label className="lf-label">Password</label>
             <input 
-              className='lf-input'
+              className="lf-input"
               type="password"
               value={this.state.password}
-              onChange={this.handleInput('password')}
+              onChange={this.handleInput("password")}
             />
 
-          <button className='lf-submit-button' type='submit'>Log in</button>
+          <button className="lf-submit-button" type="submit">Log in</button>
 
         </form>
 
-        <div className='lf-signup-link'>
-          <p>Don't have an account? {this.props.link}</p>
+        <div className="lf-signup-link">
+          <p>Don"t have an account? {this.props.link}</p>
         </div>
 
       </div>

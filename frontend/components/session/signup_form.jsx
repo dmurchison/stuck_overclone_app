@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 
 class SignupForm extends React.Component {
@@ -40,7 +40,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return (
-      <div className='session-errors'>
+      <div className="session-errors">
         {this.props.errors.map( (error, i) => (
           <div key={`error-${i}`}>{error}</div>
         ))}
@@ -50,59 +50,59 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className='sf-container'>
+      <div className="sf-container">
 
-        <div className='sf-left'>
-          <h1 className='sf-header'>Join the Stuck Overclone community</h1>
-          <div className='sf-promo'>
-            <img className='sf-logo' src="https://img.icons8.com/fluency/40/000000/ask-question.png"/>
+        <div className="sf-left">
+          <h1 className="sf-header">Join the Stuck Overclone community</h1>
+          <div className="sf-promo">
+            <img className="sf-logo" src="https://img.icons8.com/fluency/40/000000/ask-question.png"/>
             <p>Get unstuck --- ask a question</p>
           </div>
 
-          <div className='sf-promo'>
-            <img className='sf-logo' src="https://img.icons8.com/office/40/000000/sort.png"/>
+          <div className="sf-promo">
+            <img className="sf-logo" src="https://img.icons8.com/office/40/000000/sort.png"/>
             <p>Unlock new priviledges like voting and commenting</p>
           </div>
 
-          <div className='sf-promo'>
-            <img className='sf-logo' src="https://img.icons8.com/fluency/40/000000/tags.png"/>
+          <div className="sf-promo">
+            <img className="sf-logo" src="https://img.icons8.com/fluency/40/000000/tags.png"/>
             <p>Save your favorite tags, filters, and jobs</p>
           </div>
         </div>
 
-        <div className='sf-right'>
-          <button className='demoLogin-btn' onClick={this.handleDemo}>Log in with Demo User</button>
-          <form className='signup-form' onSubmit={this.handleSubmit}>
-            <div className='errors'>
+        <div className="sf-right">
+          <button className="demoLogin-btn" onClick={this.handleDemo}>Log in with Demo User</button>
+          <form className="signup-form" onSubmit={this.handleSubmit}>
+            <div className="errors">
               {this.renderErrors()}
             </div>
-            <label className='sf-label'>Display Name</label>
+            <label className="sf-label">Display Name</label>
               <input 
-                className='sf-input'
+                className="sf-input"
                 type="text"
                 value={this.state.username}
-                onChange={this.handleInput('username')}
+                onChange={this.handleInput("username")}
               />
 
-            <label className='sf-label'>Email</label>
+            <label className="sf-label">Email</label>
               <input
-                className='sf-input'
+                className="sf-input"
                 type="text" 
                 value={this.state.email}
-                onChange={this.handleInput('email')}
+                onChange={this.handleInput("email")}
               />
 
-            <label className='sf-label'>Password</label>
+            <label className="sf-label">Password</label>
               <input 
-                className='sf-input'
+                className="sf-input"
                 type="password"
                 value={this.state.password}
-                onChange={this.handleInput('password')}
+                onChange={this.handleInput("password")}
               />
-            <button className='sf-submit-button'>Sign up</button>
+            <button className="sf-submit-button">Sign up</button>
           </form>
 
-          <div className='sf-login-link'>
+          <div className="sf-login-link">
             <p>Already have an account? {this.props.link}</p>
           </div>
           

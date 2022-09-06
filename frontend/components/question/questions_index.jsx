@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import QuestionRow from './question_row';
+import React from "react";
+import { Link } from "react-router-dom";
+import QuestionRow from "./question_row";
 
 
 class QuestionsIndex extends React.Component {
@@ -16,7 +16,7 @@ class QuestionsIndex extends React.Component {
   getQuestionRow() {
     const { questions } = this.props;
     return (
-      <ul className='questions-index-rows'>
+      <ul className="questions-index-rows">
         {questions.map((question) => (
           <QuestionRow key={question.id} question={question} />
         ))}
@@ -26,11 +26,11 @@ class QuestionsIndex extends React.Component {
 
   render() {
     return (
-      <div className='questions-index-container'>
+      <div className="questions-index-container">
 
-        <div className='page-header-container'>
-          <h1 className='page-header'>All Questions</h1>
-          <Link className='AskQuestion-btn' to={'/questions/new'}>Ask&nbsp;Question </Link>
+        <div className="page-header-container">
+          <h1 className="page-header">All Questions</h1>
+          <Link className="AskQuestion-btn" to={"/questions/new"}>Ask&nbsp;Question </Link>
         </div>
 
         <div>

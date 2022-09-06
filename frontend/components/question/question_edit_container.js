@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import QuestionEdit from './question_edit';
-import { fetchQuestion, updateQuestion, removeQuestionErrors, removeQuestion } from '../../actions/questions_actions';
+import { connect } from "react-redux";
+import QuestionEdit from "./question_edit";
+import { fetchQuestion, updateQuestion, removeQuestionErrors, removeQuestion } from "../../actions/questions_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
