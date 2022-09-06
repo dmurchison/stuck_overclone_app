@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 
-class QuestionForm extends React.Component {
+class QuestionCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,4 +85,4 @@ class QuestionForm extends React.Component {
 
 }
 
-export default QuestionForm;
+export default QuestionCreate;
