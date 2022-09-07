@@ -1,6 +1,8 @@
 
 // AJAX Requests
 export const fetchQuestions = () => {
+  debugger
+
   return $.ajax({
     method: "GET",
     url: "/api/questions",
@@ -8,6 +10,8 @@ export const fetchQuestions = () => {
 }
 
 export const fetchQuestion = (questionId) => {
+  // debugger
+
   return $.ajax({
     method: "GET",
     url: `/api/questions/${questionId}`
@@ -15,6 +19,8 @@ export const fetchQuestion = (questionId) => {
 }
 
 export const createQuestion = (question) => {
+  // debugger
+
   return $.ajax({
     method: "POST",
     url: "/api/questions",
@@ -23,6 +29,8 @@ export const createQuestion = (question) => {
 }
 
 export const updateQuestion = (question) => {
+  // debugger
+
   return $.ajax({
     method: "PATCH",
     url: `/api/questions/${question.id}`,
@@ -31,6 +39,8 @@ export const updateQuestion = (question) => {
 }
 
 export const deleteQuestion = (questionId) => {
+  // debugger
+  
   return $.ajax({
     method: "DELETE",
     url: `/api/questions/${questionId}`

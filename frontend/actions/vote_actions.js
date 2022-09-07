@@ -12,16 +12,16 @@ export const handleVote = (vote) => {
 
 
 // Thunk action creators
-export const upVoteQuestion = (questionId) => dispatch => (
-  VoteAPIUtil.upVoteQuestion(questionId)
-    .then((vote) => (
+export const upVoteQuestion = (questionId) => dispatch => {
+  return VoteAPIUtil.upVoteQuestion(questionId)
+    .then((vote) => {
       dispatch(handleVote(vote))
-    ))
-);
+    });
+};
 
-export const downVoteQuestion = (questionId) => dispatch => (
-  VoteAPIUtil.downVoteQuestion(questionId)
-    .then((vote) => (
+export const downVoteQuestion = (questionId) => dispatch => {
+  return VoteAPIUtil.downVoteQuestion(questionId)
+    .then((vote) => {
       dispatch(handleVote(vote))
-    ))
-);
+    });
+};

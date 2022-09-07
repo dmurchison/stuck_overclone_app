@@ -34,39 +34,39 @@ export const removeSessionErrors = () => {
 
 
 // Thunk action creators
-export const signup = (user) => dispatch => (
-  SessionAPIUtil.signup(user)
-    .then((user) => (
+export const signup = (user) => dispatch => {
+  return SessionAPIUtil.signup(user)
+    .then(user => {
       dispatch(receiveCurrentUser(user))
-    ), err => (
+    }, err => {
       dispatch(receiveSessionErrors(err.responseJSON))
-    ))
-);
+    });
+};
 
-export const login = (user) => dispatch => (
-  SessionAPIUtil.login(user)
-    .then((user) => (
+export const login = (user) => dispatch => {
+  return SessionAPIUtil.login(user)
+    .then(user => {
       dispatch(receiveCurrentUser(user))
-    ), err => (
+    }, err => {
       dispatch(receiveSessionErrors(err.responseJSON))
-    ))
-);
+    });
+};
 
-export const logout = () => dispatch => (
-  SessionAPIUtil.logout()
-    .then(() => (
+export const logout = () => dispatch => {
+  return SessionAPIUtil.logout()
+    .then(() => {
       dispatch(logoutCurrentUser())
-    ), err => (
+    }, err => {
       dispatch(receiveSessionErrors(err.responseJSON))
-    ))
-);
+    });
+};
 
-export const fetchUser = (user) => dispatch => (
-  SessionAPIUtil.fetchUser(user)
-    .then((user) => (
+export const fetchUser = (user) => dispatch => {
+  return SessionAPIUtil.fetchUser(user)
+    .then(user => {
       dispatch(receiveCurrentUser(user))
-    ), err => (
+    }, err => {
       dispatch(receiveSessionErrors(err.responseJSON))
-    ))
-);
+    });
+};
 

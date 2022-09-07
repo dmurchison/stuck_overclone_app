@@ -1,5 +1,8 @@
 
 // Custom Data Selection Reducers
+export const getAllQuestions = (state) => Object.values(state.entities.questions).reverse();
+
+
 export const asArray = ({ questions }) => (
   Object.keys(questions).map((key) => questions[key])
 );
