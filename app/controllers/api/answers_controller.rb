@@ -3,12 +3,14 @@ class Api::AnswersController < ApplicationController
   before_action :require_logged_in, only: [:create]
 
   def show
+    # debugger
     @answer = Answer.find(params[:id])
     @author = User.find_by(id: @answer.author_id)
     render :show
   end
 
   def create
+    # debugger
     @answer = Answer.new(answer_params)
     @answer.author_id = current_user.id
     @answer.question_id = params[:question_id]
@@ -20,6 +22,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def update
+    # debugger
     @answer = current_user.answers.find(params[:id])
     if @answer.update(answer_params)
         render :show
@@ -29,6 +32,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def destroy
+    # debugger
     @answer = Answer.find(params[:id])
     if @answer.destroy
         render :show
@@ -38,10 +42,12 @@ class Api::AnswersController < ApplicationController
   end
 
   def upvote
+    # debugger
     vote(1)
   end
 
   def downvote
+    # debugger
     vote(-1)
   end
 

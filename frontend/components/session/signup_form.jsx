@@ -3,6 +3,7 @@ import React from "react";
 
 class SignupForm extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.state = {
       username: "",
@@ -26,6 +27,7 @@ class SignupForm extends React.Component {
   }
 
   componentWillUnmount() {
+    // debugger
     this.props.removeSessionErrors();
   }
 
@@ -49,6 +51,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div className="sf-container">
 

@@ -1,6 +1,7 @@
-
 // AJAX Requests
+
 export const fetchUser = (user) => {
+  // debugger
   return $.ajax({
       method: "GET",
       url: `/api/users/${user.id}`
@@ -8,6 +9,7 @@ export const fetchUser = (user) => {
 }
 
 export const signup = (user) => {
+  // debugger
   return $.ajax({
     method: "POST",
     url: "/api/users",
@@ -16,6 +18,7 @@ export const signup = (user) => {
 }
 
 export const login = (user) => {
+  // debugger
   return $.ajax({
     method: "POST",
     url: "/api/session",
@@ -24,6 +27,7 @@ export const login = (user) => {
 }
 
 export const logout = () => {
+  // debugger
   return $.ajax({
     method: "DELETE",
     url: "/api/session"

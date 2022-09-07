@@ -35,8 +35,10 @@ export const removeSessionErrors = () => {
 
 // Thunk action creators
 export const signup = (user) => dispatch => {
+  // debugger
   return SessionAPIUtil.signup(user)
     .then(user => {
+      // debugger
       dispatch(receiveCurrentUser(user))
     }, err => {
       dispatch(receiveSessionErrors(err.responseJSON))
@@ -44,8 +46,10 @@ export const signup = (user) => dispatch => {
 };
 
 export const login = (user) => dispatch => {
+  // debugger
   return SessionAPIUtil.login(user)
     .then(user => {
+      // debugger
       dispatch(receiveCurrentUser(user))
     }, err => {
       dispatch(receiveSessionErrors(err.responseJSON))
@@ -53,8 +57,10 @@ export const login = (user) => dispatch => {
 };
 
 export const logout = () => dispatch => {
+  // debugger
   return SessionAPIUtil.logout()
     .then(() => {
+      // debugger
       dispatch(logoutCurrentUser())
     }, err => {
       dispatch(receiveSessionErrors(err.responseJSON))
@@ -62,8 +68,10 @@ export const logout = () => dispatch => {
 };
 
 export const fetchUser = (user) => dispatch => {
+  // debugger
   return SessionAPIUtil.fetchUser(user)
     .then(user => {
+      // debugger
       dispatch(receiveCurrentUser(user))
     }, err => {
       dispatch(receiveSessionErrors(err.responseJSON))

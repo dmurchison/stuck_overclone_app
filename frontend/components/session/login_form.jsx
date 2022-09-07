@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 class LoginForm extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.state = {
       email: "",
@@ -27,6 +28,7 @@ class LoginForm extends React.Component {
   }
 
   componentWillUnmount() {
+    // debugger
     this.props.removeSessionErrors();
   }
 
@@ -50,6 +52,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div className="lf-container">
 

@@ -5,15 +5,18 @@ import remarkGfm from "remark-gfm";
 
 class QuestionEdit extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.state = this.props.question;
   }
   
   componentDidMount() {
+    // debugger
     this.props.fetchQuestion(this.props.match.params.questionId);
   }
 
   componentWillUnmount() {
+    // debugger
     this.props.removeQuestionErrors();
   }
 
@@ -50,6 +53,7 @@ class QuestionEdit extends React.Component {
   }
 
   render() {
+    // debugger
     const { questionTitle } = this.props;
     return (
       <div className="question-form-container">

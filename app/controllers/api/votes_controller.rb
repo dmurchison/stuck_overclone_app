@@ -3,6 +3,7 @@ class Api::VotesController < ApplicationController
   before_action :require_logged_in
 
   def vote
+    # debugger
     @votable = new_vote.votable
 
     vote_type = params[:vote_type]

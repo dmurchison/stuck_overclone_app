@@ -45,34 +45,28 @@ export const removeQuestionErrors = () => {
 
 // Thunk action creators
 export const fetchQuestions = () => dispatch => {
-  debugger
-
+  // debugger
   return QuestionAPIUtil.fetchQuestions()
     .then(questions => {
-      debugger
-
+      // debugger
       dispatch(receiveQuestions(questions))
     })
 };
 
 export const fetchQuestion = (questionId) => dispatch => {
   // debugger
-  
   return QuestionAPIUtil.fetchQuestion(questionId)
     .then(question => {
       // debugger
-
       dispatch(receiveQuestion(question))
     });
 };
 
 export const createQuestion = (question) => dispatch => {
   // debugger
-
   return QuestionAPIUtil.createQuestion(question)
     .then(question => {
       // debugger
-
       dispatch(receiveQuestion(question))
     }, err => {
       dispatch(recieveQuestionErrors(err.responseJSON))
@@ -81,22 +75,18 @@ export const createQuestion = (question) => dispatch => {
 
 export const updateQuestion = (question) => dispatch => {
   // debugger
-
   return QuestionAPIUtil.updateQuestion(question)
     .then(question => {
       // debugger
-
       dispatch(receiveQuestion(question))
     });
 };
 
 export const deleteQuestion = (questionId) => dispatch => {
   // debugger
-
   return QuestionAPIUtil.deleteQuestion(questionId)
   .then(question => {
       // debugger
-      
       dispatch(removeQuestion(question))
     });
 };

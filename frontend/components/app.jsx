@@ -21,6 +21,7 @@ import { SplashPage } from "./home/splash_page";
 import { Footer } from "./nav/footer";
 
 
+// Frontend Application
 export const App = () => {
   return (
     <>

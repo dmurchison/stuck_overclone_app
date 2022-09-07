@@ -6,14 +6,17 @@ import { sortFunc, toArr } from "../../reducers/selectors_reducer";
 
 
 const mapStateToProps = (state) => {
+  // debugger
   const id = state.session.id
   let questions = sortFunc(toArr(state.entities.questions));
   let usersQuestions = [];
+
   questions.forEach((question) => {
     if (question.author_id === id) {
       usersQuestions.push(question)
     }
   })
+  
   return {
     usersQuestions: usersQuestions,
     currentUser: state.entities.users[id]

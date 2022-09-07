@@ -5,6 +5,7 @@ import { fetchUser } from "../../actions/session_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   let question = ownProps.question;
   delete ownProps.question;
 
