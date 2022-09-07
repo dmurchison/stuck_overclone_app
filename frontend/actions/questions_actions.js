@@ -22,13 +22,6 @@ export const receiveQuestion = (question) => {
   };
 }
 
-export const receiveAuthors = (question) => {
-  return {
-    type: RECEIVE_AUTHORS,
-    question
-  };
-}
-
 export const removeQuestion = (question) => {
   return {
     type: REMOVE_QUESTION,
@@ -51,40 +44,50 @@ export const removeQuestionErrors = () => {
 
 
 // Thunk action creators
-export const fetchQuestions = () => dispatch => (
-  QuestionAPIUtil.fetchQuestions()
-    .then(questions => (
+export const fetchQuestions = () => dispatch => {
+  // debugger
+  return QuestionAPIUtil.fetchQuestions()
+    .then(questions => {
+      // debugger
       dispatch(receiveQuestions(questions))
-    ))
-);
+    })
+};
 
-export const fetchQuestion = (questionId) => dispatch => (
-  QuestionAPIUtil.fetchQuestion(questionId)
-    .then(question => (
+export const fetchQuestion = (questionId) => dispatch => {
+  // debugger
+  return QuestionAPIUtil.fetchQuestion(questionId)
+    .then(question => {
+      // debugger
       dispatch(receiveQuestion(question))
-    ))
-);
+    });
+};
 
-export const createQuestion = (question) => dispatch => (
-  QuestionAPIUtil.createQuestion(question)
-    .then(question => (
+export const createQuestion = (question) => dispatch => {
+  // debugger
+  return QuestionAPIUtil.createQuestion(question)
+    .then(question => {
+      // debugger
       dispatch(receiveQuestion(question))
-    ), err => (
+    }, err => {
       dispatch(recieveQuestionErrors(err.responseJSON))
-    ))
-);
+    });
+};
 
-export const updateQuestion = (question) => dispatch => (
-  QuestionAPIUtil.updateQuestion(question)
-    .then(question => (
+export const updateQuestion = (question) => dispatch => {
+  // debugger
+  return QuestionAPIUtil.updateQuestion(question)
+    .then(question => {
+      // debugger
       dispatch(receiveQuestion(question))
-    ))
-);
+    });
+};
 
-export const deleteQuestion = (questionId) => dispatch => (
-  QuestionAPIUtil.deleteQuestion(questionId)
-    .then(question => (
+export const deleteQuestion = (questionId) => dispatch => {
+  // debugger
+  return QuestionAPIUtil.deleteQuestion(questionId)
+  .then(question => {
+      // debugger
       dispatch(removeQuestion(question))
-    ))
-);
+    });
+};
 

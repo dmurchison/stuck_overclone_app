@@ -4,6 +4,7 @@ import { fetchQuestion, updateQuestion, removeQuestionErrors, removeQuestion } f
 
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   const question = state.entities.questions[ownProps.match.params.questionId];
   const currentUserId = state.entities.users[state.session.id];
   return {

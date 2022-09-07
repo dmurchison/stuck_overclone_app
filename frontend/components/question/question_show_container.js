@@ -6,20 +6,25 @@ import { upVoteQuestion, downVoteQuestion } from "../../actions/vote_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   const questionId = ownProps.match.params.id;
   let question = {};
   let author = {};
   let votes;
   let currentUserVote = 0;
+
   if (state.entities.questions && state.entities.questions[questionId]) {
     const tempQuestion = state.entities.questions[questionId];
     question = tempQuestion.question;
     author = tempQuestion.author_id;
+
     if (tempQuestion.votes && Object.keys(tempQuestion.votes).length > 0) {
       votes = 0;
+
       Object.keys(tempQuestion.votes).forEach((vote) => {
         let currentVote = tempQuestion.votes[vote];
         votes += currentVote.numVotes;
+
         if (currentVote.userId === state.session.id) {
           currentUserVote = currentVote.value;
         }
@@ -36,7 +41,7 @@ const mapStateToProps = (state, ownProps) => {
     returnValue.votes = votes;
     returnValue.currentUserVote = currentUserVote;
   }
-  
+
   return returnValue;
 }
 

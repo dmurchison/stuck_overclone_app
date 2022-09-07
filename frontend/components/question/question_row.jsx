@@ -5,6 +5,7 @@ import moment from "moment";
 
 class QuestionRow extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.state = {};
   }
@@ -20,6 +21,7 @@ class QuestionRow extends React.Component {
   }
 
   render() {
+    // debugger
     const { question } = this.props;
     return (
       <div className="questions-row-container">

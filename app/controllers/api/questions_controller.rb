@@ -3,6 +3,7 @@ class Api::QuestionsController < ApplicationController
   before_action :require_logged_in, only: [:create]
 
   def index
+    # debugger
     if params[:searchTerm]
       keywords = params[:searchTerm].split(" ")
       @questions = []
@@ -12,17 +13,20 @@ class Api::QuestionsController < ApplicationController
     else
       @questions = Question.all
     end
+
     @users = User.all
     render :index
   end
 
   def show
+    # debugger
     @question = Question.find(params[:id])
     @author = User.find_by(id: @question.author_id)
     render :show
   end
 
   def create
+    # debugger
     @question = Question.new(question_params)
     @question.author_id = current_user.id
     if @question.save
@@ -33,6 +37,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def update
+    # debugger
     @question = current_user.questions.find(params[:id])
     if @question.update(question_params)
       render :show
@@ -42,6 +47,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def destroy
+    # debugger
     @question = Question.find(params[:id])
     if @question.destroy
       render :show
@@ -51,6 +57,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def search
+    # debugger
     @users = User.all
     keywords = params[:keywords].split(" ")
     questions = []
@@ -60,10 +67,13 @@ class Api::QuestionsController < ApplicationController
   end
 
   def upvote
+    # debugger
     vote(1)
   end
 
   def downvote
+    # debugger
+
     vote(-1)
   end
 

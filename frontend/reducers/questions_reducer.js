@@ -11,12 +11,15 @@ export const questionsReducer = (state = {}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_QUESTIONS:
+      // debugger
       newState = Object.assign({}, action.questions.questions)
       return newState;
     case RECEIVE_QUESTION:
+      // debugger
       newState = Object.assign({}, { [action.question.question.id]: action.question });
       return newState;
     case REMOVE_QUESTION:
+      // debugger
       newState = Object.assign({}, state);
       delete newState[action.questionId];
       return newState;
