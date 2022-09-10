@@ -33,7 +33,7 @@ export const App = () => {
         </Switch>
         <Switch>
           <HomeRoute exact path="/" component={QuestionsIndexContainer} />
-          <ProtectedRoute exact path="/questions/new" component={QuestionCreateContainer} />
+          <ProtectedRoute exact path="/questions/new" component={QuestionFormContainer} />
           <ProtectedRoute exact path="/users/:id" component={ProfilePageContainer} />
           <ProtectedRoute exact path="/questions/:id" component={QuestionShowContainer} />
           <ProtectedRoute exact path="/questions/:questionId/edit" component={QuestionEditContainer} />

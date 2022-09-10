@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import QuestionRow from "../question/question_row";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import QuestionRow from '../question/question_row';
 
 
 class ProfilePage extends React.Component {
