@@ -1,9 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 
 class LoginForm extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.state = {
       email: "",
@@ -27,6 +28,7 @@ class LoginForm extends React.Component {
   }
 
   componentWillUnmount() {
+    // debugger
     this.props.removeSessionErrors();
   }
 
@@ -50,6 +52,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div className="lf-container">
 
@@ -84,7 +87,7 @@ class LoginForm extends React.Component {
         </form>
 
         <div className="lf-signup-link">
-          <p>Don't have an account? {this.props.link}</p>
+          <p>Don"t have an account? {this.props.link}</p>
         </div>
 
       </div>

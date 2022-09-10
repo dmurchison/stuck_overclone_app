@@ -1,7 +1,7 @@
 import {
   RECEIVE_SESSION_ERRORS,
   REMOVE_SESSION_ERRORS,
-} from '../../actions/session_actions';
+} from "../../actions/session_actions";
 
 
 export const sessionErrorsReducer = (state = [], action) => {

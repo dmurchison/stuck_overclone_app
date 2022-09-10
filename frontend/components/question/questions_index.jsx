@@ -1,15 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import QuestionRow from './question_row';
+import React from "react";
+import { Link } from "react-router-dom";
+import QuestionRow from "./question_row";
 
 
 class QuestionsIndex extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.getQuestionRow = this.getQuestionRow.bind(this);
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchQuestions();
   }
 
@@ -25,6 +27,7 @@ class QuestionsIndex extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div className="questions-index-container">
 

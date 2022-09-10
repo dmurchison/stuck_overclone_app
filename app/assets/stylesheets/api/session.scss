@@ -1,4 +1,4 @@
-// Session
+// SESSION -- frontend/components/session
 
 // Variables
 $bg: #393939;
@@ -13,16 +13,7 @@ $reg-orange: orange;
 $hover-orange: rgb(183, 119, 0);
 $errors: rgb(231, 68, 68);
 
-.errors {
-  p {
-    margin-bottom: 5px
-  };
-  font-size: smaller;
-  color: $errors;
-  margin-top: 5px;
-  margin-bottom: 50px;
-  font-weight: bolder;
-}
+
 
 // Session Forms
 .lf-container {
@@ -136,8 +127,9 @@ $errors: rgb(231, 68, 68);
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: center;
-    -ms-flex-pack: center;
+  -ms-flex-pack: center;
 }
+
 
 
 // Demo Login
@@ -158,5 +150,19 @@ $errors: rgb(231, 68, 68);
   border-color: $reg-orange;
   transform: scale(1.025);
   cursor: pointer;
+}
+
+
+
+// Session Errors
+.errors {
+  p {
+    margin-bottom: 5px
+  };
+  font-size: smaller;
+  color: $errors;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  font-weight: bolder;
 }
 

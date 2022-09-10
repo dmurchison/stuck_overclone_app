@@ -1,12 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import moment from 'moment';
+import React from "react";
+import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import moment from "moment";
 
 
 class QuestionShow extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.state = {
       body: "",
@@ -18,10 +19,12 @@ class QuestionShow extends React.Component {
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchQuestion(this.props.questionId);
   }
 
   componentWillUnmount() {
+    // debugger
     this.props.removeEntity();
   }
 
@@ -102,6 +105,7 @@ class QuestionShow extends React.Component {
   };
 
   render() {
+    // debugger
     return (this.props.question) ? (
       <div className="question-show-container">
 

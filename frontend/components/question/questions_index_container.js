@@ -4,9 +4,10 @@ import { fetchQuestions } from '../../actions/questions_actions';
 
 
 const mapStateToProps = (state) => {
+  // debugger
+  const questions = state.entities.questions;
   return {
-    questions: Object.values(state.entities.questions).reverse(),
-    authors: Object.values(state.entities.users)
+    questions: Object.values(questions).reverse(),
   };
 }
 

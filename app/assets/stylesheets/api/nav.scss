@@ -1,4 +1,4 @@
-// NavBars
+// NAV -- frontend/components/nav
 
 // Variables
 $bg: #393939;
@@ -127,6 +127,8 @@ $lightSmoke: rgb(175, 175, 175);
   transform: scale(1.15);
 }
 
+
+
 // Main Header
 .header-container {
   background-color: $bg;
@@ -138,7 +140,7 @@ $lightSmoke: rgb(175, 175, 175);
 
 .header-logo {
   display: inline-block;
-  padding: 0px 15px;
+  padding: 0px 10px;
   height: 50px;
   line-height: 30px;
   color: #fff;

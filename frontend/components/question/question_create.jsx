@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 
-class QuestionForm extends React.Component {
+class QuestionCreate extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.state = {
       title: "",
@@ -16,6 +17,7 @@ class QuestionForm extends React.Component {
   }
 
   componentWillUnmount() {
+    // debugger
     this.props.removeQuestionErrors();
   }
 
@@ -48,6 +50,7 @@ class QuestionForm extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div className="question-form-container">
         <h1 className="questions-header question-form-header">Ask a Public Question</h1>
@@ -85,4 +88,4 @@ class QuestionForm extends React.Component {
 
 }
 
-export default QuestionForm;
+export default QuestionCreate;

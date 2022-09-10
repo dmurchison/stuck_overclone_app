@@ -1,9 +1,10 @@
-import { connect } from 'react-redux';
-import QuestionEdit from './question_edit';
-import { fetchQuestion, updateQuestion, removeQuestionErrors, removeQuestion } from '../../actions/questions_actions';
+import { connect } from "react-redux";
+import QuestionEdit from "./question_edit";
+import { fetchQuestion, updateQuestion, removeQuestionErrors, removeQuestion } from "../../actions/questions_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   const question = state.entities.questions[ownProps.match.params.questionId];
   const currentUserId = state.entities.users[state.session.id];
   return {

@@ -5,11 +5,13 @@ import QuestionRow from '../question/question_row';
 
 class ProfilePage extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.getQuestionRow = this.getQuestionRow.bind(this);
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchQuestions();
   }
 
@@ -25,6 +27,7 @@ class ProfilePage extends React.Component {
   }
 
   render() {
+    // debugger
     const { currentUser } = this.props;
     return (
       <div className="questions-index-container">

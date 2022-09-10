@@ -1,10 +1,11 @@
-import { connect } from 'react-redux';
-import QuestionRow from './question_row';
-import { removeEntity } from '../../actions/questions_actions';
-import { fetchUser } from '../../actions/session_actions';
+import { connect } from "react-redux";
+import QuestionRow from "./question_row";
+import { removeEntity } from "../../actions/questions_actions";
+import { fetchUser } from "../../actions/session_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   let question = ownProps.question;
   delete ownProps.question;
 
