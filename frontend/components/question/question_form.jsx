@@ -31,10 +31,10 @@ class QuestionForm extends React.Component {
     e.preventDefault();
     this.props.createQuestion(this.state)
       .then((res) => {
-        this.props.errors.body ? ( this.setState({errors: true}) ) : ( 
+        this.props.errors.body ? ( this.setState({errors: true}) ) : (
           this.props.history.push(`/questions/${res.question.question.id}`)
         );
-      })
+      });
   }
 
   renderErrors() {
