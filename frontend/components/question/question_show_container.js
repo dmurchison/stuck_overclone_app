@@ -1,4 +1,4 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import QuestionShow from './question_show';
 import { fetchQuestion } from '../../actions/questions_actions';
 import { removeEntity } from '../../actions/entity_actions';
@@ -30,7 +30,6 @@ const mapStateToProps = (state, ownProps) => {
     questionId,
     author,
     question,
-    questionTitle: state.entities.questions[questionId].title,
     currentUserId: state.entities.users[state.session.id].id
   };
   if (votes !== undefined) {

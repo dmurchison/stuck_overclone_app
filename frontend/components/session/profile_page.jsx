@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import QuestionRow from "../question/question_row";
+import QuestionRow from '../question/question_row';
 
 
 class ProfilePage extends React.Component {
@@ -16,7 +16,7 @@ class ProfilePage extends React.Component {
   getQuestionRow() {
     const { usersQuestions } = this.props;
     return (
-      <div className='questions-index-rows'>
+      <div className="questions-index-rows">
         {usersQuestions.map((question) => (
           <QuestionRow key={question.id} question={question} />
         ))}
@@ -27,14 +27,14 @@ class ProfilePage extends React.Component {
   render() {
     const { currentUser } = this.props;
     return (
-      <div className='questions-index-container'>
+      <div className="questions-index-container">
 
-        <div className='page-header-container'>
-          <h1 className='page-header'>{currentUser.username}'s Questions</h1>
-          <Link className='AskQuestion-btn' to={'/questions/new'}>Ask&nbsp;Question </Link>
+        <div className="page-header-container">
+          <h1 className="page-header">{currentUser.username}'s Questions</h1>
+          <Link className="AskQuestion-btn" to={"/questions/new"}>Ask&nbsp;Question </Link>
         </div>
 
-        <div className='users-page-questions-list'>
+        <div className="users-page-questions-list">
           {this.getQuestionRow()}
         </div>
 

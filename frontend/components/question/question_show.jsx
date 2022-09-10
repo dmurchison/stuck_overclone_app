@@ -9,7 +9,7 @@ class QuestionShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: '',
+      body: "",
     };
     this.submitAnswer = this.submitAnswer.bind(this);
     this.changeVote = this.changeVote.bind(this);
@@ -33,7 +33,7 @@ class QuestionShow extends React.Component {
 
   submitAnswer() {
     this.props.submitAnswer(this.props.questionId, this.state.body);
-    this.state.body = '';
+    this.state.body = "";
   }
 
   changeVote(vote) {
@@ -71,8 +71,8 @@ class QuestionShow extends React.Component {
   editButton() {
     const { question, currentUserId } = this.props;
     return (question.author_id === currentUserId) ? (
-      <div className='editButton-container'>
-        <Link className='editButton' to={`/questions/${question.id}/edit`}>Edit/Delete Question</Link>
+      <div className="editButton-container">
+        <Link className="editButton" to={`/questions/${question.id}/edit`}>Edit/Delete Question</Link>
       </div>
     ) : (null);
   }
@@ -87,15 +87,15 @@ class QuestionShow extends React.Component {
       votes = this.state.votes;
     }
     return (
-      <div className='question-show-voting-buttons'>
-        <button className='voteButton' onClick={() => this.changeVote(1)}>
-          <div className='upVote'></div>
+      <div className="question-show-voting-buttons">
+        <button className="voteButton" onClick={() => this.changeVote(1)}>
+          <div className="upVote"></div>
         </button>
 
-        <div className='totalVotes'>{votes + currentUserVote}</div>
+        <div className="totalVotes">{votes + currentUserVote}</div>
 
-        <button className='voteButton' onClick={() => this.changeVote(-1)}>
-          <div className='downVote'></div>
+        <button className="voteButton" onClick={() => this.changeVote(-1)}>
+          <div className="downVote"></div>
         </button>
       </div>
     );
@@ -103,27 +103,27 @@ class QuestionShow extends React.Component {
 
   render() {
     return (this.props.question) ? (
-      <div className='question-show-container'>
+      <div className="question-show-container">
 
-        <div className='page-header-container'>
-          <h1 className='question-show-title'>{this.props.question.title}</h1>
+        <div className="page-header-container">
+          <h1 className="question-show-title">{this.props.question.title}</h1>
         </div>
 
-        <div className='question-show-body'>
+        <div className="question-show-body">
           {this.votingButtons()}
 
           <div>
-            <div className='questions-show-md'>
-              <ReactMarkdown className='qs-react-markdown' children={this.props.question.body} remarkPlugins={[remarkGfm]} />
+            <div className="questions-show-md">
+              <ReactMarkdown className="qs-react-markdown" children={this.props.question.body} remarkPlugins={[remarkGfm]} />
             </div>
-            <div className='question-show-other'>
-              {/* <div className='question-show-tags-container'>
-                <span className='questions-row-tags'>javascript</span>
-                <span className='questions-row-tags'>react</span>
-                <span className='questions-row-tags'>component</span>
-                <span className='questions-row-tags'>object</span>
+            <div className="question-show-other">
+              {/* <div className="question-show-tags-container">
+                <span className="questions-row-tags">javascript</span>
+                <span className="questions-row-tags">react</span>
+                <span className="questions-row-tags">component</span>
+                <span className="questions-row-tags">object</span>
               </div> */}
-              <div className='question-timestamp'>
+              <div className="question-timestamp">
                 <time dateTime={this.props.question.created_at}>Last updated {this.calculateTimeSince(this.props.question.created_at)}</time>
               </div>
               {this.editButton()}

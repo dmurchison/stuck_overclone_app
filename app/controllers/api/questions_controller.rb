@@ -3,7 +3,7 @@ class Api::QuestionsController < ApplicationController
 
   def index
     if params[:searchTerm]
-      args = params[:searchTerm].split(' ')
+      args = params[:searchTerm].split(" ")
       @questions = []
       args.each do |arg|
         @questions.concat(Question.where("lower(title) LIKE ?", "%#{arg.downcase}%"))

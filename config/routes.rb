@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  # 'namespace' allows us to name these routes to easily make ajax requests on the frontend
+  # "namespace" allows us to name these routes to easily make ajax requests on the frontend
   namespace :api, defaults: {format: :json} do
 
     # User Authentication Routes
@@ -9,10 +9,10 @@ Rails.application.routes.draw do
     
     # Question Routes
     resources :questions, only: [:index, :show, :create, :update, :destroy] do
-      # 'member' allows us to attach the upvote and downvote ids to the questions
+      # "member" allows us to attach the upvote and downvote ids to the questions
       member do
-        post 'upvote'
-        post 'downvote'
+        post "upvote"
+        post "downvote"
       end
       resources :answers, only: [:create]
     end
@@ -22,8 +22,8 @@ Rails.application.routes.draw do
     # Answers Routes
     resources :answers, only: [:show, :update, :destroy] do
       member do
-        post 'upvote'
-        post 'downvote'
+        post "upvote"
+        post "downvote"
       end
     end
 

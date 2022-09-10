@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import QuestionsIndex from './questions_index';
-import { fetchQuestions } from "../../actions/questions_actions";
+import { fetchQuestions } from '../../actions/questions_actions';
 
 
 const mapStateToProps = (state) => {

@@ -8,8 +8,8 @@ import { signup, login, removeSessionErrors } from '../../actions/session_action
 const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
-    formType: 'Sign up',
-    link: <Link className='signup-form-login-button' to='/login'>Log in</Link>
+    formType: "Sign up",
+    link: <Link className="signup-form-login-button" to="/login">Log in</Link>
   };
 }
 

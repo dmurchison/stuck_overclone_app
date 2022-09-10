@@ -26,16 +26,16 @@ export const App = () => {
     <>
       <HeaderContainer />
         <Switch>
-          <SplashRoute exact path='/' component={SplashPage} />
-          <AuthRoute exact path='/login' component={LoginFormContainer} />
-          <AuthRoute exact path='/signup' component={SignupFormContainer} />
+          <SplashRoute exact path="/" component={SplashPage} />
+          <AuthRoute exact path="/login" component={LoginFormContainer} />
+          <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>
         <Switch>
-          <HomeRoute exact path='/' component={QuestionsIndexContainer} />
-          <ProtectedRoute exact path='/questions/new' component={QuestionFormContainer} />
-          <ProtectedRoute exact path='/users/:id' component={ProfilePageContainer} />
-          <ProtectedRoute exact path='/questions/:id' component={QuestionShowContainer} />
-          <ProtectedRoute exact path='/questions/:questionId/edit' component={QuestionEditContainer} />
+          <HomeRoute exact path="/" component={QuestionsIndexContainer} />
+          <ProtectedRoute exact path="/questions/new" component={QuestionFormContainer} />
+          <ProtectedRoute exact path="/users/:id" component={ProfilePageContainer} />
+          <ProtectedRoute exact path="/questions/:id" component={QuestionShowContainer} />
+          <ProtectedRoute exact path="/questions/:questionId/edit" component={QuestionEditContainer} />
         </Switch>
       <Footer />
     </>
