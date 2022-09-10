@@ -29,9 +29,9 @@ class QuestionShow extends React.Component {
   }
 
   update(field) {
-    return (
-      (event) => this.setState({[field]: event.currentTarget.value})
-    );
+    return (e) => {
+      this.setState({[field]: e.currentTarget.value})
+    }
   }
 
   submitAnswer() {
