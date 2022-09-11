@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import QuestionCreate from "./question_create";
-import { createQuestion, removeQuestionErrors } from "../../actions/questions_actions";
+import { connect } from 'react-redux';
+import QuestionCreate from './question_create';
+import { createQuestion, removeQuestionErrors } from '../../actions/questions_actions';
 
 
 const mapStateToProps = (state) => {
@@ -13,7 +13,6 @@ const mapStateToProps = (state) => {
     question: {
       title: "",
       body: "",
-      author_id: currentUserId
     }
   };
 }

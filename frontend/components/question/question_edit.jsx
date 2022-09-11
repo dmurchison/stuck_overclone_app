@@ -1,13 +1,21 @@
-import React from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 
 class QuestionEdit extends React.Component {
   constructor(props) {
     // debugger
     super(props);
-    this.state = this.props.question;
+    this.state = {
+      title: "",
+      body: "",
+      author_id: ""
+    }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+    this.deleteButton = this.deleteButton.bind(this);
   }
   
   componentDidMount() {
@@ -16,7 +24,6 @@ class QuestionEdit extends React.Component {
   }
 
   componentWillUnmount() {
-    // debugger
     this.props.removeQuestionErrors();
   }
 
@@ -32,14 +39,18 @@ class QuestionEdit extends React.Component {
     e.preventDefault();
     this.props.updateQuestion(this.state)
       .then((res) => {
-        this.props.errors.body ? ( this.setState({errors: true}) ) : (
-          this.props.history.push(`/questions/${res.question.question.id}`)
-        );
-      })
+        this.props.history.push(`/questions/${res.question.question.id}`)
+    });
   }
 
-  updateBody(value) {
-    this.setState({ body: value });
+  deleteButton() {
+    // debugger
+    const { question }= this.props;
+    return (
+      <button onClick={() => this.props.deleteQuestion(question.question.id).then(() => this.props.history.push("/"))}>
+        Delete
+      </button>
+    );
   }
 
   renderErrors() {
@@ -54,30 +65,28 @@ class QuestionEdit extends React.Component {
 
   render() {
     // debugger
-    const { questionTitle } = this.props;
-    return (
+    return (this.props.question) ? (
       <div className="question-form-container">
-        <h1 className="questions-header question-form-header">{questionTitle}</h1>
         
         <form onSubmit={this.handleSubmit} action="">
-
-        <input
+          <input
             className="question-form-title"
+            name="title"
             type="text"
             value={this.state ? this.state.title : ""}
             onChange={this.update("title")}
-            placeholder="You may make changes to the title of your question here."
+            placeholder={this.props.question.question.title}
           />
-          
           <textarea 
             className="question-form-body"
+            name="body"
             value={this.state ? this.state.body : ""}
             onChange={this.update("body")}
-            placeholder="You may make changes to the body of your question... (You may use markdown here)"
+            placeholder={this.props.question.question.body}
           />
 
           <div className="question-form-md">
-            <ReactMarkdown className="qf-react-markdown" children={this.state ? this.state.body : ""} remarkPlugins={[remarkGfm]} />
+            <ReactMarkdown className="qf-react-markdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
           </div>
 
           <div className="errors">
@@ -85,10 +94,14 @@ class QuestionEdit extends React.Component {
           </div>
 
           <button className="question-form-submit" type="submit">Update Question</button>
-          
         </form>
+
+        <div className="delete-question-btn">
+          {this.deleteButton()}
+        </div>
+
       </div>
-    );
+    ) : (null);
   }
 
 }

@@ -1,6 +1,6 @@
-import * as VoteAPIUtil from "../util/vote_api_util";
+import * as VoteAPIUtil from '../util/vote_api_util';
 
-export const HANDLE_VOTE = "HANDLE_VOTE";
+export const HANDLE_VOTE = 'HANDLE_VOTE';
 
 
 export const handleVote = (vote) => {
@@ -17,7 +17,7 @@ export const upVoteQuestion = (questionId) => dispatch => {
   return VoteAPIUtil.upVoteQuestion(questionId)
     .then((vote) => {
       // debugger
-      dispatch(handleVote(vote))
+      return dispatch(handleVote(vote))
     });
 };
 
@@ -26,6 +26,6 @@ export const downVoteQuestion = (questionId) => dispatch => {
   return VoteAPIUtil.downVoteQuestion(questionId)
     .then((vote) => {
       // debugger
-      dispatch(handleVote(vote))
+      return dispatch(handleVote(vote))
     });
 };

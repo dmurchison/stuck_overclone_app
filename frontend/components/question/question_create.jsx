@@ -1,23 +1,19 @@
-import React from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 
 class QuestionCreate extends React.Component {
   constructor(props) {
     // debugger
     super(props);
-    this.state = {
-      title: "",
-      body: "",
-      author_id: "",
-    }
+    this.state = this.props.question;
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
-
+  
   componentWillUnmount() {
-    // debugger
     this.props.removeQuestionErrors();
   }
 
@@ -33,9 +29,7 @@ class QuestionCreate extends React.Component {
     e.preventDefault();
     this.props.createQuestion(this.state)
       .then((res) => {
-        this.props.errors.body ? ( this.setState({errors: true}) ) : (
-          this.props.history.push(`/questions/${res.question.question.id}`)
-        );
+        this.props.history.push(`/questions/${res.question.question.id}`)
       });
   }
 
@@ -60,13 +54,13 @@ class QuestionCreate extends React.Component {
           <input
             className="question-form-title"
             type="text"
-            value={this.state.title}
+            value={this.state ? this.state.title : ""}
             onChange={this.update("title")}
             placeholder="How can I replace my react class component with a hook?"
           />
           <textarea 
             className="question-form-body"
-            value={this.state.body}
+            value={this.state ? this.state.body : ""}
             onChange={this.update("body")}
             placeholder="Please enter any other information about your question... (You may use markdown here)"
           />

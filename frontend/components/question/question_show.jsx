@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import moment from "moment";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import moment from 'moment';
 
 
 class QuestionShow extends React.Component {
@@ -24,14 +24,15 @@ class QuestionShow extends React.Component {
   }
 
   componentWillUnmount() {
-    // debugger
     this.props.removeEntity();
   }
 
   update(field) {
-    return (
-      (event) => this.setState({[field]: event.currentTarget.value})
-    );
+    return (e) => {
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
+    };
   }
 
   submitAnswer() {
