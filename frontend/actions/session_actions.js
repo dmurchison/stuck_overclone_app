@@ -1,9 +1,9 @@
-import * as SessionAPIUtil from "../util/session_api_util";
+import * as SessionAPIUtil from '../util/session_api_util';
 
-export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
-export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
-export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
-export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
+export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
+export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const REMOVE_SESSION_ERRORS = 'REMOVE_SESSION_ERRORS';
 
 
 export const receiveCurrentUser = (currentUser) => {
@@ -39,42 +39,49 @@ export const signup = (user) => dispatch => {
   return SessionAPIUtil.signup(user)
     .then(user => {
       // debugger
-      dispatch(receiveCurrentUser(user))
-    }, err => {
-      dispatch(receiveSessionErrors(err.responseJSON))
-    });
+      return dispatch(receiveCurrentUser(user));
+    }, 
+    errors => (
+      dispatch(receiveSessionErrors(errors.responseJSON))
+    ));
 };
+
 
 export const login = (user) => dispatch => {
   // debugger
   return SessionAPIUtil.login(user)
     .then(user => {
       // debugger
-      dispatch(receiveCurrentUser(user))
-    }, err => {
-      dispatch(receiveSessionErrors(err.responseJSON))
-    });
+      return dispatch(receiveCurrentUser(user));
+    }, 
+    errors => (
+      dispatch(receiveSessionErrors(errors.responseJSON))
+    ));
 };
+
 
 export const logout = () => dispatch => {
   // debugger
   return SessionAPIUtil.logout()
     .then(() => {
       // debugger
-      dispatch(logoutCurrentUser())
-    }, err => {
-      dispatch(receiveSessionErrors(err.responseJSON))
-    });
+      return dispatch(logoutCurrentUser());
+    }, 
+    errors => (
+      dispatch(receiveSessionErrors(errors.responseJSON))
+    ));
 };
+
 
 export const fetchUser = (user) => dispatch => {
   // debugger
   return SessionAPIUtil.fetchUser(user)
     .then(user => {
       // debugger
-      dispatch(receiveCurrentUser(user))
-    }, err => {
-      dispatch(receiveSessionErrors(err.responseJSON))
-    });
+      return dispatch(receiveCurrentUser(user));
+    }, 
+    errors => (
+      dispatch(receiveSessionErrors(errors.responseJSON))
+    ));
 };
 

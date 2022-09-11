@@ -1,4 +1,4 @@
-export const REMOVE_ENTITY = "REMOVE_ENTITY";
+export const REMOVE_ENTITY = 'REMOVE_ENTITY';
 
 
 export const removeEntity = () => {

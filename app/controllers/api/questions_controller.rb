@@ -38,7 +38,7 @@ class Api::QuestionsController < ApplicationController
 
   def update
     # debugger
-    @question = current_user.questions.find_by(id: params[:id])
+    @question = current_user.questions.find(params[:id])
     if @question.update(question_params)
       render :show
     else
@@ -88,7 +88,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:title, :body, :author_id)
+    params.require(:question).permit(:id, :title, :body, :author_id)
   end
 
 end
