@@ -87,7 +87,7 @@ class LoginForm extends React.Component {
         </form>
 
         <div className="lf-signup-link">
-          <p>Don"t have an account? {this.props.link}</p>
+          <p>Don't have an account? {this.props.link}</p>
         </div>
 
       </div>
