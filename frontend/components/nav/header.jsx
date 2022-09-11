@@ -16,8 +16,9 @@ class Header extends React.Component {
 
   buttonChange() {
     return this.props.currentUser ? (
+      
       <div className="header-buttons-div">
-        <form action="" className="header-search-form">
+        <form className="header-search-form">
           <input className="header-search-bar" type="text" placeholder="Search..." />
         </form>
         <div>
@@ -26,7 +27,9 @@ class Header extends React.Component {
           <Link className="header-button-right" to={"/"} onClick={this.logout}>Log out</Link>
         </div>
       </div>
+
     ) : (
+
       <div className="header-buttons-div">
         <Link className="header-button-left" to="/login">Log in</Link>
           &nbsp;
