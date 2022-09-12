@@ -27,6 +27,21 @@ class QuestionShow extends React.Component {
     this.props.removeEntity();
   }
 
+  componentDidUpdate() {
+    if (this.state.votes === undefined && this.props.votes !== undefined) {
+      const currentUserVote = this.props.currentUserVote ? this.props.currentUserVote : 0;
+      this.setState({
+        votes: this.props.votes - currentUserVote,
+        currentUserVote,
+      });
+    }
+  }
+
+  calculateTimeSince(time) {
+    const timeSince = moment(time);
+    return timeSince.fromNow();
+  }
+
   update(field) {
     return (e) => {
       this.setState({
@@ -57,30 +72,6 @@ class QuestionShow extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    if (this.state.votes === undefined && this.props.votes !== undefined) {
-      const currentUserVote = this.props.currentUserVote ? this.props.currentUserVote : 0;
-      this.setState({
-        votes: this.props.votes - currentUserVote,
-        currentUserVote,
-      });
-    }
-  }
-
-  calculateTimeSince(time) {
-    const timeSince = moment(time);
-    return timeSince.fromNow();
-  }
-
-  editButton() {
-    const { question, currentUserId } = this.props;
-    return (question.author_id === currentUserId) ? (
-      <div className="editButton-container">
-        <Link className="editButton" to={`/questions/${question.id}/edit`}>Edit/Delete Question</Link>
-      </div>
-    ) : (null);
-  }
-
   votingButtons() {
     let currentUserVote = 0;
     let votes = 0;
@@ -105,21 +96,31 @@ class QuestionShow extends React.Component {
     );
   };
 
+  editButton() {
+    const { question, currentUserId } = this.props;
+    return (question.author_id === currentUserId) ? (
+      <div className="editButton-container">
+        <Link className="editButton" to={`/questions/${question.id}/edit`}>Edit/Delete Question</Link>
+      </div>
+    ) : (null);
+  }
+
   render() {
     // debugger
-    return (this.props.question) ? (
+    const { question } = this.props;
+    return (question) ? (
       <div className="question-show-container">
 
         <div className="page-header-container">
-          <h1 className="question-show-title">{this.props.question.title}</h1>
+          <h1 className="question-show-title">{question.title}</h1>
         </div>
 
         <div className="question-show-body">
           {this.votingButtons()}
 
           <div>
-            <div className="questions-show-md">
-              <ReactMarkdown className="qs-react-markdown" children={this.props.question.body} remarkPlugins={[remarkGfm]} />
+            <div className="question-show-md">
+              <ReactMarkdown className="qs-react-markdown" children={question.body} remarkPlugins={[remarkGfm]} />
             </div>
             <div className="question-show-other">
               {/* <div className="question-show-tags-container">
@@ -129,7 +130,7 @@ class QuestionShow extends React.Component {
                 <span className="questions-row-tags">object</span>
               </div> */}
               <div className="question-timestamp">
-                <time dateTime={this.props.question.created_at}>Last updated {this.calculateTimeSince(this.props.question.created_at)}</time>
+                <time dateTime={question.created_at}>Last updated {this.calculateTimeSince(question.created_at)}</time>
               </div>
               {this.editButton()}
             </div>

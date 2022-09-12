@@ -10,8 +10,14 @@ class SignupForm extends React.Component {
       email: "",
       password: ""
     };
+    
     this.handleDemo = this.handleDemo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    // debugger
+    this.props.removeSessionErrors();
   }
 
   handleInput(type) {
@@ -26,10 +32,6 @@ class SignupForm extends React.Component {
     this.props.signup(user);
   }
 
-  componentWillUnmount() {
-    // debugger
-    this.props.removeSessionErrors();
-  }
 
   handleDemo(e) {
     e.preventDefault();

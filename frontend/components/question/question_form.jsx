@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 
-class QuestionCreate extends React.Component {
+class QuestionForm extends React.Component {
   constructor(props) {
     // debugger
     super(props);
@@ -27,7 +27,7 @@ class QuestionCreate extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createQuestion(this.state)
+    this.props.action(this.state)
       .then((res) => {
         this.props.history.push(`/questions/${res.question.question.id}`)
       });
@@ -47,7 +47,7 @@ class QuestionCreate extends React.Component {
     // debugger
     return (
       <div className="question-form-container">
-        <h1 className="questions-header question-form-header">Ask a Public Question</h1>
+        <h1 className="question-header question-form-header">{this.props.formType}</h1>
         
         <form onSubmit={this.handleSubmit} action="">
 
@@ -82,4 +82,4 @@ class QuestionCreate extends React.Component {
 
 }
 
-export default QuestionCreate;
+export default QuestionForm;
