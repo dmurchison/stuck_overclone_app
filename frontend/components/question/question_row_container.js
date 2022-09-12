@@ -23,7 +23,7 @@ const mapStateToProps = (state, ownProps) => {
       delete question[key];
     }
   });
-
+  // debugger
   return {
     ...question,
   };

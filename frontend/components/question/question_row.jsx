@@ -24,14 +24,14 @@ class QuestionRow extends React.Component {
     // debugger
     const { question } = this.props;
     return (
-      <div className="questions-row-container">
+      <div className="question-row-container">
 
-        <div className="questions-row-stats">1<span className="questions-row-stats-span">votes</span></div>
+        <div className="question-row-stats">1<span className="question-row-stats-span">votes</span></div>
         {/* <div className="questions-row-stats">{numVotes}<span className="questions-row-stats-span">votes</span></div> */}
-        <div className="questions-row-stats">2<span className="questions-row-stats-span">answers</span></div>
+        <div className="question-row-stats">2<span className="question-row-stats-span">answers</span></div>
         {/* <div className="questions-row-stats">{numAnswers}<span className="questions-row-stats-span">answers</span></div> */}
 
-        <div className="questions-row-title">
+        <div className="question-row-title">
           <Link className="question-title-link" to={`/questions/${question.id}`}>{question.title}</Link>
 
           {/* <span className="questions-row-tags">javascript</span>
@@ -40,7 +40,7 @@ class QuestionRow extends React.Component {
           <span className="questions-row-tags">object</span> */}
 
           <div className="question-timestamp">
-            <p dateTime={this.props.question.updated_at}>Last updated {this.calculateTimeSince(this.props.question.updated_at)}</p>
+            <p dateTime={question.updated_at}>Last updated {this.calculateTimeSince(question.updated_at)}</p>
           </div>
         </div>
       </div>

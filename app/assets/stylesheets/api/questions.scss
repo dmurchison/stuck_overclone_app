@@ -51,7 +51,7 @@ $errors: rgb(227, 30, 30);
   align-items: center;
   margin-bottom: 10rem;
 }
-.questions-row-container {
+.question-row-container {
   margin-top: .5px;
   border-top: 0;
   border-radius: 3px;
@@ -63,26 +63,26 @@ $errors: rgb(227, 30, 30);
   transition: 325ms;
   width: 75%;
 }
-.questions-row-container:hover {
+.question-row-container:hover {
   border: 1px solid $reg-orange;
   transform: scale(1.025);
 }
 
-.questions-row-stats {
+.question-row-stats {
   text-align: center;
   display: inline-block;
   font-size: 1.2rem;
   color: #aaa;
   margin-top: 7px;
 }
-.questions-row-stats-span {
+.question-row-stats-span {
   font-size: .7rem;
   display: block;
   font-weight: 300px;
   margin-top: 4px;
 }
 
-.questions-row-title {
+.question-row-title {
   padding: 0 30px;
 }
 
@@ -101,7 +101,7 @@ $errors: rgb(227, 30, 30);
   font-weight: 500;
 }
 
-.questions-row-tags {
+.question-row-tags {
   display: inline-block;
   margin-right: 5px;
   background-color: #3e4a52;
@@ -123,7 +123,6 @@ $errors: rgb(227, 30, 30);
 // Question Show
 .question-show-container {
   padding: 30px 75px;
-  margin-bottom: 100px;
   margin-bottom: 100px;
 }
 
@@ -256,7 +255,6 @@ $errors: rgb(227, 30, 30);
 .question-form-container {
   padding: 30px 20px;
   margin-bottom: 100px;
-  margin-bottom: 100px;
 }
 
 .question-form-header {
@@ -353,3 +351,43 @@ $errors: rgb(227, 30, 30);
 .questions-index-container {
   margin-bottom: 100px;
 }
+
+
+
+// Question Edit
+.question-edit-container {
+  padding: 15px 75px;
+  margin-bottom: 100px;
+  .question-form-container {
+    margin-bottom: 10px;
+  }
+}
+
+.question-edit-form {
+  margin-bottom: 10px;
+}
+
+.question-edit-body {
+  margin-top: 20px;
+}
+
+.deleteButton-container {
+  margin-top: 10px;
+}
+
+.deleteButton {
+  background-color: $hover-blue;
+  color: $reg-orange;
+  border: 2px;
+  border-style: groove;
+  border-color: $lt-orange;
+  border-radius: 5px;
+  padding: 10px;
+  transition: 325ms;
+  margin-bottom: 0;
+}
+.deleteButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
