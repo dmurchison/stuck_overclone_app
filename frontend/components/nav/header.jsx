@@ -15,21 +15,19 @@ class Header extends React.Component {
   }
 
   buttonChange() {
-    return this.props.currentUser ? (
-      
+    const { currentUser } = this.props;
+    return (currentUser) ? (
       <div className="header-buttons-div">
         <form className="header-search-form">
           <input className="header-search-bar" type="text" placeholder="Search..." />
         </form>
         <div>
-          <Link className="header-profile-link" to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link>
+          <Link className="header-profile-link" to={`/users/${currentUser.id}`}>{currentUser.username}</Link>
             &nbsp;
           <Link className="header-button-right" to={"/"} onClick={this.logout}>Log out</Link>
         </div>
       </div>
-
     ) : (
-
       <div className="header-buttons-div">
         <Link className="header-button-left" to="/login">Log in</Link>
           &nbsp;
@@ -39,7 +37,8 @@ class Header extends React.Component {
   }
 
   render() {
-    return ( this.props.currentUser ) ? (
+    const { currentUser } = this.props;
+    return (currentUser) ? (
       <header className="header-container">
         <Link className="header-logo" to="/">
           <img className="header-icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/25/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"/><span className="header-logo-letters">stuck<b className="header-logo-letters-overclone">overclone</b></span>
@@ -48,7 +47,7 @@ class Header extends React.Component {
           <input className="header-search-bar" type="text" placeholder="Search..." />
         </form>
         <div className="header-buttons-div">
-          <Link className="header-profile-link" to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.username}</Link>
+          <Link className="header-profile-link" to={`/users/${currentUser.id}`}>{currentUser.username}</Link>
             &nbsp;
           <Link className="header-button-right" to={"/"} onClick={this.logout}>Log out</Link>
         </div>
