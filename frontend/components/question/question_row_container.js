@@ -32,7 +32,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     removeEntity: () => dispatch(removeEntity()),
-    fetchUser: (id) => dispatch(fetchUser(id))
   };
 }
 

@@ -9,8 +9,10 @@ export const questionsErrorsReducer = (state = [], action) => {
   switch(action.type) {
     case RECEIVE_QUESTION_ERRORS:
       return action.errors;
+
     case REMOVE_QUESTION_ERRORS:
       return [];
+      
     default:
       return state;
   };

@@ -6,11 +6,17 @@ import {
 
 export const usersReducer = (state = {}, action) => {
   Object.freeze(state);
+  let newState;
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
+      // debugger
+      newState = Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
+      return newState;
+
     case LOGOUT_CURRENT_USER:
+      // debugger
       return {};
+
     default:
       return state;
   };
