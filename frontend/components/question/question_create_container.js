@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import QuestionForm from './question_form';
+import QuestionCreate from './question_create';
 import { createQuestion, removeQuestionErrors } from '../../actions/questions_actions';
 
 
@@ -20,9 +20,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    action: (question) => dispatch(createQuestion(question)),
+    createQuestion: (question) => dispatch(createQuestion(question)),
     removeQuestionErrors: () => dispatch(removeQuestionErrors())
   };
 }
 
-export const QuestionCreateContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionForm);
+export const QuestionCreateContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionCreate);
