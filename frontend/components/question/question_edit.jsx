@@ -1,6 +1,4 @@
 import React from 'react';
-import QuestionForm from './question_create';
-import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import moment from 'moment';
@@ -85,7 +83,6 @@ class QuestionEdit extends React.Component {
           <h1 className="question-header question-form-header">{formType}</h1>
           
           <form onSubmit={this.handleSubmit} action="">
-
             <input
               className="question-form-title"
               type="text"
@@ -109,7 +106,6 @@ class QuestionEdit extends React.Component {
             </div>
 
             <button className="question-form-submit" type="submit">Post Question</button>
-        
           </form>
         </div>
 
