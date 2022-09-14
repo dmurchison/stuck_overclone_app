@@ -33,7 +33,7 @@ export const removeSessionErrors = () => {
 }
 
 
-// Thunk action creators
+// Thunk Action Creators
 export const signup = (user) => dispatch => {
   // debugger
   return SessionAPIUtil.signup(user)

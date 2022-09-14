@@ -11,7 +11,7 @@ export const handleVote = (vote) => {
 }
 
 
-// Thunk action creators
+// Thunk Action Creators
 export const upVoteQuestion = (questionId) => dispatch => {
   // debugger
   return VoteAPIUtil.upVoteQuestion(questionId)

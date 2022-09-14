@@ -43,7 +43,7 @@ export const removeQuestionErrors = () => {
 }
 
 
-// Thunk action creators
+// Thunk Action Creators
 export const fetchQuestions = () => dispatch => {
   // debugger
   return QuestionAPIUtil.fetchQuestions()
