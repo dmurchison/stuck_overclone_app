@@ -2,7 +2,7 @@ import {
   RECEIVE_QUESTION,
   RECEIVE_QUESTIONS,
   REMOVE_QUESTION,
-} from '../actions/questions_actions';
+} from '../actions/question_actions';
 import { REMOVE_ENTITY } from '../actions/entity_actions';
 
 

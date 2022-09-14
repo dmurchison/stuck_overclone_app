@@ -1,4 +1,4 @@
-// SESSION -- frontend/components/session
+// SESSION -- /components/session
 
 // Variables
 $bg: #393939;
@@ -93,7 +93,7 @@ $errors: rgb(231, 68, 68);
   margin-bottom: 5px;
 }
 
-.sf-submit-button, .lf-submit-button {
+.sf-submitButton, .lf-submitButton {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -109,12 +109,12 @@ $errors: rgb(231, 68, 68);
   margin-bottom: 0;
   transition: 325ms;
 }
-.sf-submit-button:hover, .lf-submit-button:hover {
+.sf-submitButton:hover, .lf-submitButton:hover {
   background-color: $hover-blue;
   cursor: pointer;
 }
 
-.sf-login-link, .lf-signup-link {
+.loginLink, .signupLink {
   justify-content: center;
   a {
     color: $link-blue;
@@ -133,7 +133,7 @@ $errors: rgb(231, 68, 68);
 
 
 // Demo Login
-.demoLogin-btn {
+.demoLogin {
   padding: 10px;
   width: 352px;
   border-radius: 5px;
@@ -144,25 +144,11 @@ $errors: rgb(231, 68, 68);
   margin-bottom: 0;
   transition: 325ms;
 }
-.demoLogin-btn:hover {
+.demoLogin:hover {
   background-color: $reg-blue;
   box-shadow: inset 0 0.5px 0 0 $reg-orange;
   border-color: $reg-orange;
   transform: scale(1.025);
   cursor: pointer;
-}
-
-
-
-// Session Errors
-.errors {
-  p {
-    margin-bottom: 5px
-  };
-  font-size: smaller;
-  color: $errors;
-  margin-top: 5px;
-  margin-bottom: 50px;
-  font-weight: bolder;
 }
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionCreate from './question_create';
-import { createQuestion, removeQuestionErrors } from '../../actions/questions_actions';
+import { createQuestion, removeQuestionErrors } from '../../actions/question_actions';
 
 
 const mapStateToProps = (state) => {
@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
   const currentUserId = state.entities.users[state.session.id];
   return {
     session: state.session,
-    formType: "Ask a Public Question",
+    formType: "Ask",
     errors: state.errors.questions,
     question: {
       title: "",

@@ -2,7 +2,7 @@ import {
   RECEIVE_QUESTION,
   RECEIVE_QUESTION_ERRORS, 
   REMOVE_QUESTION_ERRORS 
-} from '../../actions/questions_actions';
+} from '../../actions/question_actions';
 
 
 export const questionsErrorsReducer = (state = [], action) => {

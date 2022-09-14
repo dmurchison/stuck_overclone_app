@@ -25,8 +25,11 @@
   --light: whitesmoke;
   --reg-blue: rgb(52, 132, 238);
   --link-blue: rgb(0, 189, 252);
+  --errors: rgb(231, 68, 68);
 }
 
+
+/* Main Page */
 body {
   background: var(--mainBackground);
   color: var(--mainColor);
@@ -35,5 +38,19 @@ body {
 
 input, textarea {
   outline-color: var(--reg-blue);
+}
+
+
+/* Errors */
+.errors {
+  font-size: smaller;
+  margin-top: 5px;
+  color: var(--errors);
+  margin-bottom: 50px;
+  font-weight: bolder;
+}
+
+.errors p {
+  margin-bottom: 5px;
 }
 

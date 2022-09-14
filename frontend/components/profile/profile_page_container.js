@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ProfilePage from './profile_page';
-import { fetchQuestions } from '../../actions/questions_actions';
+import { fetchQuestions } from '../../actions/question_actions';
 import { fetchUser } from '../../actions/session_actions';
 import { sortFunc, toArr } from '../../reducers/selectors_reducer';
 

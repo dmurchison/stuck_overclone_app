@@ -36,7 +36,7 @@ class QuestionCreate extends React.Component {
 
   renderErrors() {
     return (
-      <div className="question-form-errors">
+      <div>
         {this.props.errors.map((error, i) => (
           <div key={`error-${i}`}>{error}</div>
         ))}
@@ -48,34 +48,34 @@ class QuestionCreate extends React.Component {
   render() {
     // debugger
     return (
-      <div className="question-form-container">
-        <h1 className="question-header question-form-header">{this.props.formType}</h1>
+      <div className="qf-container">
+        <h1 className="qf-header">{this.props.formType} a Public Question</h1>
         
         <form onSubmit={this.handleSubmit} action="">
 
           <input
-            className="question-form-title"
+            className="qf-title"
             type="text"
             value={this.state ? this.state.title : ""}
             onChange={this.update("title")}
             placeholder="How can I replace my react class component with a hook?"
           />
           <textarea 
-            className="question-form-body"
+            className="qf-body"
             value={this.state ? this.state.body : ""}
             onChange={this.update("body")}
             placeholder="Please enter any other information about your question... (You may use markdown here)"
           />
 
-          <div className="question-form-md">
-            <ReactMarkdown className="qf-react-markdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
+          <div className="qf-markdownContainer">
+            <ReactMarkdown className="qf-reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
           </div>
 
           <div className="errors">
             {this.renderErrors()}
           </div>
 
-          <button className="question-form-submit" type="submit">Post Question</button>
+          <button className="qf-submitButton" type="submit">Post Question</button>
           
         </form>
       </div>

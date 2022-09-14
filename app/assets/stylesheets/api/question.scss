@@ -1,4 +1,4 @@
-// QUESTIONS -- frontend/components/qUESTIONS -- frontend/components/questions
+// QUESTION -- /components/question
 
 // Variables
 $bg: #393939;
@@ -17,19 +17,19 @@ $errors: rgb(227, 30, 30);
 
 
 // Page Header
-.page-header-container {
+.qp-header {
   display: grid;
   grid-template-columns: 1fr min-content;
   padding: 30px 20px;
   align-items: center;
 }
 
-.page-header {
+.pageHeader {
   font-size: 1.8rem;
   margin: 0;
 }
 
-.AskQuestion-btn {
+.askButton {
   background-color: $reg-blue;
   color: #fff;
   border: 0;
@@ -38,20 +38,20 @@ $errors: rgb(227, 30, 30);
   font-style: none;
   transition: 325ms;
 }
-.AskQuestion-btn:hover {
+.askButton:hover {
   background: $hover-blue;
 }
 
 
 // Questions Row
-.questions-index-rows {
+.qi-rows {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 10rem;
 }
-.question-row-container {
+.qr-container {
   margin-top: .5px;
   border-top: 0;
   border-radius: 3px;
@@ -63,30 +63,30 @@ $errors: rgb(227, 30, 30);
   transition: 325ms;
   width: 75%;
 }
-.question-row-container:hover {
+.qr-container:hover {
   border: 1px solid $reg-orange;
   transform: scale(1.025);
 }
 
-.question-row-stats {
+.qr-stats {
   text-align: center;
   display: inline-block;
   font-size: 1.2rem;
   color: #aaa;
   margin-top: 7px;
 }
-.question-row-stats-span {
+.qr-statsSpan {
   font-size: .7rem;
   display: block;
   font-weight: 300px;
   margin-top: 4px;
 }
 
-.question-row-title {
+.qr-title {
   padding: 0 30px;
 }
 
-.question-title-link {
+.qr-titleLink {
   text-decoration: none;
   color: $question-blue;
   font-size: 1.1rem;
@@ -95,7 +95,7 @@ $errors: rgb(227, 30, 30);
   margin-bottom: 5px;
   transition: 325ms;
 }
-.question-title-link:hover {
+.qr-titleLink:hover {
   cursor: pointer;
   color: $lt-orange;
   font-weight: 500;
@@ -111,7 +111,7 @@ $errors: rgb(227, 30, 30);
   font-size: .8rem;
 }
 
-.question-timestamp {
+.questionTimeStamp {
   display: inline-block;
   color: #aaa;
   font-size: .8rem;
@@ -121,24 +121,24 @@ $errors: rgb(227, 30, 30);
 
 
 // Question Show
-.question-show-container {
+.qs-container {
   padding: 30px 75px;
   margin-bottom: 100px;
 }
 
-.question-show-title {
+.qs-title {
   border-bottom: 1px solid rgba(255,255,255, .1);
   padding-bottom: 10px;
   font-size: 1.5rem;
 }
 
-.question-show-body {
+.qs-body {
   display: grid;
   grid-template-columns: 50px 1fr;
   column-gap: 20px;
 }
 
-.question-show-other {
+.qs-other {
   margin-top: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -150,7 +150,7 @@ $errors: rgb(227, 30, 30);
   justify-content: space-around;
 }
 
-.question-show-voting-buttons {
+.qs-voteButtons {
   .voteButton {
     border: 0;
     background: none;
@@ -216,7 +216,7 @@ $errors: rgb(227, 30, 30);
   transform: scale(1.05);
 }
 
-.qs-react-markdown {
+.reactMarkdown {
   b, strong {
     font-weight: 700;
   }
@@ -249,19 +249,23 @@ $errors: rgb(227, 30, 30);
   }
 }
 
+.qe-form {
+  margin-bottom: 25px;
+}
+
 
 
 // Questions Form
-.question-form-container {
+.qf-container {
   padding: 30px 20px;
   margin-bottom: 100px;
 }
 
-.question-form-header {
+.qf-header {
   margin-bottom: 20px;
 }
 
-.question-form-title {
+.qf-title {
   background: none;
   border: 1px solid #777;
   border-radius: 3px;
@@ -273,7 +277,7 @@ $errors: rgb(227, 30, 30);
   color: white;
 }
 
-.question-form-body {
+.qf-body {
   background: none;
   border: 1px solid #777;
   border-radius: 3px;
@@ -287,14 +291,14 @@ $errors: rgb(227, 30, 30);
   font-family: inherit;
 }
 
-.question-form-md {
+.qf-markdownContainer {
   padding: 10px 20px;
   background-color: #444;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
-.qf-react-markdown {
+.qf-reactMarkdown {
   h1, h2 {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -331,7 +335,7 @@ $errors: rgb(227, 30, 30);
   }
 }
 
-.question-form-submit {
+.qf-submitButton {
   background-color: #378ad3;
   color: #fff;
   border: 0;
@@ -340,7 +344,7 @@ $errors: rgb(227, 30, 30);
   font-style: none;
   transition: 325ms;
 }
-.question-form-submit:hover {
+.qf-submitButton:hover {
   background-color: rgb(21, 82, 161);
   cursor: pointer;
 }
@@ -348,27 +352,23 @@ $errors: rgb(227, 30, 30);
 
 
 // Question Index
-.questions-index-container {
+.qi-container {
   margin-bottom: 100px;
 }
 
 
 
 // Question Edit
-.question-edit-container {
+.qe-container {
   padding: 15px 75px;
   margin-bottom: 100px;
-  .question-form-container {
+  .qf-container {
     margin-bottom: 10px;
   }
 }
 
-.question-edit-form {
-  margin-bottom: 10px;
-}
-
-.question-edit-body {
-  margin-top: 20px;
+.qe-body {
+  margin-top: 25px;
 }
 
 .deleteButton-container {
