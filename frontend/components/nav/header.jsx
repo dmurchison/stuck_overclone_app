@@ -36,6 +36,7 @@ class Header extends React.Component {
     );
   }
 
+  
   render() {
     const { currentUser } = this.props;
     return (currentUser) ? (
