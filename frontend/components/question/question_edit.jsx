@@ -97,6 +97,10 @@ class QuestionEdit extends React.Component {
               onChange={this.update("body")}
               placeholder="Please enter any other information about your question... (You may use markdown here)"
             />
+            
+            <div className='newQuestion-txt'>
+              <p>New Question:</p>
+            </div>
 
             <div className="qf-markdownContainer">
               <ReactMarkdown className="qf-reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />

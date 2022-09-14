@@ -38,7 +38,7 @@ class ProfilePage extends React.Component {
           <Link className="askButton" to={"/questions/new"}>Ask&nbsp;Question </Link>
         </div>
 
-        <div className="users-page-questions-list">
+        <div className="pp-questionList">
           {this.getQuestionRow()}
         </div>
 

@@ -38,7 +38,7 @@ $lightSmoke: rgb(175, 175, 175);
 
 
 // Splash Header
-.header-container-splash {
+.header-splash {
   display: grid;
   grid-template-columns: 1fr min-content;
   padding: 30px 20px;
@@ -46,7 +46,7 @@ $lightSmoke: rgb(175, 175, 175);
   align-items: center;
 }
 
-.header-logo-splash {
+.header-logoSplash {
   display: inline-block;
   padding: 0px 15px;
   height: 75px;
@@ -57,10 +57,10 @@ $lightSmoke: rgb(175, 175, 175);
   transition: 325ms;
   width: fit-content;
 }
-.header-logo-splash:hover {
+.header-logoSplash:hover {
   transform: scale(1.05);
 }
-.header-icon-splash {
+.header-iconSplash {
   margin-top: 10px;
   display: inline-block;
   font-size: 50px;
@@ -78,11 +78,11 @@ $lightSmoke: rgb(175, 175, 175);
   margin-left: 5px;
 }
 
-.header-buttons-div-splash {
+.headerButtons-splash {
   padding-left: 2px;
   padding-right: 8px;
 }
-.login-button {
+.header-loginButton {
   margin-top: 10px;
   padding: 8px 10px;
   border: 1px solid transparent;
@@ -99,12 +99,12 @@ $lightSmoke: rgb(175, 175, 175);
   color: $reg-blue;
   transition: 325ms;
 }
-.login-button:hover {
+.header-loginButton:hover {
   transform: scale(1.15);
   background: $lt-blue;
   color: $reg-blue;
 }
-.signup-button {
+.header-signupButton {
   margin-top: 10px;
   margin-right: 20px;
   padding: 8px 10px;
@@ -122,7 +122,7 @@ $lightSmoke: rgb(175, 175, 175);
   color: white;
   transition: 325ms;
 }
-.signup-button:hover {
+.header-signupButton:hover {
   background: $hover-blue;
   transform: scale(1.15);
 }
@@ -167,7 +167,7 @@ $lightSmoke: rgb(175, 175, 175);
   margin-left: 2px;
 }
 
-.header-search-bar {
+.searchBar {
   display: inline-block;
   box-sizing: border-box;
   margin-top: 9px;
@@ -179,12 +179,12 @@ $lightSmoke: rgb(175, 175, 175);
   color: white;
 }
 
-.header-buttons-div {
+.headerButtons {
   padding-left: 2px;
   padding-right: 8px;
 }
 
-.header-button-left {
+.buttonLeft {
   margin-top: 10px;
   padding: 8px 10px;
   border: 1px solid transparent;
@@ -201,12 +201,12 @@ $lightSmoke: rgb(175, 175, 175);
   color: $reg-blue;
   transition: 325ms;
 }
-.header-button-left:hover {
+.buttonLeft:hover {
   background: $lt-blue;
   color: $reg-blue;
 }
 
-.header-button-right {
+.buttonRight {
   margin-top: 10px;
   margin-right: 20px;
   padding: 8px 10px;
@@ -224,17 +224,17 @@ $lightSmoke: rgb(175, 175, 175);
   color: white;
   transition: 325ms;
 }
-.header-button-right:hover, .header-logout:hover {
+.buttonRight:hover, .header-logout:hover {
   background: $hover-blue;
 }
 
-.header-profile-link {
+.profileLink {
   color: $reg-blue;
   margin-right: 5px;
   transition: 325ms;
   font-weight: bold;
 }
-.header-profile-link:hover {
+.profileLink:hover {
   transform: scale(1.15);
   color: white;
 }
@@ -271,7 +271,7 @@ $lightSmoke: rgb(175, 175, 175);
   text-align: center;
 }
 
-.footer-dev-links-container {
+.footer-devLinks {
   display: flex;
   justify-content: space-around;
 }
@@ -282,10 +282,10 @@ $lightSmoke: rgb(175, 175, 175);
   margin-top: 5px;
 }
 
-.dev-link {
+.devLink {
   transition: 325ms;
 }
-.dev-link:hover {
+.devLink:hover {
   transform: scale(1.05);
 }
 

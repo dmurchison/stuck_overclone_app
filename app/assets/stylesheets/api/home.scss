@@ -15,7 +15,7 @@ $errors: rgb(227, 30, 30);
 
 
 // Splash Page
-.splashpage-inner-border {
+.splashpage-innerBorder {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,11 +28,11 @@ $errors: rgb(227, 30, 30);
   margin: auto;
   transition: 325ms;
 }
-.splashpage-inner-border:hover {
+.splashpage-innerBorder:hover {
   transform: scale(1.05);
 }
 
-.splashpage-inner-header {
+.splashpage-innerHeader {
   display: flex;
   text-align: center;
   margin-left: 10%;
@@ -43,7 +43,7 @@ $errors: rgb(227, 30, 30);
   font-weight: 600;
 }
 
-.splashpage-bottom-container {
+.splashpage-bottom {
   display: flex;
   justify-content: space-around;
   margin-top: 5rem;
