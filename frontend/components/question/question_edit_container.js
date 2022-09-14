@@ -6,12 +6,12 @@ import { fetchQuestion, updateQuestion, removeQuestionErrors, deleteQuestion } f
 const mapStateToProps = (state, ownProps) => {
   // debugger
   const question = state.entities.questions[ownProps.match.params.questionId];
-  const currentUser = state.entities.users[state.session.id];
+  const currentUserId = state.entities.users[state.session.id];
   return {
     formType: "Update your Public Question",
     errors: state.errors.questions,
     question: question,
-    currentUser: currentUser
+    currentUser: currentUserId
   };
 }
 
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
     deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
-    action: (question) => dispatch(updateQuestion(question)),
+    updateQuestion: (question) => dispatch(updateQuestion(question)),
     removeQuestionErrors: () => dispatch(removeQuestionErrors)
   };
 }

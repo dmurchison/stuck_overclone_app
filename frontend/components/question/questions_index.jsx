@@ -26,6 +26,7 @@ class QuestionsIndex extends React.Component {
     );
   }
 
+  
   render() {
     // debugger
     return (

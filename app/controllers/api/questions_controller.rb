@@ -38,11 +38,13 @@ class Api::QuestionsController < ApplicationController
 
   def update
     # debugger
-    @question = current_user.questions.find(params[:id])
-    if @question.update(question_params)
-      render :show
-    else
-      render json: @question.errors.full_messages, status: 422
+    @question = current_user.questions.find_by(id: params[:id])
+    if @question
+      if @question.update(question_params)
+        render :show
+      else
+        render json: @question.errors.full_messages, status: 422
+      end
     end
   end
 
