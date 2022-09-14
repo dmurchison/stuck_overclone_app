@@ -21,6 +21,7 @@ class QuestionEdit extends React.Component {
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchQuestion(this.props.match.params.questionId);
   }
 
@@ -65,72 +66,71 @@ class QuestionEdit extends React.Component {
 
   renderErrors() {
     return (
-      <div className="question-form-errors">
+      <>
         {this.props.errors.map((error, i) => (
           <div key={`error-${i}`}>{error}</div>
         ))}
-      </div> 
+      </> 
     );
   }
   
 
   render() {
     // debugger
-    const { formType, question } = this.props;
+    const { formType, question, currentUser } = this.props;
     return (question) ? (
-      <>
-        <div className="question-form-container">
-          <h1 className="question-header question-form-header">{formType}</h1>
-          
+      <div className='qe-container'>
+        <h1 className="qf-header">{formType} {currentUser.username}'s Public Question</h1>
+        
+        <div className='qe-form'>
           <form onSubmit={this.handleSubmit} action="">
             <input
-              className="question-form-title"
+              className="qf-title"
               type="text"
               value={this.state.title}
               onChange={this.update("title")}
               placeholder="How can I replace my react class component with a hook?"
             />
             <textarea 
-              className="question-form-body"
+              className="qf-body"
               value={this.state.body}
               onChange={this.update("body")}
               placeholder="Please enter any other information about your question... (You may use markdown here)"
             />
 
-            <div className="question-form-md">
-              <ReactMarkdown className="qf-react-markdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
+            <div className="qf-markdownContainer">
+              <ReactMarkdown className="qf-reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
             </div>
 
             <div className="errors">
               {this.renderErrors()}
             </div>
 
-            <button className="question-form-submit" type="submit">Post Question</button>
+            <button className="qf-submitButton" type="submit">Update Question</button>
           </form>
         </div>
 
-        <div className="question-edit-container">
-          <h1 className="question-show-title">{question.question.title}</h1>
+        <p>Old Question: </p>
+        
+        <div className="qe-body">
+          <h1 className="qs-title">{question.question.title}</h1>
 
-          <div className="question-edit-body">
-
-            <div className="question-show-md">
-              <ReactMarkdown className="qs-react-markdown" children={question.question.body} remarkPlugins={[remarkGfm]} />
-            </div>
-
-            <div className='question-show-other'>
-              <div className="question-timestamp">
-                <time dateTime={question.question.created_at}>Last updated {this.calculateTimeSince(question.question.created_at)}</time>
-              </div>
-
-              <div className='deleteButton-container'>
-                {this.deleteButton()}
-              </div>
-            </div>
-
+          <div className="questionMarkdown">
+            <ReactMarkdown className="reactMarkdown" children={question.question.body} remarkPlugins={[remarkGfm]} />
           </div>
+
+          <div className='qs-other'>
+            <div className="questionTimeStamp">
+              <time dateTime={question.question.created_at}>Last updated {this.calculateTimeSince(question.question.created_at)}</time>
+            </div>
+
+            <div className='deleteButton-container'>
+              {this.deleteButton()}
+            </div>
+          </div>
+
         </div>
-      </>
+      </div>
     ) : (null);
   }
 

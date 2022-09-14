@@ -82,7 +82,7 @@ class QuestionShow extends React.Component {
       votes = this.state.votes;
     }
     return (
-      <div className="question-show-voting-buttons">
+      <div className="qs-voteButtons">
         <button className="voteButton" onClick={() => this.changeVote(1)}>
           <div className="upVote"></div>
         </button>
@@ -110,27 +110,27 @@ class QuestionShow extends React.Component {
     // debugger
     const { question } = this.props;
     return (question) ? (
-      <div className="question-show-container">
+      <div className="qs-container">
 
-        <div className="page-header-container">
-          <h1 className="question-show-title">{question.title}</h1>
+        <div className="qp-header">
+          <h1 className="qs-title">{question.title}</h1>
         </div>
 
-        <div className="question-show-body">
+        <div className="qs-body">
           {this.votingButtons()}
 
           <div>
-            <div className="question-show-md">
-              <ReactMarkdown className="qs-react-markdown" children={question.body} remarkPlugins={[remarkGfm]} />
+            <div className="questionMarkdown">
+              <ReactMarkdown className="reactMarkdown" children={question.body} remarkPlugins={[remarkGfm]} />
             </div>
-            <div className="question-show-other">
+            <div className="qs-other">
               {/* <div className="question-show-tags-container">
                 <span className="questions-row-tags">javascript</span>
                 <span className="questions-row-tags">react</span>
                 <span className="questions-row-tags">component</span>
                 <span className="questions-row-tags">object</span>
               </div> */}
-              <div className="question-timestamp">
+              <div className="questionTimeStamp">
                 <time dateTime={question.created_at}>Last updated {this.calculateTimeSince(question.created_at)}</time>
               </div>
               {this.editButton()}

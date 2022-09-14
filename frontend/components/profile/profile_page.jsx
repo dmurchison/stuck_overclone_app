@@ -18,7 +18,7 @@ class ProfilePage extends React.Component {
   getQuestionRow() {
     const { usersQuestions } = this.props;
     return (
-      <div className="questions-index-rows">
+      <div className="qi-rows">
         {usersQuestions.map((question) => (
           <QuestionRow key={question.id} question={question} />
         ))}
@@ -31,11 +31,11 @@ class ProfilePage extends React.Component {
     // debugger
     const { currentUser } = this.props;
     return (
-      <div className="questions-index-container">
+      <div className="qi-container">
 
-        <div className="page-header-container">
-          <h1 className="page-header">{currentUser.username}'s Questions</h1>
-          <Link className="AskQuestion-btn" to={"/questions/new"}>Ask&nbsp;Question </Link>
+        <div className="qp-header">
+          <h1 className="pageHeader">{currentUser.username}'s Questions</h1>
+          <Link className="askButton" to={"/questions/new"}>Ask&nbsp;Question </Link>
         </div>
 
         <div className="users-page-questions-list">

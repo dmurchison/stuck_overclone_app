@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import QuestionRow from './question_row';
 
 
-class QuestionsIndex extends React.Component {
+class QuestionIndex extends React.Component {
   constructor(props) {
     // debugger
     super(props);
@@ -18,7 +18,7 @@ class QuestionsIndex extends React.Component {
   getQuestionRow() {
     const { questions } = this.props;
     return (
-      <ul className="questions-index-rows">
+      <ul className="qi-rows">
         {questions.map((question) => (
           <QuestionRow key={question.id} question={question} />
         ))}
@@ -30,11 +30,11 @@ class QuestionsIndex extends React.Component {
   render() {
     // debugger
     return (
-      <div className="questions-index-container">
+      <div className="qi-container">
 
-        <div className="page-header-container">
-          <h1 className="page-header">All Questions</h1>
-          <Link className="AskQuestion-btn" to={"/questions/new"}>Ask&nbsp;Question </Link>
+        <div className="qp-header">
+          <h1 className="pageHeader">All Questions</h1>
+          <Link className="askButton" to={"/questions/new"}>Ask&nbsp;Question </Link>
         </div>
 
         <div>
@@ -47,5 +47,5 @@ class QuestionsIndex extends React.Component {
 
 }
 
-export default QuestionsIndex;
+export default QuestionIndex;
 

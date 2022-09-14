@@ -44,11 +44,11 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return (
-      <div className="session-errors">
+      <>
         {this.props.errors.map( (error, i) => (
           <div key={`error-${i}`}>{error}</div>
         ))}
-      </div>
+      </>
     )
   }
 
@@ -77,11 +77,13 @@ class SignupForm extends React.Component {
         </div>
 
         <div className="sf-right">
-          <button className="demoLogin-btn" onClick={this.handleDemo}>Log in with Demo User</button>
+          <button className="demoLogin" onClick={this.handleDemo}>Log in with Demo User</button>
+
           <form className="signup-form" onSubmit={this.handleSubmit}>
             <div className="errors">
               {this.renderErrors()}
             </div>
+
             <label className="sf-label">Display Name</label>
               <input 
                 className="sf-input"
@@ -105,10 +107,11 @@ class SignupForm extends React.Component {
                 value={this.state.password}
                 onChange={this.handleInput("password")}
               />
-            <button className="sf-submit-button">Sign up</button>
+              
+            <button className="sf-submitButton">Sign up</button>
           </form>
 
-          <div className="sf-login-link">
+          <div className="loginLink">
             <p>Already have an account? {this.props.link}</p>
           </div>
           

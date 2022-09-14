@@ -43,11 +43,11 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <div className="session-errors">
+      <>
         {this.props.errors.map( (error, i) => (
           <div key={`error-${i}`}>{error}</div>
         ))}
-      </div>
+      </>
     )
   }
 
@@ -60,7 +60,7 @@ class LoginForm extends React.Component {
         <Link className="lf-logo" to="/">
           <img className="lf-icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"/>
         </Link>
-        <button className="demoLogin-btn" onClick={this.handleDemo}>Log in with Demo User</button>
+        <button className="demoLogin" onClick={this.handleDemo}>Log in with Demo User</button>
 
         <form className="login-form" onSubmit={this.handleSubmit}>
 
@@ -83,11 +83,11 @@ class LoginForm extends React.Component {
               onChange={this.handleInput("password")}
             />
 
-          <button className="lf-submit-button" type="submit">Log in</button>
+          <button className="lf-submitButton" type="submit">Log in</button>
 
         </form>
 
-        <div className="lf-signup-link">
+        <div className="signupLink">
           <p>Don't have an account? {this.props.link}</p>
         </div>
 
