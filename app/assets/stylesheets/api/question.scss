@@ -111,8 +111,17 @@ $errors: rgb(227, 30, 30);
   font-size: .8rem;
 }
 
+.qr-timeStamp {
+  display: flex;
+  justify-content: space-between;
+  color: #aaa;
+  font-size: .8rem;
+  padding: 10px 0;
+}
+
 .questionTimeStamp {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   color: #aaa;
   font-size: .8rem;
   padding: 10px 0;

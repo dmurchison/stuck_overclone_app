@@ -99,13 +99,13 @@ class QuestionShow extends React.Component {
   editButton() {
     const { question, currentUserId } = this.props;
     return (question.author_id === currentUserId) ? (
-      <div className="editButton-container">
-        <Link className="editButton" to={`/questions/${question.id}/edit`}>Edit/Delete Question</Link>
-      </div>
+      <Link className="editButton" to={`/questions/${question.id}/edit`}>
+        Edit/Delete Question
+      </Link>
     ) : (null);
   }
 
-  
+
   render() {
     // debugger
     const { question } = this.props;
@@ -131,9 +131,14 @@ class QuestionShow extends React.Component {
                 <span className="questions-row-tags">object</span>
               </div> */}
               <div className="questionTimeStamp">
-                <time dateTime={question.created_at}>Last updated {this.calculateTimeSince(question.created_at)}</time>
+                <time dateTime={question.created_at}>Originally Created: {this.calculateTimeSince(question.created_at)}</time>
+                <time dateTime={question.updated_at}>Last updated: {this.calculateTimeSince(question.updated_at)}</time>
               </div>
-              {this.editButton()}
+
+              <div className="editButton-container">
+                {this.editButton()}
+              </div>
+
             </div>
           </div>
 
