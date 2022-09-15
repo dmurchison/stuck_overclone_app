@@ -66,8 +66,8 @@ class QuestionCreate extends React.Component {
             placeholder="Please enter any other information about your question... (You may use markdown here)"
           />
 
-          <div className="qf-markdownContainer">
-            <ReactMarkdown className="qf-reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
+          <div className="reactMarkdown-container">
+            <ReactMarkdown className="reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
           </div>
 
           <div className="errors">

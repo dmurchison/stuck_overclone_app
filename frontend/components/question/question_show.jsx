@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnswerShowContainer } from '../answer/answer_show_container';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -21,7 +22,6 @@ class QuestionShow extends React.Component {
   componentDidMount() {
     // debugger
     this.props.fetchQuestion(this.props.questionId);
-    this.props.removeAnswerErrors();
   }
 
   componentWillUnmount() {
@@ -78,7 +78,7 @@ class QuestionShow extends React.Component {
       votes = this.state.votes;
     }
     return (
-      <div className="qs-voteButtons">
+      <div className="voteButtons-container">
         <button className="voteButton" onClick={() => this.changeVote(1)}>
           <div className="upVote"></div>
         </button>
@@ -102,8 +102,18 @@ class QuestionShow extends React.Component {
   }
   
   submitAnswer() {
-    this.props.submitAnswer(this.props.questionId, this.state.body);
+    this.props.createAnswer(this.props.questionId, this.state.body);
     this.state.body = "";
+  }
+
+  renderErrors() {
+    return (
+      <>
+        {this.props.errors.map((error, i) => (
+          <div key={`error-${i}`}>{error}</div>
+        ))}
+      </> 
+    );
   }
 
   answerForm() {
@@ -119,6 +129,10 @@ class QuestionShow extends React.Component {
           <ReactMarkdown className="reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
         </div>
 
+        <div className="errorss">
+          {this.renderErrors()}
+        </div>
+
         <button className='af-submitButton' type='submit'>Post Answer</button>
       </form>
     );
@@ -126,6 +140,14 @@ class QuestionShow extends React.Component {
 
   render() {
     // debugger
+    let currentUserVote = 0;
+    let votes = 0;
+    if (this.state.currentUserVote) {
+      currentUserVote = this.state.currentUserVote;
+    }
+    if (this.state.votes) {
+      votes = this.state.votes;
+    }
     const { question } = this.props;
     return (question) ? (
       <div className="qs-container">

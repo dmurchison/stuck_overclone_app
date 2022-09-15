@@ -102,8 +102,8 @@ class QuestionEdit extends React.Component {
               <p>New Question:</p>
             </div>
 
-            <div className="qf-markdownContainer">
-              <ReactMarkdown className="qf-reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
+            <div className="reactMarkdown-container">
+              <ReactMarkdown className="reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
             </div>
 
             <div className="errors">

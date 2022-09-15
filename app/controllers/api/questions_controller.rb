@@ -75,7 +75,6 @@ class Api::QuestionsController < ApplicationController
 
   def downvote
     # debugger
-
     vote(-1)
   end
 

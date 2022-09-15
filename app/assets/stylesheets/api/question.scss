@@ -159,7 +159,7 @@ $errors: rgb(227, 30, 30);
   justify-content: space-around;
 }
 
-.qs-voteButtons {
+.voteButtons-container {
   .voteButton {
     border: 0;
     background: none;
@@ -304,14 +304,14 @@ $errors: rgb(227, 30, 30);
   font-family: inherit;
 }
 
-.qf-markdownContainer {
+.reactMarkdown-container {
   padding: 10px 20px;
   background-color: #444;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
-.qf-reactMarkdown {
+.reactMarkdown {
   h1, h2 {
     margin-top: 20px;
     margin-bottom: 10px;

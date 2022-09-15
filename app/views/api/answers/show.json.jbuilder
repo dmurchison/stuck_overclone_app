@@ -2,7 +2,7 @@ json.answer do
   json.set! @answer.id do
     json.extract! @answer, :id, :author_id, :question_id, :body, :created_at
     json.votes do
-      @question.votes.each do |vote|
+      @answer.votes.each do |vote|
         json.set! vote.id do
           json.userId vote.user_id
           json.voteableId vote.votable_id
