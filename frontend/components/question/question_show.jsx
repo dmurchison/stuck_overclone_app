@@ -12,15 +12,16 @@ class QuestionShow extends React.Component {
     this.state = {
       body: "",
     };
-    this.submitAnswer = this.submitAnswer.bind(this);
     this.changeVote = this.changeVote.bind(this);
     this.votingButtons = this.votingButtons.bind(this);
     this.editButton = this.editButton.bind(this);
+    this.submitAnswer = this.submitAnswer.bind(this);
   }
 
   componentDidMount() {
     // debugger
     this.props.fetchQuestion(this.props.questionId);
+    this.props.removeAnswerErrors();
   }
 
   componentWillUnmount() {
@@ -49,12 +50,7 @@ class QuestionShow extends React.Component {
       });
     };
   }
-
-  submitAnswer() {
-    this.props.submitAnswer(this.props.questionId, this.state.body);
-    this.state.body = "";
-  }
-
+  
   changeVote(vote) {
     let newUserVote;
     if (vote === 1) {
@@ -71,7 +67,7 @@ class QuestionShow extends React.Component {
       currentUserVote: newUserVote,
     });
   }
-
+  
   votingButtons() {
     let currentUserVote = 0;
     let votes = 0;
@@ -95,7 +91,7 @@ class QuestionShow extends React.Component {
       </div>
     );
   };
-
+  
   editButton() {
     const { question, currentUserId } = this.props;
     return (question.author_id === currentUserId) ? (
@@ -104,7 +100,29 @@ class QuestionShow extends React.Component {
       </Link>
     ) : (null);
   }
+  
+  submitAnswer() {
+    this.props.submitAnswer(this.props.questionId, this.state.body);
+    this.state.body = "";
+  }
 
+  answerForm() {
+    return (
+      <form onSubmit={this.submitAnswer} action="">
+        <textarea
+          className='af-body'
+          onChange={this.update("body")}
+          value={this.state ? this.state.body : ""}
+        />
+
+        <div className="reactMarkdown-container">
+          <ReactMarkdown className="reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
+        </div>
+
+        <button className='af-submitButton' type='submit'>Post Answer</button>
+      </form>
+    );
+  }
 
   render() {
     // debugger
@@ -120,7 +138,7 @@ class QuestionShow extends React.Component {
           {this.votingButtons()}
 
           <div>
-            <div className="questionMarkdown">
+            <div className="reactMarkdown-container">
               <ReactMarkdown className="reactMarkdown" children={question.body} remarkPlugins={[remarkGfm]} />
             </div>
             <div className="qs-other">
@@ -142,6 +160,13 @@ class QuestionShow extends React.Component {
             </div>
           </div>
 
+        </div>
+
+        <div className='af-container'>
+          <div className="af-header">
+            <h1 className="af-yourAnswer">Your Answer</h1>
+          </div>
+          {this.answerForm()}
         </div>
       </div>
     ) : (null);

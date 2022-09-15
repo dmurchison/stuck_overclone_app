@@ -3,12 +3,14 @@ import QuestionShow from './question_show';
 import { fetchQuestion } from '../../actions/question_actions';
 import { removeEntity } from '../../actions/entity_actions';
 import { upVoteQuestion, downVoteQuestion } from '../../actions/vote_actions';
+import { createAnswer, removeAnswerErrors } from '../../actions/answer_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
   // debugger
   const questionId = ownProps.match.params.id;
   let question = {};
+  let answers = [];
   let author = {};
   let votes;
   let currentUserVote = 0;
@@ -26,22 +28,27 @@ const mapStateToProps = (state, ownProps) => {
         votes += currentVote.numVotes;
 
         if (currentVote.userId === state.session.id) {
-          currentUserVote = currentVote.value;
+          currentUserVote = currentVote.numVotes;
         }
       });
     }
+    Object.keys(state.entities.answers).forEach((answerId) => {
+      const answer = state.entities.answers[answerId];
+      if (answer) answers.push(answer);
+    })
   }
   let returnValue = {
     questionId,
+    answers,
     author,
     question,
-    currentUserId: state.entities.users[state.session.id].id
+    currentUserId: state.session.id,
   };
   if (votes !== undefined) {
     returnValue.votes = votes;
     returnValue.currentUserVote = currentUserVote;
   }
-
+  // debugger
   return returnValue;
 }
 
@@ -50,6 +57,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
     upVoteQuestion: (questionId) => dispatch(upVoteQuestion(questionId)),
     downVoteQuestion: (questionId) => dispatch(downVoteQuestion(questionId)),
+    createAnswer: (questionId, body) => dispatch(createAnswer(questionId, body)),
+    removeAnswerErrors: () => dispatch(removeAnswerErrors()), 
     removeEntity: () => dispatch(removeEntity())
   };
 }

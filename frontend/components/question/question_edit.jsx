@@ -17,7 +17,6 @@ class QuestionEdit extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -120,7 +119,7 @@ class QuestionEdit extends React.Component {
         <div className="qe-body">
           <h1 className="qs-title">{question.question.title}</h1>
 
-          <div className="questionMarkdown">
+          <div className="reactMarkdown-container">
             <ReactMarkdown className="reactMarkdown" children={question.question.body} remarkPlugins={[remarkGfm]} />
           </div>
 

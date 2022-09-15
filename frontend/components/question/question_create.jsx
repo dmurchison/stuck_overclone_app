@@ -10,7 +10,6 @@ class QuestionCreate extends React.Component {
     this.state = this.props.question;
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
   
   componentWillUnmount() {
@@ -36,11 +35,11 @@ class QuestionCreate extends React.Component {
 
   renderErrors() {
     return (
-      <div>
+      <>
         {this.props.errors.map((error, i) => (
           <div key={`error-${i}`}>{error}</div>
         ))}
-      </div> 
+      </> 
     );
   }
 
@@ -85,3 +84,4 @@ class QuestionCreate extends React.Component {
 }
 
 export default QuestionCreate;
+
