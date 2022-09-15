@@ -59,7 +59,7 @@ class QuestionEdit extends React.Component {
       onClick={ () => this.props.deleteQuestion(question.question.id)
         .then(() => this.props.history.push(`/users/${currentUser.id}`)) }
       >
-        Delete
+        Delete Question
       </button>
     );
   }
@@ -124,7 +124,7 @@ class QuestionEdit extends React.Component {
           </div>
 
           <div className='qs-other'>
-            <div className="questionTimeStamp">
+            <div className="calculateTimeStamp">
               <time dateTime={question.question.updated_at}>Last updated {this.calculateTimeSince(question.question.updated_at)}</time>
             </div>
 

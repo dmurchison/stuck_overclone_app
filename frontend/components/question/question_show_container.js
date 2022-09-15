@@ -3,7 +3,7 @@ import QuestionShow from './question_show';
 import { fetchQuestion } from '../../actions/question_actions';
 import { removeEntity } from '../../actions/entity_actions';
 import { upVoteQuestion, downVoteQuestion } from '../../actions/vote_actions';
-import { createAnswer, removeAnswerErrors } from '../../actions/answer_actions';
+import { createAnswer } from '../../actions/answer_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -59,7 +59,6 @@ const mapDispatchToProps = (dispatch) => {
     upVoteQuestion: (questionId) => dispatch(upVoteQuestion(questionId)),
     downVoteQuestion: (questionId) => dispatch(downVoteQuestion(questionId)),
     createAnswer: (questionId, body) => dispatch(createAnswer(questionId, body)),
-    removeAnswerErrors: () => dispatch(removeAnswerErrors()), 
     removeEntity: () => dispatch(removeEntity())
   };
 }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AnswerShow from './answer_show';
-import { removeAnswer } from '../../actions/answer_actions';
+import { deleteAnswer } from '../../actions/answer_actions';
 import { upVoteAnswer, downVoteAnswer } from '../../actions/vote_actions';
 
 
@@ -20,17 +20,19 @@ const mapStateToProps = (state, ownProps) => {
       }
     });
   }
-  return {
+  let returnValue = {
     answer,
     author,
     votes,
-    currentUserVote
+    currentUserVote,
+    currentUserId: state.session.id
   };
+  return returnValue;
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    removeAnswer: (answerId) => dispatch(removeAnswer(answerId)),
+    deleteAnswer: (answerId) => dispatch(deleteAnswer(answerId)),
     upVoteAnswer: (answerId) => dispatch(upVoteAnswer(answerId)),
     downVoteAnswer: (answerId) => dispatch(downVoteAnswer(answerId))
   };

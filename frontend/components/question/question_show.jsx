@@ -105,7 +105,7 @@ class QuestionShow extends React.Component {
     this.props.createAnswer(this.props.questionId, this.state.body);
     this.state.body = "";
   }
-
+  
   renderErrors() {
     return (
       <>
@@ -115,7 +115,7 @@ class QuestionShow extends React.Component {
       </> 
     );
   }
-
+  
   answerForm() {
     return (
       <form onSubmit={this.submitAnswer} action="">
@@ -123,13 +123,14 @@ class QuestionShow extends React.Component {
           className='af-body'
           onChange={this.update("body")}
           value={this.state ? this.state.body : ""}
+          placeholder="Please answer the question however you see fit, you may use markdown here..."
         />
 
         <div className="reactMarkdown-container">
           <ReactMarkdown className="reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
         </div>
 
-        <div className="errorss">
+        <div className="errors">
           {this.renderErrors()}
         </div>
 
@@ -138,16 +139,18 @@ class QuestionShow extends React.Component {
     );
   }
 
+  answerIndex() {
+    return (
+      <>
+        {this.props.answers.map((answer) => (
+          <AnswerShowContainer key={answer.id} answer={answer} />
+        ))}
+      </>
+    );
+  }
+
+
   render() {
-    // debugger
-    let currentUserVote = 0;
-    let votes = 0;
-    if (this.state.currentUserVote) {
-      currentUserVote = this.state.currentUserVote;
-    }
-    if (this.state.votes) {
-      votes = this.state.votes;
-    }
     const { question } = this.props;
     return (question) ? (
       <div className="qs-container">
@@ -170,7 +173,7 @@ class QuestionShow extends React.Component {
                 <span className="questions-row-tags">component</span>
                 <span className="questions-row-tags">object</span>
               </div> */}
-              <div className="questionTimeStamp">
+              <div className="calculateTimeStamp">
                 <time dateTime={question.created_at}>Originally Created: {this.calculateTimeSince(question.created_at)}</time>
                 <time dateTime={question.updated_at}>Last updated: {this.calculateTimeSince(question.updated_at)}</time>
               </div>
@@ -182,6 +185,14 @@ class QuestionShow extends React.Component {
             </div>
           </div>
 
+        </div>
+
+        <div className="qp-header">
+          <h1 className="qs-title">Answers:</h1>
+        </div>
+
+        <div className='answerIndex-container'>
+          {this.answerIndex()}
         </div>
 
         <div className='af-container'>
@@ -197,3 +208,4 @@ class QuestionShow extends React.Component {
 }
 
 export default QuestionShow;
+

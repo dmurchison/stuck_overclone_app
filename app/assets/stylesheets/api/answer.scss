@@ -16,6 +16,18 @@ $errors: rgb(227, 30, 30);
 
 
 
+// Answer Show
+.as-container {
+  padding: 30px 75px;
+}
+
+.as-body {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 20px;
+}
+
+
 // Answer Form
 .af-container {
   padding: 30px 20px;

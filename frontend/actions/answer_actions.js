@@ -6,7 +6,7 @@ export const REMOVE_ANSWER = 'REMOVE_ANSWER';
 export const RECEIVE_ANSWER_ERRORS = 'RECEIVE_ANSWER_ERRORS';
 export const REMOVE_ANSWER_ERRORS = 'REMOVE_ANSWER_ERRORS';
 
-export const receiveAnwers = (payload) => {
+export const receiveAnswers = (payload) => {
   return {
     type: RECEIVE_ANSWERS,
     answers: payload.answers,
@@ -14,7 +14,7 @@ export const receiveAnwers = (payload) => {
   };
 }
 
-export const receiveAnwer = (payload) => {
+export const receiveAnswer = (payload) => {
   return {
     type: RECEIVE_ANSWER,
     answer: payload.answer,
@@ -69,7 +69,7 @@ export const createAnswer = (questionId, body) => dispatch => {
   return AnswerAPIUtil.createAnswer(questionId, body)
     .then(payload => {
       // debugger
-      return dispatch(receiveAnwer(payload));
+      return dispatch(receiveAnswer(payload));
     }, errors => (
       dispatch(receiveAnswerErrors(errors.responseJSON))
     ));
