@@ -55,14 +55,14 @@ class Api::AnswersController < ApplicationController
   private
   
   def vote(direction)
-    @answer = Question.find(params[:id])
+    @answer = Answer.find(params[:id])
     @vote = @answer.votes.find_or_initialize_by(user: current_user)
     @vote.update(votes_number: direction)
     render :show
   end
 
   def answer_params
-    params.require(:answer).permit(:body, :author_id, :question_id)
+    params.require(:answer).permit(:id, :body, :author_id, :question_id)
   end
 
 end

@@ -3,8 +3,8 @@
 export const fetchUser = (user) => {
   // debugger
   return $.ajax({
-      method: "GET",
-      url: `/api/users/${user.id}`
+    method: "GET",
+    url: `/api/users/${user.id}`
   });
 }
 

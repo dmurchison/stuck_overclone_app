@@ -5,7 +5,7 @@ import {
 } from '../../actions/question_actions';
 
 
-export const questionsErrorsReducer = (state = [], action) => {
+export const questionErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_QUESTION_ERRORS:

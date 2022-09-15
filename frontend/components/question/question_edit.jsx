@@ -17,7 +17,6 @@ class QuestionEdit extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -60,7 +59,7 @@ class QuestionEdit extends React.Component {
       onClick={ () => this.props.deleteQuestion(question.question.id)
         .then(() => this.props.history.push(`/users/${currentUser.id}`)) }
       >
-        Delete
+        Delete Question
       </button>
     );
   }
@@ -103,8 +102,8 @@ class QuestionEdit extends React.Component {
               <p>New Question:</p>
             </div>
 
-            <div className="qf-markdownContainer">
-              <ReactMarkdown className="qf-reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
+            <div className="reactMarkdown-container">
+              <ReactMarkdown className="reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
             </div>
 
             <div className="errors">
@@ -120,12 +119,12 @@ class QuestionEdit extends React.Component {
         <div className="qe-body">
           <h1 className="qs-title">{question.question.title}</h1>
 
-          <div className="questionMarkdown">
+          <div className="reactMarkdown-container">
             <ReactMarkdown className="reactMarkdown" children={question.question.body} remarkPlugins={[remarkGfm]} />
           </div>
 
           <div className='qs-other'>
-            <div className="questionTimeStamp">
+            <div className="calculateTimeStamp">
               <time dateTime={question.question.updated_at}>Last updated {this.calculateTimeSince(question.question.updated_at)}</time>
             </div>
 

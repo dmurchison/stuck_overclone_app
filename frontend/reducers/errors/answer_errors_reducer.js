@@ -9,7 +9,7 @@ export const answerErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ANSWER_ERRORS:
-      action.errors;
+      return action.errors;
 
     case RECEIVE_ANSWER:
       return [];

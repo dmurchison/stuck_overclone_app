@@ -21,6 +21,7 @@ export const upVoteQuestion = (questionId) => dispatch => {
     });
 };
 
+
 export const downVoteQuestion = (questionId) => dispatch => {
   // debugger
   return VoteAPIUtil.downVoteQuestion(questionId)
@@ -29,3 +30,25 @@ export const downVoteQuestion = (questionId) => dispatch => {
       return dispatch(handleVote(vote))
     });
 };
+
+
+export const upVoteAnswer = (answerId) => dispatch => {
+  // debugger
+  return VoteAPIUtil.upVoteAnswer(answerId)
+    .then((vote) => {
+      // debugger
+      return dispatch(handleVote(vote))
+    });
+};
+
+
+export const downVoteAnswer = (answerId) => dispatch => {
+  // debugger
+  return VoteAPIUtil.downVoteAnswer(answerId)
+    .then((vote) => {
+      // debugger
+      return dispatch(handleVote(vote))
+    });
+};
+
+

@@ -10,7 +10,6 @@ class QuestionCreate extends React.Component {
     this.state = this.props.question;
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
   
   componentWillUnmount() {
@@ -36,11 +35,11 @@ class QuestionCreate extends React.Component {
 
   renderErrors() {
     return (
-      <div>
+      <>
         {this.props.errors.map((error, i) => (
           <div key={`error-${i}`}>{error}</div>
         ))}
-      </div> 
+      </> 
     );
   }
 
@@ -67,8 +66,8 @@ class QuestionCreate extends React.Component {
             placeholder="Please enter any other information about your question... (You may use markdown here)"
           />
 
-          <div className="qf-markdownContainer">
-            <ReactMarkdown className="qf-reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
+          <div className="reactMarkdown-container">
+            <ReactMarkdown className="reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
           </div>
 
           <div className="errors">
@@ -85,3 +84,4 @@ class QuestionCreate extends React.Component {
 }
 
 export default QuestionCreate;
+

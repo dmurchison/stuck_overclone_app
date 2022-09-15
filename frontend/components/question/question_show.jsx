@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnswerShowContainer } from '../answer/answer_show_container';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -12,10 +13,10 @@ class QuestionShow extends React.Component {
     this.state = {
       body: "",
     };
-    this.submitAnswer = this.submitAnswer.bind(this);
     this.changeVote = this.changeVote.bind(this);
     this.votingButtons = this.votingButtons.bind(this);
     this.editButton = this.editButton.bind(this);
+    this.submitAnswer = this.submitAnswer.bind(this);
   }
 
   componentDidMount() {
@@ -49,12 +50,7 @@ class QuestionShow extends React.Component {
       });
     };
   }
-
-  submitAnswer() {
-    this.props.submitAnswer(this.props.questionId, this.state.body);
-    this.state.body = "";
-  }
-
+  
   changeVote(vote) {
     let newUserVote;
     if (vote === 1) {
@@ -71,7 +67,7 @@ class QuestionShow extends React.Component {
       currentUserVote: newUserVote,
     });
   }
-
+  
   votingButtons() {
     let currentUserVote = 0;
     let votes = 0;
@@ -82,7 +78,7 @@ class QuestionShow extends React.Component {
       votes = this.state.votes;
     }
     return (
-      <div className="qs-voteButtons">
+      <div className="voteButtons-container">
         <button className="voteButton" onClick={() => this.changeVote(1)}>
           <div className="upVote"></div>
         </button>
@@ -95,7 +91,7 @@ class QuestionShow extends React.Component {
       </div>
     );
   };
-
+  
   editButton() {
     const { question, currentUserId } = this.props;
     return (question.author_id === currentUserId) ? (
@@ -104,10 +100,57 @@ class QuestionShow extends React.Component {
       </Link>
     ) : (null);
   }
+  
+  submitAnswer() {
+    this.props.createAnswer(this.props.questionId, this.state.body);
+    this.state.body = "";
+  }
+  
+  renderErrors() {
+    return (
+      <>
+        {this.props.errors.map((error, i) => (
+          <div key={`error-${i}`}>{error}</div>
+        ))}
+      </> 
+    );
+  }
+  
+  answerForm() {
+    return (
+      <form onSubmit={this.submitAnswer} action="">
+        <textarea
+          className='af-body'
+          onChange={this.update("body")}
+          value={this.state ? this.state.body : ""}
+          placeholder="Please answer the question however you see fit, you may use markdown here..."
+        />
+
+        <div className="reactMarkdown-container">
+          <ReactMarkdown className="reactMarkdown" children={this.state.body} remarkPlugins={[remarkGfm]} />
+        </div>
+
+        <div className="errors">
+          {this.renderErrors()}
+        </div>
+
+        <button className='af-submitButton' type='submit'>Post Answer</button>
+      </form>
+    );
+  }
+
+  answerIndex() {
+    return (
+      <>
+        {this.props.answers.map((answer) => (
+          <AnswerShowContainer key={answer.id} answer={answer} />
+        ))}
+      </>
+    );
+  }
 
 
   render() {
-    // debugger
     const { question } = this.props;
     return (question) ? (
       <div className="qs-container">
@@ -120,7 +163,7 @@ class QuestionShow extends React.Component {
           {this.votingButtons()}
 
           <div>
-            <div className="questionMarkdown">
+            <div className="reactMarkdown-container">
               <ReactMarkdown className="reactMarkdown" children={question.body} remarkPlugins={[remarkGfm]} />
             </div>
             <div className="qs-other">
@@ -130,7 +173,7 @@ class QuestionShow extends React.Component {
                 <span className="questions-row-tags">component</span>
                 <span className="questions-row-tags">object</span>
               </div> */}
-              <div className="questionTimeStamp">
+              <div className="calculateTimeStamp">
                 <time dateTime={question.created_at}>Originally Created: {this.calculateTimeSince(question.created_at)}</time>
                 <time dateTime={question.updated_at}>Last updated: {this.calculateTimeSince(question.updated_at)}</time>
               </div>
@@ -143,6 +186,21 @@ class QuestionShow extends React.Component {
           </div>
 
         </div>
+
+        <div className="qp-header">
+          <h1 className="qs-title">Answers:</h1>
+        </div>
+
+        <div className='answerIndex-container'>
+          {this.answerIndex()}
+        </div>
+
+        <div className='af-container'>
+          <div className="af-header">
+            <h1 className="af-yourAnswer">Your Answer</h1>
+          </div>
+          {this.answerForm()}
+        </div>
       </div>
     ) : (null);
   }
@@ -150,3 +208,4 @@ class QuestionShow extends React.Component {
 }
 
 export default QuestionShow;
+

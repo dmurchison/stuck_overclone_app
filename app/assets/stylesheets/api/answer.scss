@@ -16,6 +16,59 @@ $errors: rgb(227, 30, 30);
 
 
 
+// Answer Show
+.as-container {
+  padding: 30px 75px;
+}
+
+.as-body {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 20px;
+}
+
+
 // Answer Form
+.af-container {
+  padding: 30px 20px;
+  margin-bottom: 100px;
+}
+
+.af-header {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  padding: 30px 20px;
+  align-items: center;
+}
+
+.af-yourAnswer {
+  border-bottom: 1px solid rgba(255,255,255, .1);
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.af-body {
+  background: none;
+  border: 1px solid #777;
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  min-height: 200px;
+  margin-bottom: 20px;
+  font-family: inherit;
+}
+
+.af-submitButton {
+  background-color: #ffcb6c;
+  transition: 325ms;
+}
+.af-submitButton:hover {
+  border: 2px solid #3ca4ff;
+  transform: scale(1.15);
+  cursor: pointer;
+}
 
 
