@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionRow from './question_row';
-import { removeEntity } from '../../actions/question_actions';
+import { removeEntity } from '../../actions/entity_actions';
 
 
 const mapStateToProps = (state, ownProps) => {

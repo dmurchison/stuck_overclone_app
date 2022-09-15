@@ -97,3 +97,13 @@ export const deleteQuestion = (questionId) => dispatch => {
     });
 };
 
+
+export const searchQuestions = (searchTerm) => dispatch => {
+  // debugger
+  return QuestionAPIUtil.searchQuestions(searchTerm)
+    .then(questions => {
+      // debugger
+      return dispatch(fetchQuestions(questions))
+    });
+};
+

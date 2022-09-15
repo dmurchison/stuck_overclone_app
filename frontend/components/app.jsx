@@ -15,6 +15,7 @@ import { QuestionEditContainer } from './question/question_edit_container';
 import { QuestionShowContainer } from './question/question_show_container';
 import { QuestionIndexContainer } from './question/question_index_container';
 import { ProfilePageContainer } from './profile/profile_page_container';
+import { SearchBarContainer } from './nav/searchbar_container';
 
 // Components
 import { SplashPage } from './home/splash_page';
@@ -37,6 +38,7 @@ export const App = () => {
           <ProtectedRoute exact path="/users/:id" component={ProfilePageContainer} />
           <ProtectedRoute exact path="/questions/:id" component={QuestionShowContainer} />
           <ProtectedRoute exact path="/questions/:questionId/edit" component={QuestionEditContainer} />
+          <Route exact path="/search" component={SearchBarContainer} />
         </Switch>
       <Footer />
     </>

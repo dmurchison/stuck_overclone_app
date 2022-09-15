@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Debugging and Redux Cycle Test functions
-  window.store = store;
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
-  window.getState = store.getState;
+  // window.store = store;
+  // window.signup = signup;
+  // window.login = login;
+  // window.logout = logout;
+  // window.getState = store.getState;
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);

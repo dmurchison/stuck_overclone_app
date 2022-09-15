@@ -4,7 +4,7 @@ export const fetchQuestions = () => {
   // debugger
   return $.ajax({
     method: "GET",
-    url: "/api/questions",
+    url: "/api/questions"
   });
 }
 
@@ -40,5 +40,14 @@ export const deleteQuestion = (questionId) => {
     method: "DELETE",
     url: `/api/questions/${questionId}`
   });
+}
+
+export const searchQuestions = (searchTerm) => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/questions",
+    data: { searchTerm }
+  })
+
 }
 

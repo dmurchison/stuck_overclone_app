@@ -5,38 +5,35 @@ import { Link, Redirect } from 'react-router-dom';
 class Header extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {};
+    this.state = {
+      searchTerm: ""
+    };
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.logout = this.logout.bind(this);
+  }
+
+  handleUpdate(e) {
+    e.preventDefault();
+    this.setState({
+      searchTerm: e.target.value
+    })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.setSearchTerm(this.state.searchTerm);
+    this.props.history.push("/search");
+    this.setState({
+      searchTerm: ""
+    })
   }
 
   logout() {
     this.props.logout();
-    console.log(this.props.history)
   }
 
-  buttonChange() {
-    const { currentUser } = this.props;
-    return (currentUser) ? (
-      <div className="headerButtons">
-        <form className="searchForm">
-          <input className="searchBar" type="text" placeholder="Search..." />
-        </form>
-        <div>
-          <Link className="profileLink" to={`/users/${currentUser.id}`}>{currentUser.username}</Link>
-            &nbsp;
-          <Link className="buttonRight" to={"/"} onClick={this.logout}>Log out</Link>
-        </div>
-      </div>
-    ) : (
-      <div className="headerButtons">
-        <Link className="buttonLeft" to="/login">Log in</Link>
-          &nbsp;
-        <Link className="buttonRight" to="/signup">Sign up</Link>
-      </div>
-    );
-  }
 
-  
   render() {
     const { currentUser } = this.props;
     return (currentUser) ? (
