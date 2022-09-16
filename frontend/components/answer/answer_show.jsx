@@ -114,14 +114,17 @@ class AnswerShow extends React.Component {
             <div className='reactMarkdown-container'>
               <ReactMarkdown className='reactMarkdown' children={answer.body} remarkPlugins={[remarkGfm]}/>
             </div>
+            <div className="qs-other">
 
-            <div className='calculateTimeStamp'>
-              <time dateTime={answer.created_at}>Answered: {this.calculateTimeSince(answer.created_at)}</time>
-              <p>By: {answer.username}</p>
-            </div>
+              <div className='calculateTimeStamp'>
+                <time dateTime={answer.created_at}>Answered: {this.calculateTimeSince(answer.created_at)}</time>
+                <p>By: {answer.username}</p>
+              </div>
 
-            <div className="deleteButton-container">
-              {this.deleteButton()}
+              <div className="deleteButton-container">
+                {this.deleteButton()}
+              </div>
+
             </div>
           </div>
 
