@@ -62,10 +62,11 @@ class Api::QuestionsController < ApplicationController
     # debugger
     @users = User.all
     keywords = params[:keywords].split(" ")
-    questions = []
+    @questions = []
     keywords.each do |keyword|
       @questions.concat(Question.where("lower(title) LIKE ?", "%#{keyword.downcase}%"))
     end
+    render :index
   end
 
   def upvote

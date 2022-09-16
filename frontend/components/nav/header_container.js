@@ -6,10 +6,9 @@ import { setSearchTerm } from '../../actions/searchbar_actions';
 
 
 const mapStateToProps = (state) => {
-  const id = state.session.id
+  const currentUserId = state.session.id
   return {
-    session: state.session,
-    currentUser: state.entities.users[id]
+    currentUser: state.entities.users[currentUserId]
   };
 }
 

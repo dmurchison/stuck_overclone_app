@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import moment from 'moment';
 
 
@@ -12,7 +12,7 @@ class QuestionRow extends React.Component {
 
   handleRedirect() {
     this.props.removeEntity();
-    this.props.history.push(`/questions/${this.props.id}`)
+    this.props.history.push(`/questions/${this.props.question.id}`)
   }
 
   calculateTimeSince(time) {
@@ -24,9 +24,8 @@ class QuestionRow extends React.Component {
   render() {
     // debugger
     const { question } = this.props;
-    return (
+    return (question) ? (
       <div className="qr-container">
-
         <div className="qr-stats">1<span className="qr-statsSpan">votes</span></div>
         {/* <div className="questions-row-stats">{numVotes}<span className="questions-row-stats-span">votes</span></div> */}
         <div className="qr-stats">2<span className="qr-statsSpan">answers</span></div>
@@ -46,9 +45,9 @@ class QuestionRow extends React.Component {
           </div>
         </div>
       </div>
-    );
+    ) : (null);
   }
 
 }
 
-export default QuestionRow;
+export default withRouter(QuestionRow);

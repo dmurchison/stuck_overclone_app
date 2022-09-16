@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 class Header extends React.Component {
@@ -17,16 +17,16 @@ class Header extends React.Component {
     e.preventDefault();
     this.setState({
       searchTerm: e.target.value
-    })
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.setSearchTerm(this.state.searchTerm);
-    this.props.history.push("/search");
+    this.props.setSearchTerm(this.state)
+    this.props.history.push("/search/")
     this.setState({
       searchTerm: ""
-    })
+    });
   }
 
   logout() {
@@ -41,8 +41,14 @@ class Header extends React.Component {
         <Link className="header-logo" to="/">
           <img className="header-icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/25/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"/><span className="header-logo-letters">stuck<b className="header-logo-letters-overclone">overclone</b></span>
         </Link>
-        <form action="" className="searchForm">
-          <input className="searchBar" type="text" placeholder="Search..." />
+        <form className="searchForm" action="" onSubmit={this.handleSubmit}>
+          <input 
+            className="searchBar" 
+            type="text"
+            value={this.state.searchTerm}
+            onChange={this.handleUpdate}
+            placeholder="Search..." 
+          />
         </form>
         <div className="headerButtons">
           <Link className="profileLink" to={`/users/${currentUser.id}`}>{currentUser.username}</Link>
@@ -66,4 +72,4 @@ class Header extends React.Component {
 
 }
 
-export default Header;
+export default withRouter(Header);

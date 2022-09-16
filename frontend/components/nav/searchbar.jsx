@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { QuestionRowContainer } from '../question/question_row_container';
+import { QuestionRow } from '../question/question_row';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
     return (
       <ul className="qi-rows">
         {questions.map((question) => (
-          <QuestionRowContainer key={question.id} question={question} />
+          <QuestionRow key={question.id} question={question} />
         ))}
       </ul>
     );
@@ -42,6 +42,7 @@ class SearchBar extends React.Component {
 
 
   render() {
+    const { questions } = this.props;
     if (!this.state.indexed) {
       return null;
     }
