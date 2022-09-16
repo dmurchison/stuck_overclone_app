@@ -1,0 +1,117 @@
+// Variables
+$bg: #393939;
+$bg-hover: #272727;
+$question-blue: #3ca4ff;
+$lt-blue: rgb(128, 197, 220);
+$reg-blue: rgb(52, 132, 238);
+$hover-blue: rgb(21, 82, 161);
+$link-blue: rgb(0, 189, 252);
+$lightsmoke: var(--light);
+$lt-orange: #ffcb6c;
+$reg-orange: orange;
+$hover-orange: rgb(183, 119, 0);
+$errors: rgb(227, 30, 30);
+
+
+
+.askButton {
+  background-color: $reg-blue;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 12px 10px;
+  font-style: none;
+  transition: 325ms;
+}
+.askButton:hover {
+  background: $hover-blue;
+}
+
+.deleteButton {
+  background-color: $errors;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px;
+  font-style: none;
+  transition: 325ms;
+}
+
+.deleteButton:hover {
+  background: rgba($errors, $alpha: 0.75);
+  cursor: pointer;
+}
+
+.questionButton, .af-submitButton, .editButton {
+  background-color: $reg-blue;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 12px 10px;
+  font-style: none;
+  transition: 325ms;
+}
+.questionButton:hover, .af-submitButton:hover, .editButton:hover  {
+  background-color: rgb(21, 82, 161);
+  cursor: pointer;
+}
+
+// .af-submitButton {
+//   background-color: $question-blue;
+//   color: #fff;
+//   border: 2px solid $hover-orange;
+//   border-style: groove;
+//   border-radius: 5px;
+//   padding: 5px;
+//   transition: 325ms;
+//   margin-bottom: 0;
+// }
+// .af-submitButton:hover {
+//   border: 2px solid $hover-orange;
+//   transform: scale(1.15);
+//   cursor: pointer;
+//   background-color: rgba($question-blue, $alpha: 0.75);
+// }
+
+
+
+// .editButton-container {
+//   display: flex;
+//   align-items: flex-end;
+// }
+
+// .editButton {
+//   background-color: $hover-blue;
+//   color: $reg-orange;
+//   border: 2px;
+//   border-style: groove;
+//   border-color: $lt-orange;
+//   border-radius: 5px;
+//   padding: 5px;
+//   transition: 325ms;
+// }
+// .editButton:hover {
+//   transform: scale(1.05);
+// }
+
+// .deleteButton-container {
+//   margin-top: 10px;
+// // }
+
+// .deleteButton {
+//   background-color: $errors;
+//   color: #fff;
+//   border: 2px;
+//   border-style: groove;
+//   border-color: $bg-hover;
+//   border-radius: 5px;
+//   padding: 5px;
+//   transition: 325ms;
+//   margin-bottom: 0;
+// }
+// .deleteButton:hover {
+//   transform: scale(1.15);
+//   cursor: pointer;
+//   background-color: rgba($errors, $alpha: 0.75);
+// }
+

@@ -110,7 +110,7 @@ class QuestionEdit extends React.Component {
               {this.renderErrors()}
             </div>
 
-            <button className="qf-submitButton" type="submit">Update Question</button>
+            <button className="questionButton" type="submit">Update Question</button>
           </form>
         </div>
 

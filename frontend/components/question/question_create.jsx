@@ -75,7 +75,7 @@ class QuestionCreate extends React.Component {
             {this.renderErrors()}
           </div>
 
-          <button className="qf-submitButton" type="submit">Post Question</button>
+          <button className="questionButton" type="submit">Post Question</button>
           
         </form>
       </div>

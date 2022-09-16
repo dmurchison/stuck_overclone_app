@@ -29,20 +29,6 @@ $errors: rgb(227, 30, 30);
   margin: 0;
 }
 
-.askButton {
-  background-color: $reg-blue;
-  color: #fff;
-  border: 0;
-  border-radius: 5px;
-  padding: 12px 10px;
-  font-style: none;
-  transition: 325ms;
-}
-.askButton:hover {
-  background: $hover-blue;
-}
-
-
 // Questions Row
 .qi-rows {
   display: flex;
@@ -204,27 +190,6 @@ $errors: rgb(227, 30, 30);
   }
 }
 
-.editButton-container {
-  display: flex;
-  align-items: flex-end;
-}
-
-.editButton {
-  background-color: $hover-blue;
-  color: $reg-orange;
-  border: 2px;
-  border-style: groove;
-  border-color: $lt-orange;
-  border-radius: 5px;
-  padding: 10px;
-  transition: 325ms;
-  margin-bottom: 0;
-  margin-bottom: 0;
-}
-.editButton:hover {
-  transform: scale(1.05);
-}
-
 .reactMarkdown {
   b, strong {
     font-weight: 700;
@@ -348,20 +313,6 @@ $errors: rgb(227, 30, 30);
   }
 }
 
-.qf-submitButton {
-  background-color: #378ad3;
-  color: #fff;
-  border: 0;
-  border-radius: 5px;
-  padding: 12px 10px;
-  font-style: none;
-  transition: 325ms;
-}
-.qf-submitButton:hover {
-  background-color: rgb(21, 82, 161);
-  cursor: pointer;
-}
-
 
 
 // Question Index
@@ -382,25 +333,5 @@ $errors: rgb(227, 30, 30);
 
 .qe-body {
   margin-top: 25px;
-}
-
-.deleteButton-container {
-  margin-top: 10px;
-}
-
-.deleteButton {
-  background-color: $hover-blue;
-  color: $reg-orange;
-  border: 2px;
-  border-style: groove;
-  border-color: $lt-orange;
-  border-radius: 5px;
-  padding: 10px;
-  transition: 325ms;
-  margin-bottom: 0;
-}
-.deleteButton:hover {
-  transform: scale(1.05);
-  cursor: pointer;
 }
 
