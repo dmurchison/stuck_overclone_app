@@ -45,9 +45,7 @@ export const deleteQuestion = (questionId) => {
 export const searchQuestions = (searchTerm) => {
   return $.ajax({
     method: "GET",
-    url: "/api/questions",
-    data: { searchTerm }
-  })
-
+    url: `/search/?q=${searchTerm}`
+  });
 }
 

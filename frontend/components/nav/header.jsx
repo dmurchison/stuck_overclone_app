@@ -8,25 +8,21 @@ class Header extends React.Component {
     this.state = {
       searchTerm: ""
     };
-    this.handleUpdate = this.handleUpdate.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.logout = this.logout.bind(this);
   }
 
-  handleUpdate(e) {
-    e.preventDefault();
+  updateSearch(e) {
     this.setState({
-      searchTerm: e.target.value
+      searchTerm: e.target.value.substr(0, 100)
     });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.setSearchTerm(this.state)
-    this.props.history.push("/search/")
-    this.setState({
-      searchTerm: ""
-    });
+    this.props.history.push(`/search/q=${this.state.searchTerm}`);
+    this.setState({ searchTerm: "" });
   }
 
   logout() {
@@ -35,23 +31,27 @@ class Header extends React.Component {
 
 
   render() {
-    const { currentUser } = this.props;
-    return (currentUser) ? (
+    const { currentUser, session } = this.props;
+    return (session && currentUser) ? (
       <header className="header-container">
         <Link className="header-logo" to="/">
-          <img className="header-icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/25/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"/><span className="header-logo-letters">stuck<b className="header-logo-letters-overclone">overclone</b></span>
+          <img 
+            className="header-icon" 
+            src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/25/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"
+          />
+          <span className="header-logo-letters">stuck<b className="header-logo-letters-overclone">overclone</b></span>
         </Link>
         <form className="searchForm" action="" onSubmit={this.handleSubmit}>
           <input 
             className="searchBar" 
             type="text"
-            value={this.state.searchTerm}
-            onChange={this.handleUpdate}
+            value={this.state.search}
+            onChange={this.updateSearch}
             placeholder="Search..." 
           />
         </form>
         <div className="headerButtons">
-          <Link className="profileLink" to={`/users/${currentUser.id}`}>{currentUser.username}</Link>
+          <Link className="profileLink" to={`/users/${session.id}`}>{currentUser.username}</Link>
             &nbsp;
           <Link className="buttonRight" to={"/"} onClick={this.logout}>Log out</Link>
         </div>

@@ -3,17 +3,20 @@ class Api::QuestionsController < ApplicationController
   before_action :require_logged_in, only: [:create]
 
   def index
-    # debugger
-    if params[:searchTerm]
-      keywords = params[:searchTerm].split(" ")
-      @questions = []
-      keywords.each do |keyword|
-        @questions.concat(Question.where("lower(title) LIKE ?", "%#{keyword.downcase}%"))
-      end
-    else
-      @questions = Question.all
-    end
+    # # debugger
+    # if params[:searchTerm]
+    #   keywords = params[:searchTerm][:searchTerm].split(" ")
+    #   @questions = []
+    #   keywords.each do |keyword|
+    #     @questions = @questions.concat(Question.where("lower(title) LIKE ?", "%#{keyword.downcase}%"))
+    #   end
+    # else
+    #   @questions = Question.all
+    # end
 
+    # @users = User.all
+    # render :index
+    @questions = Question.all
     @users = User.all
     render :index
   end
@@ -59,7 +62,8 @@ class Api::QuestionsController < ApplicationController
   end
 
   def search
-    # debugger
+    debugger
+
     @users = User.all
     keywords = params[:keywords].split(" ")
     @questions = []

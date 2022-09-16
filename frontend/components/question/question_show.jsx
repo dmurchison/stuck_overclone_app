@@ -25,7 +25,7 @@ class QuestionShow extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.removeEntity();
+    this.props.removeAnswerErrors();
   }
 
   componentDidUpdate() {

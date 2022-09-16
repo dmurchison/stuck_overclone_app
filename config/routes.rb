@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # SearchBar Feature
+  get :search, controller: :main
   # "namespace" allows us to name these routes to easily make ajax requests on the frontend
   namespace :api, defaults: {format: :json} do
 

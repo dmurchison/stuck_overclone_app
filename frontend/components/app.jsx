@@ -38,7 +38,7 @@ export const App = () => {
           <ProtectedRoute exact path="/users/:id" component={ProfilePageContainer} />
           <ProtectedRoute exact path="/questions/:id" component={QuestionShowContainer} />
           <ProtectedRoute exact path="/questions/:questionId/edit" component={QuestionEditContainer} />
-          <ProtectedRoute exact path="/search" component={SearchBarContainer} />
+          <ProtectedRoute exact path="/search/q=:searchTerm" component={SearchBarContainer} />
         </Switch>
       <Footer />
     </>

@@ -1,21 +1,20 @@
 import { connect } from 'react-redux';
 import Header from './header';
 import { logout } from '../../actions/session_actions';
-import { setSearchTerm } from '../../actions/searchbar_actions';
 
 
 
 const mapStateToProps = (state) => {
   const currentUserId = state.session.id
   return {
-    currentUser: state.entities.users[currentUserId]
+    currentUser: state.entities.users[currentUserId],
+    session: state.session
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
-    setSearchTerm: (searchTerm) => dispatch(setSearchTerm(searchTerm))
   };
 }
 
