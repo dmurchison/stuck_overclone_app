@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { withRouter } from 'react-router';
 
 
 class QuestionCreate extends React.Component {
@@ -83,5 +84,5 @@ class QuestionCreate extends React.Component {
 
 }
 
-export default QuestionCreate;
+export default withRouter(QuestionCreate);
 

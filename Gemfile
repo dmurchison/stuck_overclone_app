@@ -55,6 +55,7 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'ransack'
 end
 
 group :test do

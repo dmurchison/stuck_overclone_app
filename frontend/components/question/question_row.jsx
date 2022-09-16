@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import moment from 'moment';
 
 
@@ -12,7 +12,7 @@ class QuestionRow extends React.Component {
 
   handleRedirect() {
     this.props.removeEntity();
-    this.props.history.push(`/questions/${this.props.id}`)
+    this.props.history.push(`/questions/${this.props.question.id}`)
   }
 
   calculateTimeSince(time) {
@@ -23,14 +23,14 @@ class QuestionRow extends React.Component {
   
   render() {
     // debugger
+    const votes = this.props.question.votes;
+    const answers = this.props.question.answers;
     const { question } = this.props;
-    return (
-      <div className="qr-container">
 
-        <div className="qr-stats">1<span className="qr-statsSpan">votes</span></div>
-        {/* <div className="questions-row-stats">{numVotes}<span className="questions-row-stats-span">votes</span></div> */}
-        <div className="qr-stats">2<span className="qr-statsSpan">answers</span></div>
-        {/* <div className="questions-row-stats">{numAnswers}<span className="questions-row-stats-span">answers</span></div> */}
+    return (question) ? (
+      <div className="qr-container">
+        <div className="qr-stats">{votes ? votes.length : 0}<span className="qr-statsSpan">votes</span></div>
+        <div className="qr-stats">{answers ? answers.length : 0}<span className="qr-statsSpan">answers</span></div>
 
         <div className="qr-title">
           <Link className="qr-titleLink" to={`/questions/${question.id}`}>{question.title}</Link>
@@ -46,7 +46,7 @@ class QuestionRow extends React.Component {
           </div>
         </div>
       </div>
-    );
+    ) : (null);
   }
 
 }

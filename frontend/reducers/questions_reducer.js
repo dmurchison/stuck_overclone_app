@@ -2,6 +2,7 @@ import {
   RECEIVE_QUESTION,
   RECEIVE_QUESTIONS,
   REMOVE_QUESTION,
+  REMOVE_QUESTION_SEARCH
 } from '../actions/question_actions';
 import { REMOVE_ENTITY } from '../actions/entity_actions';
 
@@ -12,7 +13,7 @@ export const questionsReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_QUESTIONS:
       // debugger
-      newState = Object.assign({}, action.questions.questions)
+      newState = Object.assign({}, state, action.questions )
       return newState;
 
     case RECEIVE_QUESTION:
@@ -25,6 +26,9 @@ export const questionsReducer = (state = {}, action) => {
       newState = Object.assign({}, state);
       delete newState[action.questionId];
       return newState;
+
+    case REMOVE_QUESTION_SEARCH:
+      return [];
 
     case REMOVE_ENTITY:
       return {};

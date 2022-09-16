@@ -6,6 +6,7 @@ export const RECEIVE_AUTHORS = 'RECEIVE_AUTHORS';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const RECEIVE_QUESTION_ERRORS = 'RECEIVE_QUESTION_ERRORS';
 export const REMOVE_QUESTION_ERRORS = 'REMOVE_QUESTION_ERRORS';
+export const REMOVE_QUESTION_SEARCH = 'REMOVE_QUESTION_SEARCH';
 
 
 export const receiveQuestions = (questions) => {
@@ -41,6 +42,12 @@ export const removeQuestionErrors = () => {
     type: REMOVE_QUESTION_ERRORS
   };
 }
+
+export const removeQuestionSearch = () => {
+  return {
+    type: REMOVE_QUESTION_SEARCH
+  }
+};
 
 
 // Thunk Action Creators
@@ -103,7 +110,7 @@ export const searchQuestions = (searchTerm) => dispatch => {
   return QuestionAPIUtil.searchQuestions(searchTerm)
     .then(questions => {
       // debugger
-      return dispatch(fetchQuestions(questions))
+      return dispatch(receiveQuestions(questions))
     });
 };
 
