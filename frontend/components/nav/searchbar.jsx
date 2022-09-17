@@ -30,8 +30,8 @@ class SearchBar extends React.Component {
     const { questions } = this.props;
     return (
       <ul className="qi-rows">
-        {questions.map((question) => (
-          <QuestionRow key={question.id} question={question} />
+        {questions.map((question, i) => (
+          <QuestionRow key={`question${i}`} question={question} />
         ))}
       </ul>
     );

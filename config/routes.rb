@@ -18,8 +18,6 @@ Rails.application.routes.draw do
       end
       resources :answers, only: [:create]
     end
-    # get request for searching questions index
-    get "/search/:keywords", to: "questions#search"
 
     # Answers Routes
     resources :answers, only: [:show, :update, :destroy] do

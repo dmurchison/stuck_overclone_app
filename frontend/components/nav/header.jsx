@@ -34,7 +34,7 @@ class Header extends React.Component {
     const { currentUser, session } = this.props;
     return (session && currentUser) ? (
       <header className="header-container">
-        <Link className="header-logo" to="/">
+        <Link className="header-logo" to={"/"}>
           <img 
             className="header-icon" 
             src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/25/000000/external-stack-overflow-is-a-question-and-answer-site-for-professional-logo-color-tal-revivo.png"

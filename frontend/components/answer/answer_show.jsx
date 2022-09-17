@@ -121,9 +121,9 @@ class AnswerShow extends React.Component {
                 <p>By: {answer.username}</p>
               </div>
 
-              <div className="deleteButton-container">
+              {/* <div className="deleteButton-container">
                 {this.deleteButton()}
-              </div>
+              </div> */}
 
             </div>
           </div>
