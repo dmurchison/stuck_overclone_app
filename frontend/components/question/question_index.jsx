@@ -16,11 +16,10 @@ class QuestionIndex extends React.Component {
   }
 
   getQuestionRow() {
-    const { questions } = this.props;
     return (
       <ul className="qi-rows">
-        {questions.map((question) => (
-          <QuestionRow key={question.id} question={question} />
+        {this.props.questions.map((question, i) => (
+          <QuestionRow key={`question${i}`} question={question} />
         ))}
       </ul>
     );
@@ -29,7 +28,7 @@ class QuestionIndex extends React.Component {
   
   render() {
     // debugger
-    return (
+    return (this.props.questions) ? (
       <div className="qi-container">
 
         <div className="qp-header">
@@ -42,7 +41,7 @@ class QuestionIndex extends React.Component {
         </div>
         
       </div>
-    );
+    ) : (null);
   }
 
 }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AnswerShow from './answer_show';
-import { deleteAnswer } from '../../actions/answer_actions';
+import { deleteAnswer, fetchAnswers } from '../../actions/answer_actions';
 import { upVoteAnswer, downVoteAnswer } from '../../actions/vote_actions';
 
 

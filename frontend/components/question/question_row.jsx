@@ -41,8 +41,8 @@ class QuestionRow extends React.Component {
           <span className="questions-row-tags">object</span> */}
 
           <div className="qr-timeStamp">
-            <time dateTime={question.created_at}>Originally Created: {this.calculateTimeSince(question.created_at)}</time>
-            <p dateTime={question.updated_at}>Last updated {this.calculateTimeSince(question.updated_at)}</p>
+            <time dateTime={question.created_at}>Created: {this.calculateTimeSince(question.created_at)}</time>
+            <time dateTime={question.updated_at}>Last updated: {this.calculateTimeSince(question.updated_at)}</time>
           </div>
         </div>
       </div>

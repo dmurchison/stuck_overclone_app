@@ -142,8 +142,8 @@ class QuestionShow extends React.Component {
   answerIndex() {
     return (
       <>
-        {this.props.answers.map((answer) => (
-          <AnswerShowContainer key={answer.id} answer={answer} />
+        {this.props.answers.map((answer, i) => (
+          <AnswerShowContainer key={`answer${i}`} answer={answer} />
         ))}
       </>
     );
