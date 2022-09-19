@@ -6,24 +6,23 @@ Stuck Overclone is a clone of [Stack Overflow](https://stackoverflow.com/)
 - [Design Docs](https://github.com/dmurchison/stuck_overclone_app/wiki)
 - [Stuck Overclone Website](https://stuckoverclone.herokuapp.com/)
 
+## Splash Page
+![stuck-overclone](https://user-images.githubusercontent.com/80483775/190945587-fc1a4654-b8a9-41d1-8be3-a20e1b9dde14.png)
+
 ## Questions Index
-<img width="1592" alt="Screen Shot 2022-07-01 at 10 10 11 AM" src="https://user-images.githubusercontent.com/80483775/176911821-4bd96bf0-bf19-492b-92f4-d736d0ade1fb.png">
-
+![stuck-overclone2](https://user-images.githubusercontent.com/80483775/190945715-3cf9b8eb-65a1-4ebd-9791-2710dc26afa4.png)
   - The questions index page is going to list all of the top questions based on views, answers and votes.
-  - The question titles will be links to each individual question page which will have all of the answers, comments, voting statistics and most importantly, Code!
-  ### Features to add:
-    - Eventually the header's search bar will allow users to search for questions based on key words.
-    - Dynamic tags will allow the authors of questions to add keywords referencing the code and technology.
+  - The question titles are links to each individual question page which will have all of the answers, comments, voting statistics and most importantly, Code!
 
+## Question Show Page
+![stuck-overclone4](https://user-images.githubusercontent.com/80483775/190946178-599d686b-3529-4116-a746-f17ad75842b4.png)
+  - The questions show page displays the question, votes and an answer form to write your own answers!
+  - Answers can have code blocks and votes as well. 
 
 ## Login/Signup Page
-
+![stuck-overclone3](https://user-images.githubusercontent.com/80483775/190945854-d54b9ba1-251f-4f70-a297-4b1e88c2d653.png)
   - The signup page is a simple form to allow users to signup which will intern give them access to the features listed on the left side of the form.
-  - There will be a link to signup the user or login if the user already has an account.
-  ### Features to add:
-    - CSS and styling needs to be fixed.
-    - Demo Login feature.
-
+  - There is a link to signup the user or login if the user already has an account.
 
 ## Header/Footer
   - Provides a searchbar, logo with link to splash page, and dynamic buttons for logging in and signing up which will change to a users profile badge if there is an active session.
