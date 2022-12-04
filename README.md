@@ -4,15 +4,15 @@
 
 Stuck Overclone is a clone of Stack Overflow, I chose to build this website because I am a fan of Stack Overflow. With this app, authorized users can search for, view, answer, upvote or downvote questions that other authorized users have previously posted. Most importantly, authorized users also have the ability to upvote or downvote answers as well.
 
-## Login/Signup Page
-![stuck-overclone3](https://user-images.githubusercontent.com/80483775/190945854-d54b9ba1-251f-4f70-a297-4b1e88c2d653.png)
-- The signup page is a simple form to allow users to signup which will intern give them access to the features listed on the left side of the form.
-- There is a link to signup the user or login if the user already has an account.
-
 ## Question Show Page
 ![stuck-overclone4](https://user-images.githubusercontent.com/80483775/190946178-599d686b-3529-4116-a746-f17ad75842b4.png)
 - The questions show page displays the question, votes and an answer form to write your own answers!
 - Answers can have code blocks and votes as well. 
+
+## Login/Signup Page
+![stuck-overclone3](https://user-images.githubusercontent.com/80483775/190945854-d54b9ba1-251f-4f70-a297-4b1e88c2d653.png)
+- The signup page is a simple form to allow users to signup which will intern give them access to the features listed on the left side of the form.
+- There is a link to signup the user or login if the user already has an account.
 
 ## Development Information
 ### Versions
