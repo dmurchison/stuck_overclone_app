@@ -27,16 +27,16 @@
 
 
 ## Technologies
-  ### Backend:
-    - Ruby
-    - Rails
-  ### Middleware
-    - JQuery
-    - JBuilder
-    - Redux
-  ### Frontend
-    - JavaScript
-    - React
+### Backend:
+- Ruby
+- Rails
+### Middleware
+- JQuery
+- JBuilder
+- Redux
+### Frontend
+- JavaScript
+- React
 
 
 
