@@ -1,32 +1,17 @@
-BUGS AND FIXES DURING DEVELOPMENT
-
-Features for completion
-  - Questions *
-  - Votes *
-  - Answers *
-  - Searching * 
-  - MD Support for Q&A *
-  
-
--- UNRESOLVED --
-BUGS:
+# Bugs And Notes
 
 
+## Bug1
+- Unable to push to heroku after Adding gem 'ransack' to gemfile.
+- Error: 
+FAILED: http://docs.heroku.com/bundler
+`!     Heroku push rejected, failed to install gems via Bundler
+## Fix
+- https://stackoverflow.com/questions/4574176/heroku-push-rejected-failed-to-install-gems-via-bundler
+- x86_64-darwin-16
+*x86_64-linux* For macOS uploads after updating gemfile.
 
 
--- RESOLVED --
-
-Bug:
-  - Unable to push to heroku after Adding gem 'ransack' to gemfile.
-  - Error: 
-  FAILED: http://docs.heroku.com/bundler
- !     Heroku push rejected, failed to install gems via Bundler
-Fix:
-  - https://stackoverflow.com/questions/4574176/heroku-push-rejected-failed-to-install-gems-via-bundler
-  - Added:
-  PLATFORMS
-  x86_64-darwin-16
-  **x86_64-linux** For macOS uploads after updating gemfile.
 
 Bug:
   - Cannot push to heroku after adding new npm dependecies.
