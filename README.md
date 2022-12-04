@@ -1,10 +1,7 @@
 # Stuck Overclone
 
-Stuck Overclone is a clone of [Stack Overflow](https://stackoverflow.com/)
-
-## Main Links
+- [Live Link](https://stackoverflow.com/)
 - [Design Docs](https://github.com/dmurchison/stuck_overclone_app/wiki)
-- [Stuck Overclone Website](https://stuckoverclone.herokuapp.com/)
 
 ## Splash Page
 ![stuck-overclone](https://user-images.githubusercontent.com/80483775/190945587-fc1a4654-b8a9-41d1-8be3-a20e1b9dde14.png)
