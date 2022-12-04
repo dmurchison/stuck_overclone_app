@@ -1,8 +1,8 @@
 # Stuck Overclone
-- [Live Link](https://stackoverflow.com/)
+- [Live Link](http://stuckoverclone.herokuapp.com/#/)
 - [Design Docs](https://github.com/dmurchison/stuck_overclone_app/wiki)
 
-Stuck Overclone is a clone of Stack Overflow, I chose to build this website because I am a fan of Stack Overflow. With this app, authorized users can search for, view, answer, upvote or downvote questions that other authorized users have previously posted. Most importantly, authorized users also have the ability to upvote or downvote answers as well.
+Stuck Overclone is a clone of [Stack Overflow](https://stackoverflow.com/), I chose to build this website because I am passionate about coding education. With this web app, authorized users can search for, view, answer, upvote or downvote questions that other authorized users have previously posted. Most importantly, authorized users also have the ability to upvote or downvote answers as well.
 
 ## Question Show Page
 ![stuck-overclone4](https://user-images.githubusercontent.com/80483775/190946178-599d686b-3529-4116-a746-f17ad75842b4.png)
