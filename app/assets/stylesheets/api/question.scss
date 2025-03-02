@@ -178,7 +178,7 @@ $errors: rgb(227, 30, 30);
       border-bottom: 25px solid $hover-orange;
     }
     .downVote:hover {
-      transform: scale(1.25) smooth;
+      transform: scale(1.25);
       border-top: 25px solid $hover-orange;
     }
     &.voted {
