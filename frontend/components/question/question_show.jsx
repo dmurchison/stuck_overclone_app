@@ -50,7 +50,7 @@ class QuestionShow extends React.Component {
       });
     };
   }
-  
+
   changeVote(vote) {
     let newUserVote;
     if (vote === 1) {
@@ -67,7 +67,7 @@ class QuestionShow extends React.Component {
       currentUserVote: newUserVote,
     });
   }
-  
+
   votingButtons() {
     let currentUserVote = 0;
     let votes = 0;
@@ -79,19 +79,25 @@ class QuestionShow extends React.Component {
     }
     return (
       <div className="voteButtons-container">
-        <button className="voteButton" onClick={() => this.changeVote(1)}>
+        <button
+          className={`voteButton ${currentUserVote === 1 ? 'voted' : ''}`}
+          onClick={() => this.changeVote(1)}
+        >
           <div className="upVote"></div>
         </button>
 
         <div className="totalVotes">{votes + currentUserVote}</div>
 
-        <button className="voteButton" onClick={() => this.changeVote(-1)}>
+        <button
+          className={`voteButton ${currentUserVote === -1 ? 'voted' : ''}`}
+          onClick={() => this.changeVote(-1)}
+        >
           <div className="downVote"></div>
         </button>
       </div>
     );
   };
-  
+
   editButton() {
     const { question, currentUserId } = this.props;
     return (question.author_id === currentUserId) ? (
@@ -100,22 +106,22 @@ class QuestionShow extends React.Component {
       </Link>
     ) : (null);
   }
-  
+
   submitAnswer() {
     this.props.createAnswer(this.props.questionId, this.state.body);
     this.state.body = "";
   }
-  
+
   renderErrors() {
     return (
       <>
         {this.props.errors.map((error, i) => (
           <div key={`error-${i}`}>{error}</div>
         ))}
-      </> 
+      </>
     );
   }
-  
+
   answerForm() {
     return (
       <form onSubmit={this.submitAnswer} action="">
