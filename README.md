@@ -85,6 +85,9 @@
 * Running Dev Env
   * `bundle exec rails start`
   * `npm run frontend` || `npm run start`
+* Running Tests
+  * `bundle exec rspec`
+  * `bundle exec rspec --format documentation`
 
 ## Developer Team
 
