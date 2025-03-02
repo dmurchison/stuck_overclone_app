@@ -174,12 +174,20 @@ $errors: rgb(227, 30, 30);
       transition: 325ms;
     }
     .upVote:hover {
-      transform: scale(1.05);
+      transform: scale(1.25);
       border-bottom: 25px solid $hover-orange;
     }
     .downVote:hover {
-      transform: scale(1.05);
+      transform: scale(1.25) smooth;
       border-top: 25px solid $hover-orange;
+    }
+    &.voted {
+      .upVote {
+        border-bottom: 25px solid $hover-orange;
+      }
+      .downVote {
+        border-top: 25px solid $hover-orange;
+      }
     }
   }
   .totalVotes {
