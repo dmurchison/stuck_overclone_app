@@ -83,8 +83,12 @@
   * `bundle install`
   * `npm install`
 * Running Dev Env
-  * `bundle exec rails start`
-  * `npm run frontend` || `npm run start`
+  * IF you do not have a database:
+    * `bundle exec rails db:create`
+    * `bundle exec rails db:migrate`
+    * `bundle exec rails db:seed`
+  * `bundle exec rails server`
+  * `npm run start`
 * Running Tests
   * `bundle exec rspec`
   * `bundle exec rspec --format documentation`
